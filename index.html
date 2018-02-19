@@ -4,295 +4,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Antoine Carat</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <link rel="stylesheet" href="css/bulma.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex/dist/vuex.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      .hovered-container {
+        position: relative;
+      }
+      .hovered-image {
+        opacity: 1;
+      }
+      .hovered-popup {
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 33%;
+        padding-top: 5%;
+        padding-left: 5%;
+        background-color: #445C5C;
+      }
+      .hovered-popup .title {
+        color: white;
+      }
+      .hovered-popup .subtitle {
+        color: white;
+      }
+      .hovered-container:hover .hovered-image {
+        opacity: 0.3;
+      }
+      .hovered-container:hover .hovered-popup {
+        opacity: 1;
+      }
+    </style>
 </head>
 <body>
-    <section class="section">
-        <div id="app" class="container">
-            <!-- <nav class="level" style="background-image: url('https://bulma.io/images/placeholders/128x128.png'); margin-bottom: 100px; margin-top:0px;"> -->
-            <nav class="level" style="margin-bottom: 70px; margin-top:0px">
-              <a class="level-item" @click="currentTab='aboutme'">
-                About me
-							</a>
-              <a class="level-item" @click="currentTab='school'">
-                School
-							</a>
-              <a class="level-item"  @click="currentTab='career'">
-                Career
-							</a>
-              <a class="level-item" @click="currentTab='projects'">
-                Projects
-							</a>
-              <div class="level-right">
-                <a class="level-item" href="#">
-                  <div class="field">
-                    <p class="control has-icons-right">
-                      <input class="input is-rounded" type="text" placeholder="Search">
-                      <span class="icon is-small is-right">
-                        <i class="fas fa-search"></i>
-                      </span>
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </nav>
-            <div id="aboutme" class="columns" v-show="currentTab=='aboutme'">
-              <div id="whoami" class="panel column is-one-quarter">
-                <div class="panel-heading has-text-centered">
-                  <img style="border-radius: 50%" :src="aboutme.img">
-                </div>
-                <div class="panel-block is-italic is-active">
-                  <span class="panel-icon">
-                    <i class="fas fa-handshake"></i>
-                  </span>
-                  <h1  v-if="aboutme.currentJob">{{aboutme.currentJob.title}}
-                  </br>
-                  <small><i class="fas fa-map-marker-alt"></i> {{aboutme.currentJob.location}}</small></h1>
-                  <h1 class="subtitle" v-else>Hire me !</h1>
-                </div>
-                <div class="panel-block">
-                  <div class="has-text-weight-light">
-                    <span class="panel-icon">
-                      <i class="fas fa-quote-left"></i>
-                    </span>
-                    <div>
-                      <p>{{aboutme.speech}}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <a target="_blank" :href="aboutme.links.github"> Look at my work</a>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fab fa-linkedin"></i>
-                  </span>
-                  <a target="_blank" :href="aboutme.links.linkedin"> Join my network</a>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <a target="_blank" :href="aboutme.links.email"> E-mail me</a>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fab fa-twitter"></i>
-                  </span>
-                  <a target="_blank" :href="aboutme.links.twitter"> Follow me</a>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-download"></i>
-                  </span>
-                  <a target="_blank" :href="aboutme.links.cv"> Get my CV</a>
-                </div>
-              </div>
-              <div id="skills" class="column is-three-quarter">
-              </div>
-            </div>
-            <div id="school" class="columns" v-show="currentTab=='school'">
-              <div id="cursus" class="panel column is-one-quarter">
-                <div class="panel-heading has-text-centered">
-                  My cursus
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                  </span>
-                  <h1>Master degree in Software Architecture </br>
-                  <small>Nantes' University</small></h1>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-check-circle"></i>
-                  </span>
-                  <h1>Bachelor degree in Computer Engineering </br>
-                  <small>Nantes' University</small></h1>
-                </div>
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-check-circle"></i>
-                  </span>
-                  <h1>DUT in Computer Engineering </br>
-                  <small>Nantes' Institute of Technology</small></h1>
-                </div>
-              </div>
-              <div id="description" class="column is-three-quarter has-text-centered">
-                <div class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-angle-left"></i>
-                  </span>
-                  Click on one of my diplomas to see a description of it, my motivations and my feelings afterwards.</p>
-                </div>
-              </div>
-            </div>
-            <div id="career" v-show="currentTab=='career'">
-              <div class="is-narrow has-text-right" v-if="aboutme.currentJob">
-                <span class="tag is-success">Current</span>
-              </div>
-              <div class="box columns">
-                <div class="column is-one-quarter">
-                  <h1 class="subtitle">Master degree internship</h1>
-                  <small class="is-italic"><i class="fas fa-map-marker-alt"></i> VSC-Technologies, Nantes, France</small> </br>
-                  <small class="is-italic"><i class="far fa-calendar"></i> January-July 2018</small> </br>
-                  <small class="is-italic"><i class="fas fa-tag"></i> OpenFaas, AWS Lambda, AWS API Gateway, Docker, React, Bulma, JavaScript.</small>
-                </div>
-                <div class="column is-three-quarter">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div class="column is-narrow">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </div>
-              </div>
+    <section class="section" id="app">
+            <top-container>
+              <site-menu></site-menu>
+              <aboutme-tab></aboutme-tab>
+              <career-tab></career-tab>
+              <projects-tab></projects-tab>
+            </top-container>
 
-              <div class="has-text-centered" style="margin-bottom: 25px">
-                <i class="fas fa-caret-up"></i>
-              </div>
-
-              <div class="box columns">
-                <div class="column is-one-quarter">
-                  <h1 class="subtitle">Volunteer internship</h1>
-                  <small class="is-italic"><i class="fas fa-map-marker-alt"></i> Discovery Initiative, IMT, Nantes, France</small> </br>
-                  <small class="is-italic"><i class="far fa-calendar"></i> June-August 2017</small> </br>
-                  <small class="is-italic"><i class="fas fa-tag"></i> Research, Openstack, CockroachDB, Python, Ansible, PostgreSQL</small>
-                </div>
-                <div class="column is-three-quarter">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div class="column is-narrow">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </div>
-              </div>
-
-              <div class="has-text-centered" style="margin-bottom: 25px">
-                <i class="fas fa-caret-up"></i>
-              </div>
-
-              <div class="box columns">
-                <div class="column is-one-quarter">
-                  <h1 class="subtitle">Research initiation internship</h1>
-                  <small class="is-italic"><i class="fas fa-map-marker-alt"></i> Discovery Initiative, IMT, Nantes, France</small> </br>
-                  <small class="is-italic"><i class="far fa-calendar"></i> January-April 2017</small> </br>
-                  <small class="is-italic"><i class="fas fa-tag"></i> Research, Openstack, Python, Ansible</small>
-                </div>
-                <div class="column is-three-quarter">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div class="column is-narrow">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </div>
-              </div>
-
-              <div class="has-text-centered" style="margin-bottom: 25px">
-                <i class="fas fa-caret-up"></i>
-              </div>
-
-              <div class="box columns">
-                <div class="column is-one-quarter">
-                  <h1 class="subtitle">Student non-profit organization fundation & presidency</h1>
-                  <small class="is-italic"><i class="fas fa-map-marker-alt"></i> Sciences&Technologies University, Nantes, France</small> </br>
-                  <small class="is-italic"><i class="far fa-calendar"></i> October 2016-November 2017</small> </br>
-                  <small class="is-italic"><i class="fas fa-tag"></i> Team management, Event organization, Self-control</small>
-                </div>
-                <div class="column is-three-quarter">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div class="column is-narrow">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </div>
-              </div>
-
-              <div class="has-text-centered" style="margin-bottom: 25px">
-                <i class="fas fa-caret-up"></i>
-              </div>
-
-              <div class="box columns">
-                <div class="column is-one-quarter">
-                  <h1 class="subtitle">Bachelor degree internship</h1>
-                  <small class="is-italic"><i class="fas fa-map-marker-alt"></i> TASC team, EMN, Nantes, France</small> </br>
-                  <small class="is-italic"><i class="far fa-calendar"></i> April-June 2016</small> </br>
-                  <small class="is-italic"><i class="fas fa-tag"></i> Research, Constraint Programming, Java</small>
-                </div>
-                <div class="column is-three-quarter">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div class="column is-narrow">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </div>
-              </div>
-
-              <div class="has-text-centered" style="margin-bottom: 25px">
-                <i class="fas fa-caret-up"></i>
-              </div>
-
-              <div class="box columns">
-                <div class="column is-one-quarter">
-                  <h1 class="subtitle">DUT internship</h1>
-                  <small class="is-italic"><i class="fas fa-map-marker-alt"></i> La Poste DTC, Nantes, France</small> </br>
-                  <small class="is-italic"><i class="far fa-calendar"></i> April-June 2015</small> </br>
-                  <small class="is-italic"><i class="fas fa-tag"></i> Puppet, Ruby, Bash, Mercurial</small>
-                </div>
-                <div class="column is-three-quarter">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div class="column is-narrow">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </div>
-              </div>
-            </div>
-            <div id="projects" class="columns" v-show="currentTab=='projects'">
-
-            </div>
             <div class="is-hidden">
               <h2>Icons</h2>
               <i class="fas fa-home"></i>
@@ -333,13 +91,7 @@
             </div>
             <footer class="footer has-text-centered" style="margin-top: 30px">
               <div>
-                <div v-show="currentTab!='aboutme'">
-                  <a><i class="fab fa-github"></i></a>
-                  <a><i class="fab fa-linkedin"></i></a>
-                  <a><i class="fas fa-envelope"></i></a>
-                  <a><i class="fab fa-twitter"></i></a>
-                  <a><i class="fas fa-download"></i></a>
-                </div>
+                <div class="has-text-centered is-italic">I built up this website as a showcase, to make you travel through my universe so you can understand who I am and what I'm able to do.</div>
                 <i class="far fa-copyright"></i> Antoine Carat 2018.
               </div>
             </footer>
