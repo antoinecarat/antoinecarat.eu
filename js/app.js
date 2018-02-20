@@ -1,85 +1,110 @@
 const store = new Vuex.Store({
   state: {
-
+    //TODO: replace it with the right things. In store because it's used by several components;
+    currentSchool: null,
+    currentJob: null
   },
   mutations: {
 
   }
 })
 
-var siteMenu = Vue.component('site-menu', {
-  template: '<nav class="level" style="margin-bottom: 70px; margin-top:0px"><a class="level-item" :class="{active: this.$store.state.currentTab==\'aboutme\'}" @click="setCurrentTab(\'aboutme\')">About me</a><a class="level-item" @click="setCurrentTab(\'career\')">Career</a><a class="level-item" @click="setCurrentTab(\'projects\')">Projects</a></nav>',
-  methods: {
-    setCurrentTab: function(tab) {
-      store.commit('updateTab', tab);
-    }
-  }
-})
+// var siteMenu = Vue.component('site-menu', {
+//   template: '<nav class="level" style="margin-bottom: 70px; margin-top:0px"><a class="level-item" :class="{active: this.$store.state.currentTab==\'aboutme\'}" @click="setCurrentTab(\'aboutme\')">About me</a><a class="level-item" @click="setCurrentTab(\'career\')">Career</a><a class="level-item" @click="setCurrentTab(\'projects\')">Projects</a></nav>',
+//   methods: {
+//     setCurrentTab: function(tab) {
+//       store.commit('updateTab', tab);
+//     }
+//   }
+// })
 
 var aboutMeTab = Vue.component ('aboutme-tab',{
-  template: '<div id="aboutme" class="columns">AboutMe</div>'
+  template: '<div id="aboutme" class="columns">\
+              <whoami-panel></whoami-panel>\
+              <myskills-panel></myskills-panel>\
+             </div>'
 })
 
-/*<div id="whoami" class="panel column is-one-quarter is-active">
-  <div class="panel-heading has-text-centered">
-    <img style="border-radius: 50%" :src="aboutme.img">
-  </div>
-  <div class="panel-block">
-    <div class="has-text-weight-light">
-      <span class="panel-icon">
-        <i class="fas fa-quote-left"></i>
-      </span>
-      <div>
-        <p>{{aboutme.speech}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="panel-block">
-    <span class="panel-icon">
-      <i class="fab fa-github"></i>
-    </span>
-    <a target="_blank" :href="aboutme.links.github"> Look at my work</a>
-  </div>
-  <div class="panel-block">
-    <span class="panel-icon">
-      <i class="fab fa-linkedin"></i>
-    </span>
-    <a target="_blank" :href="aboutme.links.linkedin"> Join my network</a>
-  </div>
-  <div class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <a target="_blank" :href="aboutme.links.email"> E-mail me</a>
-  </div>
-  <div class="panel-block">
-    <span class="panel-icon">
-      <i class="fab fa-twitter"></i>
-    </span>
-    <a target="_blank" :href="aboutme.links.twitter"> Follow me</a>
-  </div>
-  <div class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-download"></i>
-    </span>
-    <a target="_blank" :href="aboutme.links.cv"> Get my CV</a>
-  </div>
-</div>
-<div class="column is-three-quarter">
-  <div id="jobInfo">
-    <div class="panel-block is-italic has-text-centered">
-      <span class="panel-icon">
-        <i class="fas fa-handshake"></i>
-      </span>
-      <h1 v-if="aboutme.currentJob">{{aboutme.currentJob.title}}
-      </br>
-      <small><i class="fas fa-map-marker-alt"></i> {{aboutme.currentJob.location}}</small></h1>
-      <h1 class="subtitle" v-else>Hire me !</h1>
-    </div>
-  </div>
-  <div id="skills" class="box">
-  </div>
-</div>*/
+var whoamiPanel = Vue.component ('whoami-panel', {
+  data: function() {
+    return {
+      aboutme: {
+        img: 'https://bulma.io/images/placeholders/128x128.png',
+        speech: "IT became one of my passions while I was studying electronics in high-school. I started to learn how to code to better unserstand how things work under the hood. Easy-learner, I spend a part of my free time searching for new languages or frameworks to learn. I recently developped a real appeal to web and cloud relative technologies which led me to do several internship around Openstack and AWS solutions and also to spend time learning JS based frameworks like React or VueJS or about languages like Go or GraphQL.",
+        links: {
+          github: "https://github.com/cara-puce?tab=repositories",
+          linkedin: "https://www.linkedin.com/in/antoine-carat-138754135",
+          email: "mailto:antoine.carat@protonmail.com",
+          twitter: "https://twitter.com/a_carat",
+          cv: "",
+        }
+      },
+    }
+  },
+  template: '<div id="whoami" class="panel column is-one-quarter">\
+              <div class="panel-heading has-text-centered">\
+                <img style="border-radius: 50%" :src="aboutme.img">\
+              </div>\
+              <div class="panel-block">\
+                <div class="has-text-weight-light">\
+                  <span class="panel-icon">\
+                    <i class="fas fa-quote-left"></i>\
+                  </span>\
+                  <div>\
+                    <p>{{aboutme.speech}}</p>\
+                  </div>\
+                </div>\
+              </div>\
+              <div class="panel-block">\
+                <span class="panel-icon">\
+                  <i class="fab fa-github"></i>\
+                </span>\
+                <a target="_blank" :href="aboutme.links.github"> Look at my work</a>\
+              </div>\
+              <div class="panel-block">\
+                <span class="panel-icon">\
+                  <i class="fab fa-linkedin"></i>\
+                </span>\
+                <a target="_blank" :href="aboutme.links.linkedin"> Join my network</a>\
+              </div>\
+              <div class="panel-block">\
+                <span class="panel-icon">\
+                  <i class="fas fa-envelope"></i>\
+                </span>\
+                <a target="_blank" :href="aboutme.links.email"> E-mail me</a>\
+              </div>\
+              <div class="panel-block">\
+                <span class="panel-icon">\
+                  <i class="fab fa-twitter"></i>\
+                </span>\
+                <a target="_blank" :href="aboutme.links.twitter"> Follow me</a>\
+              </div>\
+              <div class="panel-block">\
+                <span class="panel-icon">\
+                  <i class="fas fa-download"></i>\
+                </span>\
+                <a target="_blank" :href="aboutme.links.cv"> Get my CV</a>\
+              </div>\
+            </div>'
+})
+
+var skillsPanel = Vue.component ('myskills-panel', {
+template: '<div class="column is-three-quarter">\
+             <div id="jobInfo">\
+              <div class="panel-block is-italic has-text-centered">\
+                <span class="panel-icon">\
+                  <i class="fas fa-handshake"></i>\
+                </span>\
+                <h1 v-if="this.$store.state.currentJob">{{this.$store.state.currentJob.title}}\
+                </br>\
+                <small><i class="fas fa-map-marker-alt"></i> {{this.$store.state.currentJob.location}}</small></h1>\
+                <h1 class="subtitle" v-else>Take a look at my skills, if you\'re interested in hiring me, just contact me!</h1>\
+              </div>\
+            </div>\
+            <div id="skills" class="box">\
+            </div>\
+          </div>'
+})
 
 var careerTab = Vue.component ('career-tab',{
   template: '<div id="career" class="columns">Career</div>'
@@ -364,22 +389,7 @@ var app = new Vue({
     //currentTab: 'projects', //'aboutme', 'career' or 'projects'
     currentCareerItem: null,
     modal: null,
-    aboutme: {
-      img: 'https://bulma.io/images/placeholders/128x128.png',
-      currentlyInSchool: true,
-      currentJob: {
-        title: 'Cloud Intern',
-        location: 'VSCT, Nantes, France'
-      },
-      speech: "IT became one of my passions while I was studying electronics in high-school. I started to learn how to code to better unserstand how things work under the hood. Easy-learner, I spend a part of my free time searching for new languages or frameworks to learn. I recently developped a real appeal to web and cloud relative technologies which led me to do several internship around Openstack and AWS solutions also to spend time learning JS based frameworks like React or VueJS or about languages like Go or GraphQL.",
-      links: {
-        github: "https://github.com/cara-puce?tab=repositories",
-        linkedin: "https://www.linkedin.com/in/antoine-carat-138754135",
-        email: "mailto:antoine.carat@protonmail.com",
-        twitter: "https://twitter.com/a_carat",
-        cv: "",
-      }
-    },
+
     cursus:{
       current: null,
       diplomas: [
