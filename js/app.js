@@ -1,11 +1,9 @@
 const store = new Vuex.Store({
   state: {
-    currentTab: 'aboutme'
+    
   },
   mutations: {
-    updateTab (state, tab) {
-      state.currentTab=tab;
-    }
+
   }
 })
 
@@ -19,7 +17,7 @@ var siteMenu = Vue.component('site-menu', {
 })
 
 var aboutMeTab = Vue.component ('aboutme-tab',{
-  template: '<div id="aboutme" class="columns" v-show="this.$store.state.currentTab==\'aboutme\'"></div>'
+  template: '<div id="aboutme" class="columns">AboutMe</div>'
 })
 
 /*<div id="whoami" class="panel column is-one-quarter is-active">
@@ -84,7 +82,7 @@ var aboutMeTab = Vue.component ('aboutme-tab',{
 </div>*/
 
 var careerTab = Vue.component ('career-tab',{
-  template: '<div id="career" class="columns" v-show="this.$store.state.currentTab==\'career\'"></div>'
+  template: '<div id="career" class="columns">Career</div>'
 })
 
 /*<div id="cursus" class="column is-two-fifths">
@@ -305,8 +303,9 @@ var careerTab = Vue.component ('career-tab',{
   </div>
 </div>*/
 
+//TODO: use dynamic routes to handle projects details presentation.
 var projectsTab = Vue.component ('projects-tab',{
-  template: '<div id="projects" class="columns" v-show="this.$store.state.currentTab==\'projects\'"></div>'
+  template: '<div id="projects" class="columns">Projects</div>'
 })
 
 /*<div class="column is-3" @click="modal='myCoachVic'">
@@ -344,23 +343,23 @@ var projectsTab = Vue.component ('projects-tab',{
   <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
 </div>*/
 
-var topContainer = Vue.component('top-container',{
-  template: '<div class="container-fluid""><site-menu></site-menu><aboutme-tab></aboutme-tab><career-tab></career-tab><projects-tab></projects-tab></div>',
-  data: function() {
-    return {
-      currentTab: 'aboutme'
-    }
-  },
-  methods:{
-    updateTab: function(tab){
-      console.log(tab);
-    }
-  }
+const routes = [
+  { path: '/', redirect: '/aboutme' },
+  { path: '/aboutme', component: aboutMeTab },
+  { path: '/career', component: careerTab },
+  { path: '/projects', component: projectsTab }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  routes
 })
+
 
 var app = new Vue({
   el: '#app',
   store,
+  router,
 	data: {
     //currentTab: 'projects', //'aboutme', 'career' or 'projects'
     currentCareerItem: null,
