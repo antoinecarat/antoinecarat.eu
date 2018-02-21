@@ -2,7 +2,9 @@ const store = new Vuex.Store({
   state: {
     //TODO: replace it with the right things. In store because it's used by several components;
     currentSchool: null,
-    currentJob: null
+    //currentJob: null
+    currentJob: { title: "Cloud intern", location: 'VSCT, Nantes, France', end: '13/07/2018'}
+    //currentJob: { title: "Cloud intern", location: 'VSCT, Nantes, France'}
   },
   mutations: {
 
@@ -13,7 +15,7 @@ const store = new Vuex.Store({
 //   template: '<nav class="level" style="margin-bottom: 70px; margin-top:0px"><a class="level-item" :class="{active: this.$store.state.currentTab==\'aboutme\'}" @click="setCurrentTab(\'aboutme\')">About me</a><a class="level-item" @click="setCurrentTab(\'career\')">Career</a><a class="level-item" @click="setCurrentTab(\'projects\')">Projects</a></nav>',
 //   methods: {
 //     setCurrentTab: function(tab) {
-//       store.commit('updateTab', tab);
+//       store.commfromit('updateTab', tab);
 //     }
 //   }
 // })
@@ -89,54 +91,98 @@ var whoamiPanel = Vue.component ('whoami-panel', {
 })
 
 var skillsPanel = Vue.component ('myskills-panel', {
-template: '<div class="column is-three-quarter">\
-             <div id="jobInfo">\
-              <div class="panel-block is-italic has-text-centered">\
-                <span class="panel-icon">\
-                  <i class="fas fa-handshake"></i>\
-                </span>\
-                <h1 v-if="this.$store.state.currentJob">{{this.$store.state.currentJob.title}}\
-                </br>\
-                <small><i class="fas fa-map-marker-alt"></i> {{this.$store.state.currentJob.location}}</small></h1>\
-                <h1 class="subtitle" v-else>Take a look at my skills, if you\'re interested in hiring me, just contact me!</h1>\
-              </div>\
+  template: '<div class="column is-three-quarter">\
+            <div class="notification has-text-centered" :class="jobStatus">\
+              <h1 v-show="jobStatus==\'is-success\'">I\'m currently free so if you\'re interested in hiring me, just contact me!</h1>\
+              <h1 v-show="jobStatus==\'is-info\'">My current job \"{{this.$store.state.currentJob.title}}\" at {{this.$store.state.currentJob.location}} will end on {{this.$store.state.currentJob.end}}, if you\'re interested in hiring me after this date, just contact me!</h1>\
+              <h1 v-show="jobStatus==\'is-warning\'">I\'m currently {{this.$store.state.currentJob.title}} at {{this.$store.state.currentJob.location}}, but you can contact me if you want to know more about me!</h1>\
             </div>\
             <div id="skills" class="box">\
             </div>\
-          </div>'
+          </div>',
+  computed: {
+    jobStatus: function() {
+      if (this.$store.state.currentJob==null) {
+        return 'is-success';
+      } else {
+        if (this.$store.state.currentJob.end!=null) {
+          return 'is-info';
+        } else {
+          return 'is-warning';
+        }
+      }
+    }
+  }
 })
 
 var careerTab = Vue.component ('career-tab',{
-  template: '<div id="career" class="columns">Career</div>'
+  //TODO: handle a specific display for current school & job.
+  template: '<div id="career" class="columns">\
+              <div id="cursus" class="column is-two-fifths">\
+                <h1 class="has-text-centered"><i class="fas fa-graduation-cap"></i></h1>\
+                <div v-for="diploma in diplomas">\
+                  <diploma-card :title="diploma.title"\
+                                :location="diploma.location"\
+                                :dates="diploma.dates"\
+                                :description="diploma.description"></diploma-card>\
+                  <div class="has-text-centered" style="margin-bottom: 25px">\
+                    <i class="fas fa-caret-up"></i>\
+                  </div>\
+                </div>\
+              </div>\
+             </div>',
+  data: function(){
+    return {
+      diplomas: [
+        {
+          title: 'Master degree in Software architecture',
+          location: 'Sciences University, Nantes, France',
+          dates:'2016 - 2018',
+          description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          title: 'Bachelor degree in Computer',
+          location: 'Sciences University, Nantes, France',
+          dates:'2014 - 2016',
+          description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          title: 'DUT in Computer Science',
+          location: 'Institute of Technology, Nantes, France',
+          dates:'2012 - 2014',
+          description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+      ]
+    }
+  }
 })
 
-/*<div id="cursus" class="column is-two-fifths">
-  <h1 class="has-text-centered"><i class="fas fa-graduation-cap"></i></h1>
+var jobCard = Vue.component ('job-card',{
+  props: ['title', 'location', 'dates', 'description', 'logo'],
+})
+
+var diplomaCard = Vue.component('diploma-card',{
+  props: ['title', 'location', 'dates', 'description'],
+  template: '<div class="box columns" style="cursor: pointer">\
+              <div class="column is-two-fifths">\
+                <h1 class="subtitle">{{title}}</h1>\
+                <small class="is-italic"><i class="fas fa-map-marker-alt"></i> {{location}}</small> </br>\
+                <small class="is-italic"><i class="far fa-calendar"></i> 2016 - 2018</small>\
+              </div>\
+              <div class="column">\
+                <p>{{description}}</p>\
+              </div>\
+            </div>'
+})
+
+/*
   <div class="is-narrow has-text-right" v-if="aboutme.currentlyInSchool">
     <span class="tag is-success">Current</span>
   </div>
-  <div class="box columns" @click="toggleCareerItem('master')" style="cursor: pointer">
-    <div class="column is-two-fifths">
-      <h1 class="subtitle">Master degree in Software Architecture</h1>
-      <small class="is-italic"><i class="fas fa-map-marker-alt"></i> Sciences University, Nantes, France</small> </br>
-      <small class="is-italic"><i class="far fa-calendar"></i> 2016 - 2018</small>
-    </div>
-    <div id="short" class="column" v-show="currentCareerItem!='master'">
-      <p>
-        Right after my Bachelor degree,
-      </p>
-    </div>
-    <div id="long" class="column" v-show="currentCareerItem=='master'">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-    </div>
-  </div>
+
   <div class="has-text-centered" style="margin-bottom: 25px">
     <i class="fas fa-caret-up"></i>
   </div>
