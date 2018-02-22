@@ -269,54 +269,59 @@ var jobCard = Vue.component ('job-card',{
 })
 
 //TODO: use dynamic routes to handle projects details presentation.
+//TODO: Sort projects by category ?
 var projectsTab = Vue.component ('projects-tab',{
-  template: '<div id="projects" class="columns">\
-              <div class="column is-3" v-for="(project, index) in projects"\
-                <div class="hovered-container">\
-                  <img class="hovered-image" src="https://bulma.io/images/placeholders/480x320.png">\
-                  <div class="hovered-popup">\
-                    <h5 class="title">myCoachVic</h5>\
-                    <h6 class="subtitle">A simple sport session manager</h6>\
-                  </div>\
-                </div>\
+  template: '<div id="projects" class="columns is-multiline">\
+              <div class="column is-3" v-for="project in projects">\
+                <project-div :title="project.title"\
+                             :subtitle="project.subtitle"\
+                             :screenshot="project.screenshot">\
+                </project-div>\
               </div>\
-             </div>'
+             </div>',
+  data: function () {
+    return {
+      projects: [
+        {
+          title: 'myCoachVic',
+          subtitle: 'A (very) simple sport sessions manager',
+          screenshot: 'https://bulma.io/images/placeholders/480x320.png'
+        },
+        {
+          title: 'antoinecarat.eu',
+          subtitle: 'This very website',
+          screenshot: 'https://bulma.io/images/placeholders/480x320.png'
+        },
+        {
+          title: 'Charlie\'s Quizz',
+          subtitle: 'Generated from open-data questions quiz.',
+          screenshot: 'https://bulma.io/images/placeholders/480x320.png'
+        },
+        {
+          title: 'KeepInTouch',
+          subtitle: 'Former students record application',
+          screenshot: 'https://bulma.io/images/placeholders/480x320.png'
+        },
+        {
+          title: 'ReportGenerator',
+          subtitle: 'Organization meeting report generator',
+          screenshot: 'https://bulma.io/images/placeholders/480x320.png'
+        }
+      ]
+    }
+  }
 })
 
-/*<div class="column is-3" @click="modal='myCoachVic'">
-  <div class="hovered-container">
-    <img class="hovered-image" src="https://bulma.io/images/placeholders/480x320.png">
-    <div class="hovered-popup">
-      <h5 class="title">myCoachVic</h5>
-      <h6 class="subtitle">A simple sport session manager</h6>
-    </div>
-  </div>
-</div>
-<div class="modal" :class="{ is-active: modal=='myCoachVic' }">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
-</div>
-<div class="column is-3">
-  <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
-</div>
-<div class="column is-3">
-  <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
-</div>
-<div class="column is-3">
-  <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
-</div>
-<div class="column is-3">
-  <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
-</div>
-<div class="column is-3">
-  <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
-</div>
-<div class="column is-3">
-  <img style="cursor: pointer" src="https://bulma.io/images/placeholders/480x320.png">
-</div>*/
+var projectDiv = Vue.component('project-div', {
+  props: ['title', 'subtitle', 'screenshot'],
+  template: '<div class="hovered-container">\
+              <img class="hovered-image" :src="screenshot">\
+              <div class="hovered-popup">\
+                <h5 class="title">{{title}}</h5>\
+                <h6 class="subtitle">{{subtitle}}</h6>\
+              </div>\
+            </div>'
+})
 
 const routes = [
   { path: '/', redirect: '/aboutme' },
