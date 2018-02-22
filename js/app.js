@@ -23,8 +23,28 @@ const store = new Vuex.Store({
 var aboutMeTab = Vue.component ('aboutme-tab',{
   template: '<div id="aboutme" class="columns">\
               <whoami-panel></whoami-panel>\
-              <myskills-panel></myskills-panel>\
-             </div>'
+              <div class="column is-three-quarter">\
+                <div class="notification has-text-centered" :class="jobStatus">\
+                  <h1 v-if="jobStatus==\'is-success\'">I\'m currently free so if you\'re interested in hiring me, just contact me!</h1>\
+                  <h1 v-if="jobStatus==\'is-info\'">My current job \"{{this.$store.state.currentJob.title}}\" at {{this.$store.state.currentJob.location}} will end on {{this.$store.state.currentJob.end}}, if you\'re interested in hiring me after this date, just contact me!</h1>\
+                  <h1 v-if="jobStatus==\'is-warning\'">I\'m currently {{this.$store.state.currentJob.title}} at {{this.$store.state.currentJob.location}}, but you can contact me if you want to know more about me!</h1>\
+                </div>\
+                <myskills-panel></myskills-panel>\
+              </div>\
+             </div>',
+   computed: {
+     jobStatus: function() {
+       if (this.$store.state.currentJob==null) {
+         return 'is-success';
+       } else {
+         if (this.$store.state.currentJob.end!=null) {
+           return 'is-info';
+         } else {
+           return 'is-warning';
+         }
+       }
+     }
+   }
 })
 
 var whoamiPanel = Vue.component ('whoami-panel', {
@@ -91,28 +111,9 @@ var whoamiPanel = Vue.component ('whoami-panel', {
 })
 
 var skillsPanel = Vue.component ('myskills-panel', {
-  template: '<div class="column is-three-quarter">\
-            <div class="notification has-text-centered" :class="jobStatus">\
-              <h1 v-show="jobStatus==\'is-success\'">I\'m currently free so if you\'re interested in hiring me, just contact me!</h1>\
-              <h1 v-show="jobStatus==\'is-info\'">My current job \"{{this.$store.state.currentJob.title}}\" at {{this.$store.state.currentJob.location}} will end on {{this.$store.state.currentJob.end}}, if you\'re interested in hiring me after this date, just contact me!</h1>\
-              <h1 v-show="jobStatus==\'is-warning\'">I\'m currently {{this.$store.state.currentJob.title}} at {{this.$store.state.currentJob.location}}, but you can contact me if you want to know more about me!</h1>\
-            </div>\
-            <div id="skills" class="box">\
-            </div>\
-          </div>',
-  computed: {
-    jobStatus: function() {
-      if (this.$store.state.currentJob==null) {
-        return 'is-success';
-      } else {
-        if (this.$store.state.currentJob.end!=null) {
-          return 'is-info';
-        } else {
-          return 'is-warning';
-        }
-      }
-    }
-  }
+  template: '<div id="skills" class="box">\
+              INSERT HUGE SKILLS HERE\
+             </div>'
 })
 
 var careerTab = Vue.component ('career-tab',{
