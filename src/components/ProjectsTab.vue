@@ -10,13 +10,13 @@
 </template>
 
 <script>
-  import ProjectCard from './projects/ProjectCard'
-  import projectsDatas from '../data/en/projects.js'
+import ProjectCard from './projects/ProjectCard'
+import projectsDatas from '../data/en/projects.js'
 
-  export default {
-    components: { 'project-card': ProjectCard },
-    data () {
-      return projectsDatas
-    }
+export default {
+  components: { 'project-card': ProjectCard },
+  data () {
+    return projectsDatas
   }
+}
 </script>

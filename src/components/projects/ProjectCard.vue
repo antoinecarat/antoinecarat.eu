@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  export default {
-    props : ['title', 'subtitle', 'screenshot']
-  }
+export default {
+  props: ['title', 'subtitle', 'screenshot']
+}
 </script>
 
 <style>

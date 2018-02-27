@@ -66,10 +66,10 @@ export default {
 </script>
 
 <style>
-   #header{
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-bottom: 1%;
-    border-bottom-style: inset;
-  }
+#header {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 1%;
+  border-bottom-style: inset;
+}
 </style>

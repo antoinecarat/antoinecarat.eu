@@ -13,23 +13,23 @@
 </template>
 
 <script>
-  import WhoAmI from './aboutme/WhoAmITab.vue'
-  import Skills from './aboutme/SkillsTab.vue'
-  
-  export default {
-    components: { 'whoamitab': WhoAmI, 'skillstab': Skills },
-    computed: {
-      jobStatus () {
-       if (this.$store.state.currentJob==null) {
-         return 'is-success';
-       } else {
-         if (this.$store.state.currentJob.end!=null) {
-           return 'is-info';
-         } else {
-           return 'is-warning';
-         }
-       }
-     }
-   }
+import WhoAmI from './aboutme/WhoAmITab.vue'
+import Skills from './aboutme/SkillsTab.vue'
+
+export default {
+  components: { whoamitab: WhoAmI, skillstab: Skills },
+  computed: {
+    jobStatus () {
+      if (this.$store.state.currentJob == null) {
+        return 'is-success'
+      } else {
+        if (this.$store.state.currentJob.end != null) {
+          return 'is-info'
+        } else {
+          return 'is-warning'
+        }
+      }
+    }
   }
+}
 </script>

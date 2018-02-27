@@ -36,14 +36,14 @@
 </template>
 
 <script>
-  import DiplomaCard from './career/DiplomaCard.vue'
-  import JobCard from './career/JobCard.vue'
-  import careerDatas from '../data/en/career.js'
+import DiplomaCard from './career/DiplomaCard.vue'
+import JobCard from './career/JobCard.vue'
+import careerDatas from '../data/en/career.js'
 
-  export default {
-    components: { 'diploma-card': DiplomaCard, 'job-card': JobCard },
-    data () {
-      return careerDatas
-    }
+export default {
+  components: { 'diploma-card': DiplomaCard, 'job-card': JobCard },
+  data () {
+    return careerDatas
   }
+}
 </script>

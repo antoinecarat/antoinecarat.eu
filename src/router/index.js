@@ -9,7 +9,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    { path: '/', redirect: '/aboutme'},
+    { path: '/', redirect: '/aboutme' },
     { path: '/aboutme', component: AboutMeTab },
     { path: '/career', component: CareerTab },
     { path: '/projects', component: ProjectTab }

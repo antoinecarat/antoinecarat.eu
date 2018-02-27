@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  import skillsDatas from '../../data/en/skills.js'
+import skillsDatas from '../../data/en/skills.js'
 
-  export default {
-    data () {
-      return skillsDatas;
-    }
+export default {
+  data () {
+    return skillsDatas
   }
+}
 </script>

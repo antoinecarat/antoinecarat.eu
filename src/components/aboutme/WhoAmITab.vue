@@ -47,11 +47,11 @@
 </template>
 
 <script>
-  import whoamiDatas from '../../data/en/whoami.js'
+import whoamiDatas from '../../data/en/whoami.js'
 
-  export default {
-    data () {
-      return whoamiDatas;
-    }
+export default {
+  data () {
+    return whoamiDatas
   }
+}
 </script>

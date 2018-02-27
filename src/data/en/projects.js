@@ -11,7 +11,7 @@ export default {
       screenshot: 'https://bulma.io/images/placeholders/480x320.png'
     },
     {
-      title: 'Charlie\'s Quizz',
+      title: "Charlie's Quizz",
       subtitle: 'Generated from open-data questions quiz.',
       screenshot: 'https://bulma.io/images/placeholders/480x320.png'
     },
