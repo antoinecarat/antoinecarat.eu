@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="app">
     <div id="header">
-      <header class="title has-text-centered">Antoine Carat - Graduated developper</header>
+      <header class="title has-text-centered">Antoine Carat - {{keyword}}</header>
       <nav class="level">
         <router-link class="level-item is-active" to="/aboutme">About me</router-link>
         <router-link class="level-item" to="/career">Career</router-link>
@@ -61,7 +61,10 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+    keyword () { return 'Graduated Developper' }
+  }
 }
 </script>
 
