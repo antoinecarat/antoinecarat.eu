@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="app">
     <div id="header">
-      <header class="title has-text-centered">Antoine Carat - {{keyword}}</header>
+      <header class="title has-text-centered" @click="genkeywordID">Antoine Carat - {{keyword}}</header>
       <nav class="level">
         <router-link class="level-item is-active" to="/aboutme">About me</router-link>
         <router-link class="level-item" to="/career">Career</router-link>
@@ -62,8 +62,19 @@
 <script>
 export default {
   name: 'App',
+  data () {
+    return {
+      keywords: ['Graduated developer', 'DevOps believer', 'Cloud lover', 'Human being'],
+      keywordID: 0
+    }
+  },
   computed: {
-    keyword () { return 'Graduated Developper' }
+    keyword () { return this.keywords[this.keywordID] }
+  },
+  methods: {
+    genkeywordID () {
+      this.keywordID = Math.floor(Math.random() * this.keywords.length)
+    }
   }
 }
 </script>
