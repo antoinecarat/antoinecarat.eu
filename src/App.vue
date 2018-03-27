@@ -64,7 +64,7 @@ export default {
   name: 'App',
   data () {
     return {
-      keywords: ['Graduated developer', 'DevOps believer', 'Cloud lover', 'Human being'],
+      keywords: ['Graduated developer', 'DevOps believer', 'Cloud lover', 'Open-source enthusiatic', 'Human being'],
       keywordID: 0
     }
   },

@@ -29,16 +29,24 @@
               <progress></progress>
               <progress></progress>
               <progress></progress>
+              <!-- <chartist
+              ratio="ct-major-second"
+              type="Line"
+              :data="chartData"
+              :options="chartOptions" >
+              </chartist> -->
             </article>
           </div>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child notification is-success">
-            <p class="title">I also like ...</p>
+            <p class="title">Essentials</p>
             <i class="fas fa-motorcycle"></i>
             <i class="fab fa-nintendo-switch"></i>
             <i class="fas fa-football-ball"></i>
             <i class="fas fa-music"></i>
+            <i class="fas fa-beer"></i>
+            <i class="fas fa-coffee"></i>
           </article>
         </div>
       </div>
@@ -53,30 +61,6 @@
         </article>
       </div>
     </div>
-    <!-- <div class="card has-text-centered column is-one-quarter">
-      <div class="card-header">Feelings</div>
-      <div class="card-content">
-        <div class="card">
-          <span class="card-header">I'd rather ...</span>
-
-        </div>
-        <div class="card">
-          <span class="card-header">I also like ...</span> <br/>
-
-        </div>
-      </div>
-    </div>
-    <div class="card has-text-centered column is-three-quarter">
-      <div class="card-header">Skills</div>
-      <div class="card-content>
-        <chartist
-        ratio="ct-major-second"
-        type="Line"
-        :data="chartData"
-        :options="chartOptions" >
-        </chartist>
-      </div>
-    </div> -->
 </template>
 
 <script>
