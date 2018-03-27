@@ -1,13 +1,82 @@
-<template>
-  <div id="skills" class="box">
-    INSERT HUGE SKILLS HERE
-    <chartist
-    ratio="ct-major-second"
-    type="Line"
-    :data="chartData"
-    :options="chartOptions" >
-</chartist>
-  </div>
+  <template>
+    <div class="tile is-ancestor" id="skills">
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-dark">
+              <p class="title">I'd rather...</p>
+              <i class="fas fa-bicycle"></i> <progress></progress> <i class="fas fa-car"></i><br/>
+              <i class="far fa-building"></i> <progress></progress> <i class="fas fa-home"></i><br/>
+              <i class="fas fa-street-view"></i> <progress></progress> <i class="far fa-map"></i><br/>
+              <i class="fas fa-bed"></i> <progress></progress> <i class="fas fa-plane"></i>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-light">
+              <p class="title">Top</p>
+              <p class="subtitle">Front-end</p>
+              <progress></progress>
+              <progress></progress>
+              <progress></progress>
+              <progress></progress>
+              <p class="subtitle">Back-end</p>
+              <progress></progress>
+              <progress></progress>
+              <progress></progress>
+              <progress></progress>
+              <p class="subtitle">Databases</p>
+              <progress></progress>
+              <progress></progress>
+              <progress></progress>
+              <progress></progress>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-success">
+            <p class="title">I also like ...</p>
+            <i class="fas fa-motorcycle"></i>
+            <i class="fab fa-nintendo-switch"></i>
+            <i class="fas fa-football-ball"></i>
+            <i class="fas fa-music"></i>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-warning">
+          <div class="content">
+            <p class="title">Other</p>
+            <div class="content">
+              <!-- Content -->
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- <div class="card has-text-centered column is-one-quarter">
+      <div class="card-header">Feelings</div>
+      <div class="card-content">
+        <div class="card">
+          <span class="card-header">I'd rather ...</span>
+
+        </div>
+        <div class="card">
+          <span class="card-header">I also like ...</span> <br/>
+
+        </div>
+      </div>
+    </div>
+    <div class="card has-text-centered column is-three-quarter">
+      <div class="card-header">Skills</div>
+      <div class="card-content>
+        <chartist
+        ratio="ct-major-second"
+        type="Line"
+        :data="chartData"
+        :options="chartOptions" >
+        </chartist>
+      </div>
+    </div> -->
 </template>
 
 <script>

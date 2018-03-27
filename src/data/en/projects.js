@@ -1,4 +1,5 @@
 export default {
+  display: 'list',
   projects: [
     {
       title: 'myCoachVic',
@@ -13,7 +14,7 @@ export default {
       subtitle: 'This very website',
       screenshot: 'https://bulma.io/images/placeholders/480x320.png',
       start: 'January 2018',
-      description: 'I developped this website following an incremental fashion in order to enhance my VueJS knowledge. I started with a dynamic-ish website with vueJS but no components, then I add components and after that i start using vue-router and vuex. When everything was fine, I start over using the vue-cli tool, which deliver a powerful npm&webpack development environment.',
+      description: 'I developped this website following an incremental fashion in order to enhance my VueJS knowledge. I started with a dynamic-ish website with vueJS but no components, then I add components and after that I start using vue-router and vuex. When everything was fine, I start over using the vue-cli tool, which deliver a powerful npm&webpack development environment.',
       tags: []
     },
     {

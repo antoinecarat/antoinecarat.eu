@@ -35,7 +35,7 @@ export default {
          Working with technologies like OpenStack, Jenkins, Docker, ... taught me how things work in the Ops side of DevOps, which will for sure reveal itself as a strengh.',
       logo: 'https://bulma.io/images/placeholders/128x128.png',
       tags:
-        'OpenStack, Docker, Docker-Swarm, Jenkins.'
+        'OpenStack, Docker, Docker-Swarm, Jenkins, OpenFaas, Angular, Go.'
     },
     {
       title: 'Volunteer internship',
