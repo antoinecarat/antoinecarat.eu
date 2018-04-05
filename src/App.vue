@@ -3,9 +3,10 @@
     <div id="header">
       <header class="title has-text-centered" @click="genkeywordID">Antoine Carat - {{keyword}}</header>
       <nav class="level">
-        <router-link class="level-item is-active" to="/aboutme">About me</router-link>
-        <router-link class="level-item" to="/career">Career</router-link>
-        <router-link class="level-item" to="/projects">Projects</router-link>
+        <router-link id="router-link" class="level-item is-active" to="/aboutme">About me</router-link>
+        <router-link id="router-link" class="level-item" to="/skills">Skills</router-link>
+        <router-link id="router-link" class="level-item" to="/career">Career</router-link>
+        <router-link id="router-link" class="level-item" to="/projects">Projects</router-link>
       </nav>
     </div>
     <div class="container-fluid">
@@ -86,4 +87,9 @@ export default {
   margin-bottom: 1%;
   border-bottom-style: inset;
 }
+
+#router-link .router-link-active {
+  background-color: black;
+}
+
 </style>

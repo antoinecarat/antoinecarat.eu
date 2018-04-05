@@ -1,78 +1,63 @@
-  <template>
-    <div class="tile is-ancestor" id="skills">
-      <div class="tile is-vertical is-8">
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-dark">
-              <p class="title">I'd rather...</p>
-              <i class="fas fa-bicycle"></i> <progress></progress> <i class="fas fa-car"></i><br/>
-              <i class="far fa-building"></i> <progress></progress> <i class="fas fa-home"></i><br/>
-              <i class="fas fa-street-view"></i> <progress></progress> <i class="far fa-map"></i><br/>
-              <i class="fas fa-bed"></i> <progress></progress> <i class="fas fa-plane"></i>
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-light">
-              <p class="title">Top</p>
-              <p class="subtitle">Front-end</p>
-              <progress></progress>
-              <progress></progress>
-              <progress></progress>
-              <progress></progress>
-              <p class="subtitle">Back-end</p>
-              <progress></progress>
-              <progress></progress>
-              <progress></progress>
-              <progress></progress>
-              <p class="subtitle">Databases</p>
-              <progress></progress>
-              <progress></progress>
-              <progress></progress>
-              <progress></progress>
-              <!-- <chartist
-              ratio="ct-major-second"
-              type="Line"
-              :data="chartData"
-              :options="chartOptions" >
-              </chartist> -->
-            </article>
-          </div>
+<template>
+  <div class="tile is-ancestor" id="skills">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-dark">
+            <p class="title">Languages</p>
+            JavaScript<progress class="progress"></progress>
+            PHP<progress  class="progress"></progress>
+            Java<progress class="progress"></progress>
+          </article>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
-            <p class="title">Essentials</p>
-            <i class="fas fa-motorcycle"></i>
-            <i class="fab fa-nintendo-switch"></i>
-            <i class="fas fa-football-ball"></i>
-            <i class="fas fa-music"></i>
-            <i class="fas fa-beer"></i>
-            <i class="fas fa-coffee"></i>
+          <article class="tile is-child notification is-light">
+            <p class="title">Frameworks</p>
+            Vue.js<progress class="progress"></progress>
+            Node.js<progress  class="progress"></progress>
+            React.js<progress class="progress"></progress>
+            Laravel<progress class="progress"></progress>
           </article>
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-warning">
-          <div class="content">
-            <p class="title">Other</p>
-            <div class="content">
-              <!-- Content -->
-            </div>
-          </div>
+        <article class="tile is-child notification is-success">
+          <p class="title">Essentials</p>
+          <i class="fas fa-motorcycle"></i>
+          <i class="fab fa-nintendo-switch"></i>
+          <i class="fas fa-football-ball"></i>
+          <i class="fas fa-music"></i>
+          <i class="fas fa-beer"></i>
+          <i class="fas fa-coffee"></i>
         </article>
       </div>
     </div>
+    <div class="tile is-parent is-2">
+      <article class="tile is-child notification is-warning">
+        <div class="content">
+          <p class="title">I'd rather</p>
+          <div class="content">
+            <i class="fas fa-bicycle"></i> ---|------------ <i class="fas fa-car"></i><br/>
+            <i class="far fa-building"></i> -----------|---- <i class="fas fa-home"></i><br/>
+            <i class="far fa-map"></i> --|-------------- <i class="fas fa-street-view"></i><br/>
+            <i class="fas fa-bed"></i> -------------|--- <i class="fas fa-plane"></i><br/>
+            <i class="fas fa-beer"></i> --------|-------- <i class="fas fa-beer"></i><br/>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
 </template>
 
 <script>
-import skillsDatas from '../../data/en/skills.js'
 import Vue from 'vue'
 Vue.use(require('vue-chartist'))
 
 
 export default {
-  data () {
-    return skillsDatas
-  }
+data () {
+  return skillsDatas
+}
 }
 </script>
 
@@ -339,357 +324,357 @@ display: block;
 position: relative;
 width: 100%; }
 .ct-square:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 100%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 100%; }
 .ct-square:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-square > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-minor-second {
 display: block;
 position: relative;
 width: 100%; }
 .ct-minor-second:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 93.75%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 93.75%; }
 .ct-minor-second:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-minor-second > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-second {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-second:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 88.8888888889%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 88.8888888889%; }
 .ct-major-second:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-second > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-minor-third {
 display: block;
 position: relative;
 width: 100%; }
 .ct-minor-third:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 83.3333333333%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 83.3333333333%; }
 .ct-minor-third:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-minor-third > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-third {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-third:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 80%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 80%; }
 .ct-major-third:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-third > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-perfect-fourth {
 display: block;
 position: relative;
 width: 100%; }
 .ct-perfect-fourth:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 75%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 75%; }
 .ct-perfect-fourth:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-perfect-fourth > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-perfect-fifth {
 display: block;
 position: relative;
 width: 100%; }
 .ct-perfect-fifth:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 66.6666666667%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 66.6666666667%; }
 .ct-perfect-fifth:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-perfect-fifth > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-minor-sixth {
 display: block;
 position: relative;
 width: 100%; }
 .ct-minor-sixth:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 62.5%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 62.5%; }
 .ct-minor-sixth:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-minor-sixth > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-golden-section {
 display: block;
 position: relative;
 width: 100%; }
 .ct-golden-section:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 61.804697157%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 61.804697157%; }
 .ct-golden-section:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-golden-section > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-sixth {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-sixth:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 60%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 60%; }
 .ct-major-sixth:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-sixth > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-minor-seventh {
 display: block;
 position: relative;
 width: 100%; }
 .ct-minor-seventh:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 56.25%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 56.25%; }
 .ct-minor-seventh:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-minor-seventh > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-seventh {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-seventh:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 53.3333333333%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 53.3333333333%; }
 .ct-major-seventh:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-seventh > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-octave {
 display: block;
 position: relative;
 width: 100%; }
 .ct-octave:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 50%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 50%; }
 .ct-octave:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-octave > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-tenth {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-tenth:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 40%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 40%; }
 .ct-major-tenth:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-tenth > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-eleventh {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-eleventh:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 37.5%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 37.5%; }
 .ct-major-eleventh:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-eleventh > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-major-twelfth {
 display: block;
 position: relative;
 width: 100%; }
 .ct-major-twelfth:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 33.3333333333%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 33.3333333333%; }
 .ct-major-twelfth:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-major-twelfth > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 .ct-double-octave {
 display: block;
 position: relative;
 width: 100%; }
 .ct-double-octave:before {
-  display: block;
-  float: left;
-  content: "";
-  width: 0;
-  height: 0;
-  padding-bottom: 25%; }
+display: block;
+float: left;
+content: "";
+width: 0;
+height: 0;
+padding-bottom: 25%; }
 .ct-double-octave:after {
-  content: "";
-  display: table;
-  clear: both; }
+content: "";
+display: table;
+clear: both; }
 .ct-double-octave > svg {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0; }
+display: block;
+position: absolute;
+top: 0;
+left: 0; }
 
 /*# sourceMappingURL=chartist.css.map */
 </style>
