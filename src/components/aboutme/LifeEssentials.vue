@@ -1,38 +1,17 @@
 <template>
-  <div class="tile is-ancestor" id="skills">
-    <div class="tile is-vertical is-8">
-      <div class="tile">
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification is-dark">
-            <p class="title">Languages</p>
-            JavaScript<progress class="progress"></progress>
-            PHP<progress  class="progress"></progress>
-            Java<progress class="progress"></progress>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-light">
-            <p class="title">Frameworks</p>
-            Vue.js<progress class="progress"></progress>
-            Node.js<progress  class="progress"></progress>
-            React.js<progress class="progress"></progress>
-            Laravel<progress class="progress"></progress>
-          </article>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
-          <p class="title">Essentials</p>
-          <i class="fas fa-motorcycle"></i>
-          <i class="fab fa-nintendo-switch"></i>
-          <i class="fas fa-football-ball"></i>
-          <i class="fas fa-music"></i>
-          <i class="fas fa-beer"></i>
-          <i class="fas fa-coffee"></i>
-        </article>
-      </div>
+  <div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <p class="title">Essentials</p>
+        <i class="fas fa-motorcycle"></i>
+        <i class="fab fa-nintendo-switch"></i>
+        <i class="fas fa-football-ball"></i>
+        <i class="fas fa-music"></i>
+        <i class="fas fa-beer"></i>
+        <i class="fas fa-coffee"></i>
+      </article>
     </div>
-    <div class="tile is-parent is-2">
+    <div class="tile is-parent">
       <article class="tile is-child notification is-warning">
         <div class="content">
           <p class="title">I'd rather</p>
@@ -55,9 +34,7 @@ Vue.use(require('vue-chartist'))
 
 
 export default {
-data () {
-  return skillsDatas
-}
+
 }
 </script>
 
