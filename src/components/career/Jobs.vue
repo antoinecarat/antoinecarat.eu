@@ -16,7 +16,12 @@
 </template>
 
 <script>
+import datas from '../../data/en/career.js'
+
 export default {
-  props: ['title', 'location', 'dates', 'description', 'logo', 'tags']
+  props: ['title', 'location', 'dates', 'description', 'logo', 'tags'],
+  data: function () {
+    return datas
+  }
 }
 </script>

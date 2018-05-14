@@ -39,7 +39,7 @@ export default {
       subtitle: 'Former students record application',
       screenshot: 'https://bulma.io/images/placeholders/480x320.png',
       start: '',
-      description: '',
+      description: 'This application is designed to register former student of Nantes\' IT University. With these records, actual student can easily contact',
       tags: []
     }
   ]

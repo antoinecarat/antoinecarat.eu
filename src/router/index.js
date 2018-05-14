@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import AboutMeTab from '@/components/AboutMeTab'
-import SkillsTab from '@/components/SkillsTab'
-import CareerTab from '@/components/CareerTab'
-import ProjectTab from '@/components/ProjectsTab'
+import AboutMe from '@/components/AboutMe'
+import Skills from '@/components/Skills'
+import Career from '@/components/Career'
+import Projects from '@/components/Projects'
 
 Vue.use(Router)
 
@@ -11,9 +11,9 @@ export default new Router({
   mode: 'history',
   routes: [
     { path: '/', redirect: '/aboutme' },
-    { path: '/aboutme', component: AboutMeTab },
-    { path: '/skills', component: SkillsTab },
-    { path: '/career', component: CareerTab },
-    { path: '/projects', component: ProjectTab }
+    { path: '/aboutme', component: AboutMe },
+    { path: '/skills', component: Skills },
+    { path: '/career', component: Career },
+    { path: '/projects', component: Projects }
   ]
 })

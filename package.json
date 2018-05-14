@@ -13,6 +13,10 @@
     "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
+    "bulma": "^0.7.1",
+    "bulma-steps": "^1.0.2",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
     "vue": "^2.5.2",
     "vue-chartist": "^2.1.2",
     "vue-router": "^3.0.1",

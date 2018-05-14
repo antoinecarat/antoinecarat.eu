@@ -11,19 +11,18 @@
         <h1 v-if="jobStatus=='is-info'">My current job "{{this.$store.state.currentJob.title}}" at {{this.$store.state.currentJob.location}} will end on {{this.$store.state.currentJob.end}}, if you're interested in hiring me after this date, just contact me!</h1>
         <h1 v-if="jobStatus=='is-warning'">currently {{this.$store.state.currentJob.title}} at {{this.$store.state.currentJob.location}}, but I'll be glad to talk to you if you want to know more about me!</h1>
       </div>
-      <div>
-        
-      </div>
+      <timeline></timeline>
     </div>
   </div>
 </template>
 
 <script>
 import whoamiDatas from '../data/en/whoami.js'
+import Timeline from './aboutme/Timeline.vue'
 import LifeEssentials from './aboutme/LifeEssentials'
 
 export default {
-  components: { lifeessentials: LifeEssentials},
+  components: { timeline: Timeline, lifeessentials: LifeEssentials},
   data: function () {
     return whoamiDatas
   },

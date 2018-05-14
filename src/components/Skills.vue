@@ -65,7 +65,7 @@ export default {
 
 <style>
 .is-vue {
-  color: 
+  color:
 }
 
 .is-node {
