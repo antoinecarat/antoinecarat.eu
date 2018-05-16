@@ -1,21 +1,31 @@
 <template>
   <div id="career" class="columns">
-    <div id="experiences" class="column">
-      <h1 class="has-text-centered" :style="{'margin-bottom: 25px' : this.$store.state.currentJob==null }"><i class="fas fa-handshake"></i></h1>
-      <jobs>
-      </jobs>
-      <div class="has-text-centered" style="margin-bottom: 25px" v-show="index!=experiences.length-1">
-        <i class="fas fa-caret-up"></i>
+    <div id="experiences" class="timeline column is-one-quarter">
+      <div class="timeline-item" v-for="(experience, index) in experiences">
+        <div class="timeline-marker is-image is-48x48">
+          <img :src="experience.logo">
+        </div>
+        <div class="timeline-content">
+          <p class="heading"><span class="tag is-success" v-show="experience.current">Current</span> {{experience.title}}</p>
+          <small class="is-italic"><i class="fas fa-map-marker-alt"></i> {{experience.location}}</small> <br/>
+          <small class="is-italic"><i class="far fa-calendar"></i> {{experience.dates}}</small> <br/>
+          <small class="is-italic"><i class="fas fa-tag"></i> {{experience.tags}}</small>
+        </div>
       </div>
+      <div class="timeline-header">
+        <span class="tag is-medium is-link">2012</span>
+      </div>
+    </div>
+    <div class="column is-three-quarter">
+      <p v-for="(experience, index) in experiences">{{experience.description}}</p>
     </div>
   </div>
 </template>
 
 <script>
-import Jobs from './career/Jobs.vue'
+import careerDatas from '../data/en/career.js'
 
 export default {
-  components: {'jobs': Jobs },
   data () {
     return careerDatas
   }

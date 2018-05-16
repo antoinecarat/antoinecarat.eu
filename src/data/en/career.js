@@ -9,8 +9,8 @@ export default {
          Working with technologies like OpenStack, Jenkins, Docker, ... taught me how things work in the Ops side of DevOps, which will for sure reveal itself as a strengh.\
          I also built up a solution testing an application resiliency with chaos. I was the monkey, i definitely loved it! :)',
       logo: 'https://bulma.io/images/placeholders/128x128.png',
-      tags:
-        'OpenStack, Docker, Docker-Swarm, Jenkins, OpenFaas, Angular, Go, AWS, Chaos engineering.'
+      tags: 'OpenStack, Docker, Docker-Swarm, Jenkins, OpenFaas, Angular, Go, AWS, Chaos engineering.',
+      current: true
     },
     {
       title: 'Volunteer internship',
