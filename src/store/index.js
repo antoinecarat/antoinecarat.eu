@@ -15,5 +15,7 @@ export default new Vuex.Store({
     }
     // currentJob: { title: "Cloud intern", location: 'VSCT, Nantes, France'}
   },
-  mutations: {}
+  mutations: {
+      
+  }
 })

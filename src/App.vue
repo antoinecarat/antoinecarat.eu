@@ -1,54 +1,37 @@
 <template>
   <section class="section" id="app">
     <div id="header">
-      <header class="title has-text-centered" @click="genkeywordID">Antoine Carat - {{keyword}}</header>
-      <nav class="level">
-        <router-link id="router-link" class="level-item is-active" to="/aboutme">About me</router-link>
-        <router-link id="router-link" class="level-item" to="/skills">Skills</router-link>
-        <router-link id="router-link" class="level-item" to="/career">Career</router-link>
-        <router-link id="router-link" class="level-item" to="/projects">Projects</router-link>
-      </nav>
+      <div class="has-text-centered is-hidden-touch" @click="genkeywordID">
+        <p class="title">Antoine Carat - {{keyword}}</p>
+        <nav class="level">
+          <router-link id="router-link" class="level-item" to="/aboutme" active-class="is-active">About me</router-link>
+          <router-link id="router-link" class="level-item" to="/skills" active-class="is-active">Skills</router-link>
+          <router-link id="router-link" class="level-item" to="/career" active-class="is-active">Career</router-link>
+          <router-link id="router-link" class="level-item" to="/projects" active-class="is-active">Projects</router-link>
+        </nav>
+      </div>
+      <div class="is-hidden-desktop" @click="genkeywordID">
+        <p class="title">Antoine Carat</p>
+        <p class="subtitle">{{keyword}}</p>
+        <div class="dropdown" :class="{'is-active': showBurger}"  @click="showBurger=!showBurger">
+          <div class="dropdown-trigger">
+            <button class="button">
+              {{currentTab}} &ensp; <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <router-link id="router-link" class="dropdown-item" to="/aboutme" active-class="is-active">About me</router-link>
+              <router-link id="router-link" class="dropdown-item" to="/skills" active-class="is-active">Skills</router-link>
+              <router-link id="router-link" class="dropdown-item" to="/career" active-class="is-active">Career</router-link>
+              <router-link id="router-link" class="dropdown-item" to="/projects" active-class="is-active">Projects</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="container-fluid">
       <router-view></router-view>
-    </div>
-    <div class="is-hidden">
-      <h2>Icons</h2>
-      <i class="fas fa-home"></i>
-      <i class="fas fa-envelope"></i>
-      <i class="fas fa-quote-left"></i>
-      <i class="fas fa-quote-right"></i>
-      <i class="fas fa-info-circle"></i>
-      <i class="fas fa-graduation-cap"></i>
-      <i class="fas fa-comments"></i>
-      <i class="fas fa-cogs"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fas fa-code-branch"></i>
-      <i class="fas fa-upload"></i>
-      <i class="fas fa-question-circle"></i>
-      <i class="fas fa-code"></i>
-      <i class="fas fa-check"></i>
-      <i class="fas fa-toggle-on"></i>
-      <i class="fas fa-toggle-off"></i>
-      <i class="fab fa-aws"></i>
-      <i class="fab fa-vuejs"></i>
-      <i class="fab fa-react"></i>
-      <i class="fab fa-python"></i>
-      <i class="fab fa-js-square"></i>
-      <i class="fab fa-node-js"></i>
-      <i class="fab fa-linux"></i>
-      <i class="fab fa-html5"></i>
-      <i class="fab fa-firefox"></i>
-      <i class="fab fa-docker"></i>
-      <i class="fas fa-database"></i>
-      <i class="fab fa-css3-alt"></i>
-      <i class="fab fa-chrome"></i>
-      <i class="fab fa-angular"></i>
-      <i class="fab fa-android"></i>
-      <i class="fab fa-wordpress"></i>
-      <i class="fab fa-laravel"></i>
-      <i class="fas fa-copyright"></i>
     </div>
     <footer class="footer has-text-centered" style="margin-top: 30px">
       <div>
@@ -66,13 +49,18 @@ export default {
   data () {
     return {
       keywords: ['Graduated developer', 'DevOps believer', 'Cloud lover', 'Open-source enthusiatic', 'Human being'],
-      keywordID: 0
+      keywordID: 0,
+      showBurger: false
     }
   },
   computed: {
-    keyword () { return this.keywords[this.keywordID] }
+    keyword () { return this.keywords[this.keywordID] },
+    currentTab () { return this.$route.name }
   },
   methods: {
+    switchTab (tab) {
+      this.$store.commit('switchTab', tab)
+    },
     genkeywordID () {
       this.keywordID = Math.floor(Math.random() * this.keywords.length)
     }
