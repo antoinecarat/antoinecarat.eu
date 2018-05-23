@@ -22,7 +22,7 @@
             </div>
             <p class="is-italic"><i class="far fa-calendar-alt"></i> {{start}} - {{end}}</p
             <p class="is-italic"><i class="fab fa-github"></i> {{link}}</p>
-            <p class="is-italic"><i class="fas fa-tags"></i> <span v-for="tag in tags">{{tag}},</span> </p>
+            <p class="is-italic"><i class="fas fa-tags"></i> <span v-for="tag in tags">{{tag}}</span> </p>
           </div>
           <footer class="card-footer">
 

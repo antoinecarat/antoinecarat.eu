@@ -1,17 +1,13 @@
 <template>
-  <div id="whoami" class="panel column is-one-quarter">
+  <div id="whoami" class="panel">
     <div class="panel-heading has-text-centered">
       <img style="border-radius: 50%" :src="aboutme.img">
     </div>
     <div class="panel-block">
-      <div class="has-text-weight-light">
-        <span class="panel-icon">
-          <i class="fas fa-quote-left"></i>
-        </span>
-        <div>
-          <p>{{aboutme.speech}}</p>
-        </div>
-      </div>
+      <span class="panel-icon">
+        <i class="fas fa-id-badge"></i>
+      </span>
+      Antoine Carat, 22 y.o.
     </div>
     <div class="panel-block">
       <span class="panel-icon">
