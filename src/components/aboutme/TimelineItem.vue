@@ -4,7 +4,11 @@
         <i :class="icon"></i>
       </div>
       <div class="timeline-content">
-        <p class="heading">{{date}}</p>
+        <p class="heading">
+          {{date}}
+          <span v-show="hideDescription"><i class="fas fa-caret-left"></i></span>
+          <span v-show="!hideDescription"><i class="fas fa-caret-down"></i></span>
+        </p>
         <p :class="{'has-text-weight-semibold': !hideDescription}">{{title}}</p>
         <p v-show="!hideDescription">
           {{description}}

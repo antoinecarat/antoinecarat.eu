@@ -1,11 +1,7 @@
 <template>
   <div>
     <p class="subtitle has-text-centered">{{title}}</p>
-    <div class="timeline is-centered is-hidden-touch">
-      <timelineitem v-for="event in events" :key="event.title" :icon="event.icon" :title="event.title" :date="event.date" :description="event.description">
-      </timelineitem>
-    </div>
-    <div class="timeline is-hidden-desktop">
+    <div class="timeline">
       <timelineitem v-for="event in events" :key="event.title" :icon="event.icon" :title="event.title" :date="event.date" :description="event.description">
       </timelineitem>
     </div>
