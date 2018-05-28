@@ -6,12 +6,16 @@
       <div class="timeline-content">
         <p class="heading">
           {{date}}
-          <span v-show="hideDescription"><i class="fas fa-caret-left"></i></span>
-          <span v-show="!hideDescription"><i class="fas fa-caret-down"></i></span>
         </p>
-        <p :class="{'has-text-weight-semibold': !hideDescription}">{{title}}</p>
+        <p :class="{'has-text-weight-semibold': !hideDescription}">
+          {{title}}
+        </p>
         <p v-show="!hideDescription">
           {{description}}
+        </p>
+        <p>
+          <span v-if="hideDescription"><a>More...</a></span>
+          <span v-else><a>Fold</a></span>
         </p>
       </div>
   </div>

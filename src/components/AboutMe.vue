@@ -2,7 +2,7 @@
   <div id="aboutme" class="columns">
     <whoami class="column is-one-fifth"></whoami>
     <timeline class="column is-two-fifths" title="How did I come to here?"></timeline>
-    <preferences class="column is-two-fifth" title="I'd rather ..."></preferences>
+    <!-- <preferences class="column is-two-fifth" title="I'd rather ..."></preferences> -->
   </div>
 </template>
 
