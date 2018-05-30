@@ -17,13 +17,19 @@
   </div>
   <div class="modal" :class="{'is-active': showDescription }">
     <div class="modal-background" @click="showDescription = !showDescription"></div>
-    <div class="modal-content">
-      <div class="card is-8">
-        <p>
-          {{description}}
-        </p>
-      </div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">{{title}}</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>{{description}}</p>
+      </section>
+      <footer class="modal-card-foot">
+        <a>Link</a>
+      </footer>
     </div>
+    <button class="modal-close is-large" aria-label="close" @click="showDescription = !showDescription"></button>
   </div>
 </div>
 </template>

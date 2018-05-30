@@ -1,7 +1,7 @@
 <template>
   <div id="career" class="columns">
     <div id="experiences" class="timeline column is-one-quarter">
-      <careeritem :icon="experience.logo" :title="experience.title" :dates="experience.dates" :location="experience.location" :tags="experience.tags" :description="experience.description" :current="experience.current" v-for="experience in experiences" :keys="experience.title">
+      <careeritem :icon="experience.logo" :title="experience.title" :dates="experience.dates" :location="experience.location" :tags="experience.tags" :description="experience.description" :current="experience.current" v-for="experience in experiences" :key="experience.title">
       </careeritem>
       <div class="timeline-header">
         <span class="tag is-medium is-link">2012</span>
