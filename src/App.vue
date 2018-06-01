@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="app">
     <div id="header">
-      <div class="has-text-centered is-hidden-touch" @click="genkeywordID">
+      <div class="has-text-centered is-hidden-touch">
         <p class="title">Antoine Carat - {{keyword}}</p>
         <nav class="level">
           <router-link id="router-link" class="level-item" to="/aboutme" active-class="is-active">About me</router-link>
@@ -10,7 +10,7 @@
           <router-link id="router-link" class="level-item" to="/projects" active-class="is-active">Projects</router-link>
         </nav>
       </div>
-      <div class="is-hidden-desktop" @click="genkeywordID">
+      <div class="is-hidden-desktop">
         <p class="title">Antoine Carat</p>
         <p class="subtitle">{{keyword}}</p>
         <div class="dropdown" :class="{'is-active': showBurger}"  @click="showBurger=!showBurger">
@@ -60,10 +60,12 @@ export default {
   methods: {
     switchTab (tab) {
       this.$store.commit('switchTab', tab)
-    },
-    genkeywordID () {
-      this.keywordID = Math.floor(Math.random() * this.keywords.length)
     }
+  },
+  mounted: function () {
+    window.setInterval(() => {
+      this.keywordID = Math.floor(Math.random() * this.keywords.length)
+    }, 3000);
   }
 }
 </script>
