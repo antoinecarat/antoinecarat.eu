@@ -1,6 +1,6 @@
 <template>
-<div>
-  <div class="timeline-item"  @click="showDescription=!showDescription" :class="{'is-info': showDescription}">
+<div class="columns">
+  <div class="timeline-item column"  @click="showDescription=!showDescription" :class="{'is-info': showDescription}">
       <div class="timeline-marker is-image is-48x48">
         <img :src="logo">
       </div>
@@ -11,16 +11,26 @@
         <small class="is-italic tags"><i class="fas fa-tag"></i> &ensp; <span class="tag" v-for="tag in tags">{{tag}}</span></small>
         <p>
           <span v-if="!showDescription"><a>More...</a></span>
-          <span v-else><a>Fold</a></span>
         </p>
       </div>
   </div>
-  <div class="modal" :class="{'is-active': showDescription }">
+  <div class="card column is-hidden-touch" v-show="showDescription">
+    <header class="card-header">
+      <p class="card-header-title">{{title}}</p>
+      <button class="delete" aria-label="close" @click="showDescription = !showDescription"></button>
+    </header>
+    <section class="card-content">
+      <p>{{description}}</p>
+    </section>
+    <footer class="card-foot">
+      <a>Link</a>
+    </footer>
+  </div>
+  <div class="modal is-hidden-desktop" :class="{'is-active': showDescription }">
     <div class="modal-background" @click="showDescription = !showDescription"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">{{title}}</p>
-        <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <p>{{description}}</p>
@@ -29,7 +39,7 @@
         <a>Link</a>
       </footer>
     </div>
-    <button class="modal-close is-large" aria-label="close" @click="showDescription = !showDescription"></button>
+    <button class="delete" aria-label="close" @click="showDescription = !showDescription"></button>
   </div>
 </div>
 </template>

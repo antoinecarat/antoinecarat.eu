@@ -1,6 +1,6 @@
 <template>
-  <div id="career" class="columns">
-    <div id="experiences" class="timeline column is-one-quarter">
+  <div id="career">
+    <div id="experiences" class="timeline">
       <careeritem :icon="experience.logo" :title="experience.title" :dates="experience.dates" :location="experience.location" :tags="experience.tags" :description="experience.description" :current="experience.current" v-for="experience in experiences" :key="experience.title">
       </careeritem>
       <div class="timeline-header">
