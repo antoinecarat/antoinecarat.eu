@@ -8,7 +8,7 @@
         <p class="heading"><span class="tag is-success" v-show="current">Current</span> {{title}}</p>
         <small class="is-italic"><i class="fas fa-map-marker-alt"></i> {{location}}</small> <br/>
         <small class="is-italic"><i class="far fa-calendar"></i> {{dates}}</small> <br/>
-        <small class="is-italic tags"><i class="fas fa-tag"></i> &ensp; <span class="tag" v-for="tag in tags">{{tag}}</span></small>
+        <small class="is-italic tags"><i class="fas fa-tag"></i> &ensp; <span class="tag" v-for="tag in tags" :key="tag">{{tag}}</span></small>
         <p>
           <span v-if="!showDescription"><a>More...</a></span>
         </p>

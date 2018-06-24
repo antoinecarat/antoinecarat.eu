@@ -1,6 +1,6 @@
 <template>
   <div id="projects" class="columns is-multiline">
-      <div class="column is-3" v-for="project in projects">
+      <div class="column is-3" v-for="project in projects" :key="project.title">
         <project :title="project.title"
                      :subtitle="project.subtitle"
                      :screenshot="project.screenshot"
