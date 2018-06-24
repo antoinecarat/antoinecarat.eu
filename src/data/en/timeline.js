@@ -34,10 +34,10 @@ export default {
       title: "Graduating: Master's degree",
       icon: "fas fa-graduation-cap",
       date: "July 2018",
-      description: ""
+      description: "After two years studying mostly Software Architecture but also other interesting things like compilation or middleware, I finally graduated and I'm now ready to enter my professional life!"
     },
     {
-      title: "Moving to Cork, Ireland",
+      title: "Moving to Ireland",
       icon: "fas fa-plane",
       date: "September 2018",
       description: "At this time, I wanted to leave France for a time and see how things go somewhere else. I chosed Ireland for a first step."

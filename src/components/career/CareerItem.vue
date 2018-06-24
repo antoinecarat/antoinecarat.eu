@@ -31,6 +31,7 @@
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">{{title}}</p>
+        <button class="delete" aria-label="close" @click="showDescription = !showDescription"></button>
       </header>
       <section class="modal-card-body">
         <p>{{description}}</p>
@@ -39,7 +40,6 @@
         <a>Link</a>
       </footer>
     </div>
-    <button class="delete" aria-label="close" @click="showDescription = !showDescription"></button>
   </div>
 </div>
 </template>
