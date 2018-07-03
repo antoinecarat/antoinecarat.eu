@@ -1,51 +1,26 @@
-  <template>
-    <div class="tile is-ancestor" id="skills">
-      <div class="tile is-vertical">
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-warning">
-
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-link">
-
-            </article>
-          </div>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
-
-          </article>
-        </div>
-      </div>
-      <div class="tile is-parent is-2">
-        <article class="tile is-child notification is-danger">
-
-        </article>
-      </div>
-    </div>
+<template>
+  <wordcloud :words="keywords" :handler="handleWordClick" />
 </template>
 
 <script>
 import skillsDatas from '../data/en/skills.js'
-import Vue from 'vue'
-Vue.use(require('vue-chartist'))
-
+import WordCloud from "./skills/WordCloud.vue";
 
 export default {
+  components: {
+    wordcloud: WordCloud
+  },
   data () {
     return skillsDatas
+  },
+  methods: {
+    handleWordClick: (tag) => {
+      console.log(tag)
+    }
   }
 }
 </script>
 
 <style>
-.is-vue {
-  color:
-}
 
-.is-node {
-
-}
 </style>
