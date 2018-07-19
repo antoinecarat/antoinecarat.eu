@@ -5,10 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSeedling, faShoePrints, faVial, faComment, faComments } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faSeedling, faShoePrints, faVial, faComment, faComments)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+
 require('./assets/sass/main.scss')
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

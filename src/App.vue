@@ -1,43 +1,67 @@
 <template>
-  <section class="section" id="app">
-    <div id="header">
-      <div class="has-text-centered is-hidden-touch">
-        <p class="title">Antoine Carat - {{keyword}}</p>
-        <nav class="level">
-          <router-link id="router-link" class="level-item" to="/aboutme" active-class="is-active">About me</router-link>
-          <router-link id="router-link" class="level-item" to="/skills" active-class="is-active">Skills</router-link>
-          <router-link id="router-link" class="level-item" to="/career" active-class="is-active">Career</router-link>
-          <router-link id="router-link" class="level-item" to="/projects" active-class="is-active">Projects</router-link>
+  <section class="hero is-info is-fullheight" id="app">
+    <transition name="fade">
+        <nav class="navbar">
+          <div class="container">
+              <div class="navbar-brand">
+                <span class="navbar-item">
+                  <a class="" @click="$router.push('/')">
+                      <span class="title">Antoine Carat</span>
+                  </a>
+                </span>
+                <span class="navbar-burger burger" :class="{'is-active': showBurgerMenu}" data-target="navbarMenu" @click="toggleBurgerMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+              </div>
+              <div id="navbarMenu" class="navbar-menu">
+                  <div class="navbar-end">
+                      <span class="navbar-item">
+                          <a class="button is-white is-outlined" @click="$router.push('/skills')">
+                              <span class="icon">
+                                  <font-awesome-icon icon='seedling' />
+                              </span>
+                              <span>Skills</span>
+                          </a>
+                      </span>
+                      <span class="navbar-item">
+                          <a class="button is-white is-outlined" @click="$router.push('/career')">
+                              <span class="icon">
+                                  <font-awesome-icon icon='shoe-prints' />
+                              </span>
+                              <span>Career</span>
+                          </a>
+                      </span>
+                      <span class="navbar-item">
+                          <a class="button is-white is-outlined" @click="$router.push('/projects')">
+                              <span class="icon">
+                                  <font-awesome-icon icon='vial' />
+                              </span>
+                              <span>Projects</span>
+                          </a>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <div id="burgerMenu" class="navbar has-text-centered" v-show="showBurgerMenu">
+            <p><a @click="switchTab('/skills')">Skills</a></p>
+            <p><a @click="switchTab('/career')">Career</a></p>
+            <p><a @click="switchTab('/projects')">Projects</a></p>
+          </div>
         </nav>
-      </div>
-      <div class="is-hidden-desktop">
-        <p class="title">Antoine Carat</p>
-        <p class="subtitle">{{keyword}}</p>
-        <div class="dropdown" :class="{'is-active': showBurger}"  @click="showBurger=!showBurger">
-          <div class="dropdown-trigger">
-            <button class="button">
-              {{currentTab}} &ensp; <i class="fas fa-bars"></i>
-            </button>
-          </div>
-          <div class="dropdown-menu">
-            <div class="dropdown-content">
-              <router-link id="router-link" class="dropdown-item" to="/aboutme" active-class="is-active">About me</router-link>
-              <router-link id="router-link" class="dropdown-item" to="/skills" active-class="is-active">Skills</router-link>
-              <router-link id="router-link" class="dropdown-item" to="/career" active-class="is-active">Career</router-link>
-              <router-link id="router-link" class="dropdown-item" to="/projects" active-class="is-active">Projects</router-link>
-            </div>
-          </div>
-        </div>
-      </div>
+    </transition>
+    <div class="hero-body" v-if="wip">
+      <div class="container has-text-centered" >
+        <h1 class="title">Coming soon</h1>
+        <h2 class="subtitle">I'm currently undergoing a design restructuration of this website. Stay tuned!</h2>
+      </div>  
     </div>
-    <div class="container-fluid">
+    <transition name="fade" v-else>
       <router-view></router-view>
-    </div>
-    <footer class="footer has-text-centered" style="margin-top: 30px">
-      <div>
-        <div class="has-text-centered is-italic">I built up this website as a showcase, to make you travel through my universe so you can understand who I am and what I'm able to do.</div>
-        <i class="far fa-copyright"></i> Antoine Carat 2018.
-      </div>
+    </transition>
+    <footer class="has-text-centered">
+      Thanks.
     </footer>
   </section>
 
@@ -48,38 +72,50 @@ export default {
   name: 'App',
   data () {
     return {
-      keywords: ['Graduated developer', 'DevOps believer', 'Cloud lover', 'Open-source enthusiatic', 'Human being'],
-      keywordID: 0,
-      showBurger: false
+      wip: false,
+      showBurgerMenu: false
     }
   },
-  computed: {
-    keyword () { return this.keywords[this.keywordID] },
-    currentTab () { return this.$route.name }
-  },
   methods: {
-    switchTab (tab) {
-      this.$store.commit('switchTab', tab)
+    toggleBurgerMenu() {
+      this.showBurgerMenu = !this.showBurgerMenu;
+    },
+    switchTab(path) {
+      this.$router.push(path);
+      this.toggleBurgerMenu();
     }
   },
   mounted: function () {
-    window.setInterval(() => {
-      this.keywordID = Math.floor(Math.random() * this.keywords.length)
-    }, 3000);
+
   }
 }
 </script>
 
 <style>
-#header {
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin-bottom: 1%;
-  border-bottom-style: inset;
+#app {
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../static/wip.jpeg') no-repeat center center fixed;
+  background-size: cover;
 }
 
-#router-link .router-link-active {
-  background-color: black;
+nav {
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) )
+}
+
+footer {
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) )
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 
 </style>
