@@ -61,7 +61,7 @@
       <router-view></router-view>
     </transition>
     <footer class="has-text-centered">
-      Thanks.
+      Thanks for your visit. <br> <a href="mailto:antoine.carat@protonmail.com">Contact me</a>
     </footer>
   </section>
 
@@ -93,7 +93,7 @@ export default {
 
 <style>
 #app {
-  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../static/wip.jpeg') no-repeat center center fixed;
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../static/wip.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
