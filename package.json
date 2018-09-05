@@ -4,21 +4,24 @@
   "description": "My professional website",
   "author": "Antoine Carat",
   "homepage": "https://github.com/cara-puce/antoinecarat.eu",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js",
-    "deploy": "node ./node_modules/vue-gh-pages/index.js"
+    "build": "node build/build.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
     "bulma": "^0.7.1",
     "bulma-extensions": "^1.0.30",
+    "i": "^0.3.6",
     "node-sass": "^4.9.0",
+    "npm": "^6.2.0",
     "sass-loader": "^7.0.1",
     "vue": "^2.5.2",
-    "vue-chartist": "^2.1.2",
+    "vue-resize-directive": "^1.0.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
@@ -61,7 +64,6 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
-    "vue-gh-pages": "^1.10.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

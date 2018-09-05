@@ -6,9 +6,9 @@ import router from './router'
 import store from './store'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSeedling, faShoePrints, faVial, faComment, faComments } from '@fortawesome/free-solid-svg-icons'
+import { faSeedling, faShoePrints, faVial, faComment, faComments, faParachuteBox, faTrain, faGraduationCap, faPlaneDeparture, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faSeedling, faShoePrints, faVial, faComment, faComments)
+library.add(faSeedling, faShoePrints, faVial, faComment, faComments, faParachuteBox, faTrain, faGraduationCap, faPlaneDeparture, faHeart)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
