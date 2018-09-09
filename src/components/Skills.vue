@@ -1,5 +1,7 @@
 <template>
-  <wordcloud :words="keywords" :handler="handleWordClick" />
+  <div class= "container">
+    <wordcloud :tags="this.keywords" :handler="handleWordClick" />
+  </div>
 </template>
 
 <script>
@@ -15,12 +17,14 @@ export default {
   },
   methods: {
     handleWordClick: (tag) => {
-      console.log(tag)
+      console.log(`${tag.text} clicked!`)
     }
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .container {
+    /* border: 1px solid white; */
+  }
 </style>
