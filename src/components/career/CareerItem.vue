@@ -1,6 +1,5 @@
 <template>
-<div class="columns">
-  <div class="timeline-item column"  @click="showDescription=!showDescription" :class="{'is-info': showDescription}">
+  <div class="timeline-item"  @click="showDescription=!showDescription" :class="{'is-info': showDescription}">
       <div class="timeline-marker is-image is-48x48">
         <img :src="logo">
       </div>
@@ -14,7 +13,7 @@
         </p>
       </div>
   </div>
-  <div class="card column is-hidden-touch" v-show="showDescription">
+  <!-- <div class="card is-hidden-touch" v-show="showDescription">
     <header class="card-header">
       <p class="card-header-title">{{title}}</p>
       <button class="delete" aria-label="close" @click="showDescription = !showDescription"></button>
@@ -40,8 +39,7 @@
         <a>Link</a>
       </footer>
     </div>
-  </div>
-</div>
+  </div> -->
 </template>
 
 <script>

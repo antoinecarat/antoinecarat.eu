@@ -1,16 +1,17 @@
 <template>
-  <div id="projects" class="columns is-multiline">
-      <div class="column is-3" v-for="project in projects" :key="project.title">
-        <project :title="project.title"
-                     :subtitle="project.subtitle"
-                     :screenshot="project.screenshot"
-                     :description="project.description"
-                     :start="project.start"
-                     :end="project.end"
-                     :tags="project.tags">
-        </project>
-      </div>
+  <div class="container">
+    <div id="projects" class="columns is-multiline">
+      <project v-for="project in projects" :key="project.title"
+                                           :title="project.title"
+                                           :subtitle="project.subtitle"
+                                           :screenshot="project.screenshot"
+                                           :description="project.description"
+                                           :start="project.start"
+                                           :end="project.end"
+                                           :tags="project.tags">
+      </project>
     </div>
+  </div>
 </template>
 
 <script>
@@ -24,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #projects {
+    margin: 3%;
+  }
+</style>

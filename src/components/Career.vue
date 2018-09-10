@@ -1,6 +1,20 @@
 <template>
-  <div id="career">
-    <div id="experiences" class="timeline">
+  <div id="career" class="container">
+    <div id="experiences" class="timeline is-rtl is-hidden-desktop">
+      <div class="timeline-header">
+        <span class="tag is-medium is-success">Now</span>
+      </div>
+      <careeritem :icon="experience.logo" :title="experience.title" :dates="experience.dates" :location="experience.location" :tags="experience.tags" :description="experience.description" :current="experience.current" v-for="experience in experiences" :key="experience.title">
+      </careeritem>
+      <div class="timeline-header">
+        <span class="tag is-medium is-link">2012</span>
+      </div>
+    </div>
+
+    <div id="experiences" class="timeline is-centered is-hidden-touch">
+      <div class="timeline-header">
+        <span class="tag is-medium is-success">Now</span>
+      </div>
       <careeritem :icon="experience.logo" :title="experience.title" :dates="experience.dates" :location="experience.location" :tags="experience.tags" :description="experience.description" :current="experience.current" v-for="experience in experiences" :key="experience.title">
       </careeritem>
       <div class="timeline-header">
@@ -21,3 +35,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .timeline {
+    margin: 3%;
+  }
+</style>

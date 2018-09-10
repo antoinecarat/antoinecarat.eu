@@ -7,8 +7,7 @@ export default {
       description:
         'Chaos tests automation',
       logo: 'https://bulma.io/images/placeholders/128x128.png',
-      tags: ['Chaos engineering', 'Python', 'Jenkins', 'AWS'],
-      current: true
+      tags: ['Chaos engineering', 'Python', 'Jenkins', 'AWS']
     },
     {
       title: 'Cloud Intern',

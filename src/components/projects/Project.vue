@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="column is-4">
     <div class="hovered-container" @click="expand = !expand">
       <img class="hovered-image" :src="screenshot">
       <div class="hovered-popup">
@@ -20,9 +20,9 @@
             <div class="content">
               {{description}}
             </div>
-            <p class="is-italic"><i class="far fa-calendar-alt"></i> {{start}} - {{end}}</p
-            <p class="is-italic"><i class="fab fa-github"></i> {{link}}</p>
-            <p class="is-italic"><i class="fas fa-tags"></i> <span v-for="tag in tags">{{tag}}</span> </p>
+            <p class="is-italic"><i class="far fa-calendar-alt"></i> {{start}} - {{end}}</p>
+            <p class="is-italic"><i class="fab fa-github"></i> {{link}} </p>
+            <p class="is-italic"><i class="fas fa-tags"></i> <span v-for="tag in tags" :key="tag">{{tag}}</span> </p>
           </div>
           <footer class="card-footer">
 
@@ -49,21 +49,18 @@ export default {
 
 <style>
   .hovered-container {
-    position: relative;
+    border: 1px solid white;
+    position: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
   }
   .hovered-image {
     opacity: 1;
   }
   .hovered-popup {
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 33%;
-    padding-top: 5%;
-    padding-left: 5%;
-    background-color: dimgray;
+    opacity: 1;
+    padding: 2% 3% 2% 3%;
   }
   .hovered-popup .title {
     color: white;
