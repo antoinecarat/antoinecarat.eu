@@ -1,46 +1,46 @@
 export default {
   events: [
     {
-      title: "\"Hello, World!\"",
-      icon: "fas fa-user",
-      date: "August 1995, 30th",
-      description: "I'm born this day, nothing much to say :)"
+      date: "30-08-1995",
+      icon: "parachute-box",
+      title: "Hello, World!",
+      text: "I'm born this day, nothing much to say.",
+      completed: true
     },
     {
+      date: "2011 - 2012",
+      icon: "heart",
       title: "Fell in love with IT",
-      icon: "fas fa-heart",
-      date: "January 2012",
-      description: "I discovered programming and IT in general while working on my college project of Electronics. We had to code some part of the behaviour of a robot vacuum cleaner. It was my first - but not last - step in IT world."
+      text: "I discovered software programing in Electronics class as we had to program the microchip of a vaccum cleaner.",
+      completed: true
     },
     {
-      title: "Moving to Nantes to study IT",
-      icon: "fas fa-train",
-      date: "August 2012",
-      description: "I hooked up fast with IT, so I decided to study it and make it my work domain. Thus, I moved to the lovely city of Nantes engaging myself in a two-years diploma: a DUT."
+      date: "08-2012",
+      icon: "train",
+      title: "Moved to Nantes",
+      text: "At this time, I decided to make my career in Software Development so I moved to Nantes in order to study Computer Science at IUT de Nantes.",
+      completed: true
     },
     {
-      title: "Completed DUT",
-      icon: "fa fa-check",
-      date: "June 2014",
-      description: "After two years studying Computer Science' basics, from algorithms to networks through databases and functionnal programming, I completed my DUT. I still wanted to learn about this field that I've discovered only few years ago, this is why I went to university to earn a Bachelor's degree."
+      date: "16-07-2018",
+      icon: "graduation-cap",
+      title: "Graduated! \\o/",
+      text: "On this day, I got the results of my master's degree. I'm really proud to say that I got it with honors and that I ended at the 1st rank out of 40.",
+      completed: true
     },
     {
-      title: "Got my Bachelor's degree",
-      icon: "fas fa-star",
-      date: "May 2016",
-      description: "Two years later, and with really strengthened knowledge, I was holding my Bachelor's degree. Its program was basically the same than the DUT's one but with deeper dive into details. I engaged myself into a Master's degree to learn more again about IT, this time with a speciality area: Software Architecture."
+      date: "22-09-2018",
+      icon: "plane-departure",
+      title: "Moved to Dublin",
+      text: "After my graduation, I needed a new challenge in my life as long as discovering new people, new culture and I picked up Dublin for that.",
+      completed: true
     },
     {
-      title: "Graduating: Master's degree",
-      icon: "fas fa-graduation-cap",
-      date: "July 2018",
-      description: "After two years studying mostly Software Architecture but also other interesting things like compilation or middleware, I finally graduated and I'm now ready to enter my professional life!"
-    },
-    {
-      title: "Moving to Ireland",
-      icon: "fas fa-plane",
-      date: "September 2018",
-      description: "At this time, I wanted to leave France for a time and see how things go somewhere else. I chosed Ireland for a first step."
+      date: "05-11-2018",
+      icon: "handshake",
+      title: "Start my first job",
+      text: "After one month of intensive job research in Dublin, I finally get this \"Software Engineer\" position @Browserstack. I was really excited to begin!",
+      completed: true
     }
   ]
 }
