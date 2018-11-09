@@ -87,8 +87,7 @@ export default {
   }
 
   .timeline-control {
-    width: 2rem;
-    height: 2rem;
+    width: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,9 +105,10 @@ export default {
     position: relative;
 
     .events-wrapper {
+    // border: 1px solid white;
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: flex-start;
     }
 
