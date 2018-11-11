@@ -1,7 +1,7 @@
-//@import "bulma";
-//@import "bulma-extensions/bulma-steps";
-//@import "bulma-extensions/bulma-timeline";
-//@import "bulma-extensions/bulma-slider";
+// @import "bulma";
+// @import "bulma-extensions/bulma-steps";
+// @import "bulma-extensions/bulma-timeline";
+// @import "bulma-extensions/bulma-slider";
 
 body {
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1) ), url('../../../static/bwmaccoffee.jpeg') no-repeat center center fixed;
@@ -17,6 +17,22 @@ body {
     display: flex;
     flex-flow: column;
 
+    &.is-three-quarters {
+        width: 75%;
+    }
+
+    &.is-half {
+        width: 50%;
+    }
+
+    &.is-third {
+        width: 30%;
+    }
+
+    &.is-quarter {
+        width: 25%;
+    }
+
     &.is-centered {
         justify-content: center;
         align-items: center;
@@ -25,5 +41,17 @@ body {
 
     &.is-row {
         flex-flow: row;
+        align-items: center;
+
+        &.is-centered {
+            justify-content: space-evenly;
+        }
     }
+}
+
+.button {
+    cursor: pointer;
+    padding: 1% 2%;
+    background: transparent;
+    color: whitesmoke;
 }

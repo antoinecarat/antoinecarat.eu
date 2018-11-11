@@ -1,50 +1,12 @@
 <template>
   <section class="container">
     <nav class="navbar container is-row">
-      <div class="navbar-brand">
-        <span class="navbar-item">
-          <a class="" @click="$router.push('/')">
-            <span class="title">Antoine Carat</span>
-          </a>
-        </span>
-        <span class="navbar-burger burger" :class="{'is-active': showBurgerMenu}" data-target="navbarMenu" @click="toggleBurgerMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </div>
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-end">
-          <span class="navbar-item">
-              <a class="button is-white is-outlined" @click="$router.push('/skills')">
-                  <span class="icon">
-                    <font-awesome-icon icon='seedling' />
-                  </span>
-                  <span>Skills</span>
-              </a>
-          </span>
-          <span class="navbar-item">
-              <a class="button is-white is-outlined" @click="$router.push('/career')">
-                  <span class="icon">
-                      <font-awesome-icon icon='shoe-prints' />
-                  </span>
-                  <span>Career</span>
-              </a>
-          </span>
-          <span class="navbar-item">
-              <a class="button is-white is-outlined" @click="$router.push('/projects')">
-                  <span class="icon">
-                      <font-awesome-icon icon='vial' />
-                  </span>
-                  <span>Projects</span>
-              </a>
-          </span>
-        </div>
-      </div>
-      <div id="burgerMenu" class="navbar has-text-centered" v-show="showBurgerMenu">
-        <p><a @click="switchTab('/skills')">Skills</a></p>
-        <p><a @click="switchTab('/career')">Career</a></p>
-        <p><a @click="switchTab('/projects')">Projects</a></p>
+      <h1 class="navbar-title" @click="$router.push('/')">Antoine Carat</h1>
+      <div class="navbar-menu container is-row is-centered is-third">
+        <a class="button navbar-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}"><font-awesome-icon icon='home' /> Home</a>
+        <a class="button navbar-menu-item" @click="$router.push('/skills')" :class="{'is-active': isCurrentPath('/skills')}"><font-awesome-icon icon='seedling' /> Skills</a>
+        <a class="button navbar-menu-item" @click="$router.push('/career')" :class="{'is-active': isCurrentPath('/career')}"><font-awesome-icon icon='shoe-prints' /> Career</a>
+        <a class="button navbar-menu-item" @click="$router.push('/projects')" :class="{'is-active': isCurrentPath('/projects')}"> <font-awesome-icon icon='vial' /> Projects</a>
       </div>
     </nav>
     <router-view></router-view>
@@ -77,6 +39,10 @@ export default {
     }
   },
   methods: {
+    isCurrentPath(path) {
+      console.log(this.$route.path + " :: " + path);
+      return this.$route.path == path;
+    },
     toggleBurgerMenu() {
       this.showBurgerMenu = !this.showBurgerMenu;
     },
@@ -86,7 +52,7 @@ export default {
     }
   },
   mounted: function () {
-
+    
   }
 }
 </script>
@@ -94,7 +60,26 @@ export default {
 <style lang="scss">
 .navbar {
   background: rgba(0, 0, 0, 0.9);
-  padding: 1% 2%;
+  justify-content: space-between;
+  padding:  0 2%;
+
+  .navbar-title {
+    font-size: 2rem;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .navbar-menu {
+    
+    .navbar-menu-item {
+      &:hover,
+      &.is-active {
+        background: transparent;
+        border-bottom: 1px solid whitesmoke;
+      }
+    }
+  }
+
 }
 
 .footer {
