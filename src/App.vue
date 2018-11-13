@@ -13,10 +13,10 @@
     <footer class="footer container is-row">
         <div class="footer-menu container">
           <h5 class="footer-menu-title">antoinecarat.eu</h5>
-          <a class="footer-menu-item" @click="$router.push('/')">Home</a>
-          <a class="footer-menu-item" @click="$router.push('/skills')">Skills</a>
-          <a class="footer-menu-item" @click="$router.push('/career')">Career</a>
-          <a class="footer-menu-item" @click="$router.push('/projects')">Projects</a>
+          <a class="footer-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}">Home</a>
+          <a class="footer-menu-item" @click="$router.push('/skills')" :class="{'is-active': isCurrentPath('/skills')}">Skills</a>
+          <a class="footer-menu-item" @click="$router.push('/career')" :class="{'is-active': isCurrentPath('/career')}">Career</a>
+          <a class="footer-menu-item" @click="$router.push('/projects')" :class="{'is-active': isCurrentPath('/projects')}">Projects</a>
         </div>
         <div class="footer-menu container">
           <h5 class="footer-menu-title">Contact me</h5>
@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     isCurrentPath(path) {
-      console.log(this.$route.path + " :: " + path);
       return this.$route.path == path;
     },
     toggleBurgerMenu() {

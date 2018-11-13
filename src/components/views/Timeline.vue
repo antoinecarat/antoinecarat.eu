@@ -83,7 +83,7 @@ export default {
   text-align: center;
     
   .timeline-title {
-    margin: 0;
+    margin-top: 0;
   }
 
   .timeline-control {
