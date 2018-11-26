@@ -1,21 +1,17 @@
 # cara-puce.github.io
+> My professional website, deployed here: https://antoinecarat.eu
 
-> My professional website
+## Purpose
+This website has been - and is still - built as a showcase of me and my skills so people coming accross it can know me better and maybe engage a conversation. I tend to developp this in a very incremental way as you can see on the road map below, you can also notice that I have still work left to achieve my expectations.
 
-## Build Setup
+## Features roadmap
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- [x] Dynamic html page with Vue.js and Bulma.css
+- [x] Splitting page into Vue components
+- [x] Add vue-router and vuex
+- [x] Restarting from scratch with vue-cli
+- [x] Get my own domain name
+- [ ] Remove Bulma framework **WIP**
+- [ ] Deployment pipeline
+- [ ] Give components to open-source
+- [ ] Progressive Web Application
