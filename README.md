@@ -6,12 +6,14 @@ This website has been - and is still - built as a showcase of me and my skills s
 
 ## Features roadmap
 
-- [x] Dynamic html page with Vue.js and Bulma.css
+- [x] Dynamic html page with Vue.js and Bulma.css (template)
 - [x] Splitting page into Vue components
 - [x] Add vue-router and vuex
 - [x] Restarting from scratch with vue-cli
 - [x] Get my own domain name
+- [x] Redesign without template
 - [ ] Remove Bulma framework **WIP**
 - [ ] Deployment pipeline
+- [ ] Add touch gestures (?)
 - [ ] Give components to open-source
 - [ ] Progressive Web Application
