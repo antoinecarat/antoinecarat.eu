@@ -1,10 +1,10 @@
 <template>
   <div class="timeline">
-    <span class="timeline-control" :class="{'is-disabled': !canMoveLeft()}" @click="moveLeft()" v-show="this.events != []">
-      <font-awesome-icon icon="caret-left" />
-    </span>
+    <h3 class="timeline-title">{{title}}</h3>
     <div class="timeline-content">
-      <h3 class="timeline-title">{{title}}</h3>
+      <span class="timeline-control" :class="{'is-disabled': !canMoveLeft()}" @click="moveLeft()" v-show="this.events != []">
+        <font-awesome-icon icon="caret-left" />
+      </span>
       <div class="events-wrapper">
         <div class="timeline-placeholder" v-show="this.events.length < 1">
           No event to show, sorry about that!
@@ -20,10 +20,10 @@
           </div>
         </div>
       </div>
+      <span class="timeline-control" :class="{'is-disabled': !canMoveRight()}" @click="moveRight()" v-show="this.events != []">
+        <font-awesome-icon icon="caret-right" />
+      </span>
     </div>
-    <span class="timeline-control" :class="{'is-disabled': !canMoveRight()}" @click="moveRight()" v-show="this.events != []">
-      <font-awesome-icon icon="caret-right" />
-    </span>
   </div>
 </template>
 
@@ -72,7 +72,7 @@ export default {
   },
   mounted: function () {
     if (screen.width > 768) {
-      this.lastIndex = 3;
+      this.lastIndex = 4;
     }
   }
 }
@@ -82,7 +82,7 @@ export default {
 
 .timeline {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -105,11 +105,11 @@ export default {
   }
 
   .timeline-content {
-    border: 2px solid red;
-    width: 50%;
-    @media only screen and (max-width: 768px) {
-      width: 80%;
-    }
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
     overflow:  hidden;
     position: relative;
 
@@ -121,7 +121,6 @@ export default {
     }
 
     .timeline-event {
-      border: 1px solid white;
       width: 30%;
       @media only screen and (max-width: 768px) {
         width: 80%;
