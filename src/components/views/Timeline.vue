@@ -42,7 +42,7 @@ export default {
   data: function () {
     return {
       firstIndex: 0,
-      lastIndex: 6
+      lastIndex: 1
     }
   },
   computed: {
@@ -69,6 +69,11 @@ export default {
         this.lastIndex += 1;
       }
     }
+  },
+  mounted: function () {
+    if (screen.width > 768) {
+      this.lastIndex = 3;
+    }
   }
 }
 </script>
@@ -77,7 +82,7 @@ export default {
 
 .timeline {
   display: flex;
-  flex-flow: row;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -100,12 +105,15 @@ export default {
   }
 
   .timeline-content {
-    width: 90%;
+    border: 2px solid red;
+    width: 50%;
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+    }
     overflow:  hidden;
     position: relative;
 
     .events-wrapper {
-    // border: 1px solid white;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-evenly;
@@ -113,8 +121,11 @@ export default {
     }
 
     .timeline-event {
-      min-width: 15%;
-      max-width: 15%;
+      border: 1px solid white;
+      width: 30%;
+      @media only screen and (max-width: 768px) {
+        width: 80%;
+      }
       padding: 1% 0;
       display: flex;
       flex-direction: column;
