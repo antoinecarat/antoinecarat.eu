@@ -1,33 +1,22 @@
 <template>
-  <div class="container">
-    <div id="projects" class="columns is-multiline">
-      <project v-for="project in projects" :key="project.title"
-                                           :title="project.title"
-                                           :subtitle="project.subtitle"
-                                           :screenshot="project.screenshot"
-                                           :description="project.description"
-                                           :start="project.start"
-                                           :end="project.end"
-                                           :tags="project.tags">
-      </project>
-    </div>
-  </div>
+  <projects-grid title="Here's some of my most significant personnal/school projects: " :projects=projectsData.projects />
 </template>
 
 <script>
-import Project from './projects/Project'
-import projectsDatas from '../data/en/projects.js'
+import ProjectsGrid from './views/ProjectsGrid.vue'
+import projectsData from './../data/en/projects.js'
 
 export default {
-  components: { 'project': Project },
-  data () {
-    return projectsDatas
-  }
+  data: function () {
+    return {
+      projectsData
+    }
+  },
+  components: { 'projects-grid': ProjectsGrid }
 }
 </script>
 
-<style scoped>
-  #projects {
-    margin: 3%;
-  }
+<style lang="scss">
+  
 </style>
+
