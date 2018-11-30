@@ -1,12 +1,12 @@
 <template>
-  <div class= "container">
+  <div class= "skills-wrapper">
     <wordcloud :tags="this.keywords" :handler="handleWordClick" />
   </div>
 </template>
 
 <script>
 import skillsDatas from '../data/en/skills.js'
-import WordCloud from "./skills/WordCloud.vue";
+import WordCloud from "./views/WordCloud.vue";
 
 export default {
   components: {
@@ -23,8 +23,11 @@ export default {
 }
 </script>
 
-<style scoped>
-  .container {
-    /* border: 1px solid white; */
+<style lang="scss">
+ .skills-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
   }
 </style>

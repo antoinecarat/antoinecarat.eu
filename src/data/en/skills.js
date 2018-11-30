@@ -6,6 +6,7 @@ export default {
         { text: 'Vue.js', weight: 7 },
         { text: 'Angular', weight: 5 },
         { text: 'TypeScript', weight: 6},
+        { text: 'Python', weight: 7},
         { text: 'Java', weight: 3 },
         { text: 'C++', weight: 4 },
         { text: 'Haskell', weight: 4 },
