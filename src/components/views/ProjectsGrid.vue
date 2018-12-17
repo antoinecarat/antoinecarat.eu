@@ -1,37 +1,37 @@
 <template>
-  <div class="grid is-list">
+  <div class="grid">
     <h3 class="grid-title">{{title}}</h3>
     <div class="projects-wrapper">
       <div class="project-placeholder" v-show="this.projects.length < 1">
         No project to show, sorry about that!
       </div>
       <div class="project" v-for="project in projects" :key="project.title">
-        <img class="project-thumbnail" :src=project.thumbnail alt="">
-        <div class="project-info">
-          <h4 class="project-title">
-            {{project.title}}
-          </h4>
-          <h5 class="project-subtitle">
-            {{project.subtitle}}
-          </h5>
-          <p class="project-tags" v-if="project.tags.length > 0">
-            <span class="project-tag" v-for="tag in project.tags" :key="tag">{{tag}}</span>
-          </p>
-          <p class="project-dates" v-if="project.start && project.end">
-            {{project.start}} - {{project.end}}
-          </p>
-          <p class="project-dates" v-else-if="project.start && !project.end">
-            {{project.start}} - Now
-          </p>
-          <p class="project-dates" v-else>
-            Still waiting its kick-off...
-          </p>
-          <p class="project-description">
-            {{project.description}}
-          </p>
-        </div>
-        <div class="project-links">
-          
+        <div class="project-content">
+          <div class="project-thumbnail">
+            <img :src=project.thumbnail alt="">
+          </div>
+          <div class="project-info">
+            <div class="project-footer">
+              <p class="project-dates" v-if="project.start && project.end">
+                {{project.start}} - {{project.end}}
+              </p>
+              <p class="project-dates" v-else-if="project.start && !project.end">
+                {{project.start}}
+              </p>
+              <p class="project-dates" v-else>
+                Pending
+              </p>
+            </div>
+            <h4 class="project-title">
+              {{project.title}}
+            </h4>
+            <h5 class="project-subtitle">
+              {{project.subtitle}}
+            </h5>
+            <div class="project-tags" v-if="project.tags.length > 0">
+              <span class="project-tag" v-for="tag in project.tags" :key="tag">{{tag}}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,77 +63,118 @@ export default {
 </script>
 
 <style lang="scss">
-    .grid {
-      
-      .grid-title {
-        text-align: center;
-      }
+  .grid {
+    
+    .grid-title {
+      text-align: center;
+    }
 
-      .projects-wrapper {
+    .projects-wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      align-content: space-around;
+
+      .project {
+        position: relative;
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: start; 
+        flex-flow: column wrap;
+        align-items: center;
+        margin-bottom: 5%;
+        width: 30%;
+        border: 5px solid whitesmoke;
+        @media only screen and (max-width: 1024px) {
+          width: 45%;  
+        }
+        @media only screen and (max-width: 768px) {
+          width: 90%;  
+        }
 
-        .project {
-          border: 1px solid white;
-          @media only screen and (max-width: 768px) {
-            position: relative;  
+        .project-content {
+          width: 100%;
+          max-height: 100%;
+          display: flex;
+          flex-flow: column wrap;
+
+          &:hover::after {
+            content: '+ See more';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background: black;
+            cursor: pointer;
           }
 
           .project-thumbnail {
-            @media only screen and (max-width: 768px) {
-              max-width: 98%;
+            background: rgba(0, 0, 0, 1);
+            img {
+              opacity: 0.5;
+              max-width: 100%;
             }
-            max-width: 30%;
-            margin: 1% 3% 1% 1%;
           }
+
           .project-info {
-            @media only screen and (max-width: 768px) {
-              margin: 3% 0 0 5%;
-              position: absolute;
-              max-width: 80%;
-            }
+            width: 90%;
+            position: absolute;
             display: flex;
             flex-flow: column wrap;
-            justify-content: center;
-            align-items: start;
-            margin: 1% 0;
-            max-width: 60%;
+            justify-content: space-between;
+            padding: 5%;
+
             
-            .project-title,
-            .project-subtitle {
+            .project-title {
               margin: 0;
+              font-size: 1.5rem;
             }
 
-            .project-description {
-              @media only screen and (max-width: 768px) {
-                display: none;  
+            .project-subtitle {
+              margin: 2% 0 10% 0;
+              font-size: 1rem;
+            }
+            
+            .project-tags {
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: flex-start;
+              align-items: center;
+              align-content: space-around;
+
+              span {
+                margin: 1% 1% 0 1%;
+                background: whitesmoke;
+                opacity: 0.7;
+                border-radius: 5rem;
+                color: black;
+                padding: 1% 2%;
+              }
+            }
+
+            .project-links {
+              a {
+                margin: 0 1%;
+              }
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+          
+            .project-footer {
+              align-self: flex-end;
+              display: flex;
+              flex-flow: column wrap;
+              justify-content: flex-end;
+              align-items: flex-end;
+              margin: 0 0 10% 0;
+
+              .project-dates {
+                margin: 0;
+                font-style: italic;
               }
             }
           }
-          .project-tags {
-            min-width: 100%;
-            .project-tag {
-              padding: 1%;
-              border: 1px solid whitesmoke;
-            }
-          }
-          .project-dates {
-            margin: 0;
-          }
-
         }
-
-      }
-
-      &.is-list .projects-wrapper .project {
-        width: 90%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin-bottom: 2%;
       }
     }
+  }
 </style>
