@@ -26,21 +26,23 @@ export default {
 
 <style lang="scss">
   .footer {
+    width: 80%;
+    @media only screen and (max-width: 768px) {
+      width: 90%;
+    }
+
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
     border-top: 1px solid darken($color: rgb(240, 240, 240), $amount: 30);
-    margin-top: 3%;
-    padding: 2%;
+    margin: 3rem 0;
     background: transparent;
 
     .footer-menu-item {
-      font-size: .8rem;
+      margin-top: 1rem;
+      // font-size: .8rem;
       color: rgba(128, 128, 128, 0.8);
-      text-decoration: underline;
-      cursor: pointer;
 
       &:hover {
         color: rgba(200, 200, 200, 0.8);

@@ -1,6 +1,8 @@
 <template>
-  <section class="container">
-    <navbar />
+  <section class="box">
+    <navbar title="Antoine Carat"
+            subtitle="One more software engineer"
+    />
     <router-view></router-view>
     <flat-footer />
   </section>
@@ -13,28 +15,26 @@ import FlatFooter from './components/FlatFooter.vue';
 export default {
   name: 'App',
   components: {
-    navbar: Navbar,
+    'navbar': Navbar,
     'flat-footer': FlatFooter
   },
   data () {
     return {
-      wip: false,
-      showBurgerMenu: false
+      
     }
   },
   methods: {
-    isCurrentPath(path) {
-      return this.$route.path == path;
-    }
+    
   }
 }
 </script>
 
 <style lang="scss">
-  .container {
+  .box {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 </style>

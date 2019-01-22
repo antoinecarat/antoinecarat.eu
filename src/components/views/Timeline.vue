@@ -2,7 +2,7 @@
   <div class="timeline">
     <h3 class="timeline-title">{{title}}</h3>
     <div class="timeline-content">
-      <span class="timeline-control" :class="{'is-disabled': !canMoveLeft()}" @click="moveLeft()" v-show="this.events != []">
+      <span class="timeline-control timeline-control-left" :class="{'is-disabled': !canMoveLeft()}" @click="moveLeft()" v-show="this.events != []">
         <font-awesome-icon icon="caret-left" />
       </span>
       <div class="events-wrapper">
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <span class="timeline-control" :class="{'is-disabled': !canMoveRight()}" @click="moveRight()" v-show="this.events != []">
+      <span class="timeline-control timeline-control-right" :class="{'is-disabled': !canMoveRight()}" @click="moveRight()" v-show="this.events != []">
         <font-awesome-icon icon="caret-right" />
       </span>
     </div>
@@ -41,8 +41,8 @@ export default {
   },
   data: function () {
     return {
-      firstIndex: 0,
-      lastIndex: 1
+      firstIndex: 5,
+      lastIndex: 6
     }
   },
   computed: {
@@ -69,11 +69,6 @@ export default {
         this.lastIndex += 1;
       }
     }
-  },
-  mounted: function () {
-    if (screen.width > 768) {
-      this.lastIndex = 4;
-    }
   }
 }
 </script>
@@ -92,7 +87,17 @@ export default {
   }
 
   .timeline-control {
-    width: 5%;
+    position: absolute;
+    &.timeline-control-left {
+      top: 50%;
+      left: 0
+    }
+    &.timeline-control-right {
+      top: 50%;
+      right: 0
+    }
+
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,10 +126,7 @@ export default {
     }
 
     .timeline-event {
-      width: 30%;
-      @media only screen and (max-width: 768px) {
-        width: 80%;
-      }
+      width: 80%;
       padding: 1% 0;
       display: flex;
       flex-direction: column;
@@ -140,7 +142,7 @@ export default {
         border: .2rem solid rgba(128, 128, 128, 0.5);
         border-radius: 50%;
         position: relative;
-        margin-bottom: 5%;
+        margin-bottom: 1rem;
       }
 
       &.completed .timeline-event-badge {
@@ -161,7 +163,7 @@ export default {
 
         .timeline-event-title {
           font-size: 1rem;
-          margin: 5% 0 10% 0;
+          margin: 5% 0;
         }
 
         .timeline-event-text {
