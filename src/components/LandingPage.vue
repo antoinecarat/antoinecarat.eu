@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <div class="intro">
-      <img class="image" src="../../static/me.jpg" alt="">
+  <div class="content">
+    <div class="intro tile">
+      <img class="image" src="../../static/me.png" alt="My filthy face">
       <div class="text">
-        <h2>Hey, nice to meet you!</h2>
+        <h3>Hey! What's the craic?</h3>
         <p>
-        My name is Antoine, I'm a French Software Engineer graduated from <em>Université des Sciences et Technique de Nantes.</em>
+          I'm Antoine, a Software Engineer based in Dublin. I'm currently working at <a href="https://www.browserstack.com"  target="_blank">BrowserStack Ltd</a>.
+          <br><br>
+          I tend to be an open-source enthusiastic and have a lot of fun working with web technologies, especially JavaScript.
+          <br><br>
+          I spend my spare time on the pitch for <a href="https://www.railwayunionrfc.com"  target="_blank">Railway Union RFC</a> or hanging around in some part of the world.
+          <br><br>
+          In a nutshell: 🙊👨‍💻🏉🎒🌍
         </p>
-        <p>
-        I'm currently living in Dublin, Ireland where I'm working at BrowserStack Ltd.
-        </p>
-        <p>
-        I've built up this website as  as a showcase, to let you come in my universe and see what I can do.
-        <br>
-        Please, feel free to reach out if you have any question, comment or if you just want to talk!
-        </p>
+        <div class="separator" />
       </div>
     </div>
-    <timeline title="What happened in my Software Engineer life so far" :events=timelineEvents.events />
+    <div class="list-tiles">
+      <div class="highlights tile">
+        <h3>Highlights</h3>
+        <p>Stay tuned for any incoming event!</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,23 +42,32 @@ export default {
 </script>
 
 <style lang="scss">
-.intro {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 3%;
+    .intro {
+      @media only screen and (min-width: 768px) {
+        width: 30%;
+      }
 
-  .image {
-    @media only screen and (max-width: 768px) {
-      width: 60%;
+      .image {
+        width: 125px;
+        height: 125px;
+        border-radius: 125px;
+      }
+
+      .text {
+        max-width: 80%;
+      }
     }
-    width: 20%;
-    box-shadow: 0 0 3rem 0.2rem black;
-  }
 
-  .text {
-    text-align: center;
-  }
-}
+    .list-tiles {
+      @media only screen and (min-width: 768px) {
+        width: 60%;
+      }
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+
 </style>

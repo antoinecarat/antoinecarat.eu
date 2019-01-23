@@ -6,10 +6,11 @@
         <h6 v-if="subtitle !== ''">{{subtitle}}</h6>
       </div>
       <div class="navbar-menu">
-        <!-- <a class="button navbar-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}"><font-awesome-icon icon='home' /> Home</a> -->
+        <a class="button navbar-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}" title="Home"><font-awesome-icon icon='home' /></a>
+        <a class="button navbar-menu-item" @click="$router.push('/about')" :class="{'is-active': isCurrentPath('/about')}" title="About"> <font-awesome-icon icon='shoe-prints' /></a>
+        <a class="button navbar-menu-item" @click="$router.push('/projects')" :class="{'is-active': isCurrentPath('/projects')}" title="Projects"> <font-awesome-icon icon='vial' /></a>
         <!-- <a class="button navbar-menu-item" @click="$router.push('/skills')" :class="{'is-active': isCurrentPath('/skills')}"><font-awesome-icon icon='seedling' /> Skills</a> -->
         <!-- <a class="button navbar-menu-item" @click="$router.push('/career')" :class="{'is-active': isCurrentPath('/career')}"><font-awesome-icon icon='shoe-prints' /> Career</a> -->
-        <!-- <a class="button navbar-menu-item" @click="$router.push('/projects')" :class="{'is-active': isCurrentPath('/projects')}"> <font-awesome-icon icon='vial' /> Projects</a> -->
       </div>
       <!-- <div class="burger">
           <div></div>
@@ -101,9 +102,15 @@ export default {
 
       .navbar-menu {
         @media only screen and (max-width: 768px) {
-          display: none;
+          //display: none;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-content: center;
+          width: 100%;
+          margin-top: 1rem;
         }
         
+          font-size: 1.3rem;
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-end;
@@ -111,6 +118,7 @@ export default {
         min-width: 50%;
         
         .navbar-menu-item {
+          color: whitesmoke;
           cursor: pointer;
           margin: 0 4%;
 

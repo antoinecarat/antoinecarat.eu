@@ -1,5 +1,8 @@
 <template>
-  <projects-grid title="Here's some of my most significant personnal/school projects: " :projects=projectsData.projects />
+  <div class="content">
+    <div class="tile">🚧 🏗️ Work  in Progress 👷‍♂️ 🚧</div>
+    <!-- <projects-grid title="Here's some of my most significant personnal/school projects: " :projects=projectsData.projects /> -->
+  </div>
 </template>
 
 <script>
