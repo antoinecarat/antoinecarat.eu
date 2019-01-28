@@ -16,11 +16,9 @@
         <div class="separator" />
       </div>
     </div>
-    <div class="list-tiles">
-      <div class="highlights tile">
-        <h3>Highlights</h3>
-        <p>Stay tuned for any incoming event!</p>
-      </div>
+    <div class="tile">
+      <h3>Highlights</h3>
+      <p>Stay tuned for any incoming event!</p>
     </div>
   </div>
 </template>

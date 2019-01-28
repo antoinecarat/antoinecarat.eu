@@ -38,6 +38,10 @@ a, a:visited {
     align-items: center;
     width: 100%;
   }
+
+  @media only screen and (min-width: 1824px) {
+    width: 60%;
+  }
 }
 
 .tile {

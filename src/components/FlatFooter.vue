@@ -31,6 +31,10 @@ export default {
       width: 90%;
     }
 
+    @media only screen and (min-width: 1824px) {
+      width: 60%;
+    }
+
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;

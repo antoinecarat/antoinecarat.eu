@@ -31,6 +31,9 @@ export default {
 
 <style lang="scss">
   .project {
+    @media only screen and (min-width: 768px) {
+      width: 25%;
+    }
     align-items: flex-start;
     position: relative;
 

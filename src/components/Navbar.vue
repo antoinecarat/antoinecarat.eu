@@ -70,8 +70,13 @@ export default {
     .navbar-container {
       width: 80%;
       margin: 1rem;
+
       @media only screen and (max-width: 768px) {
         width: 90%;
+      }
+      
+      @media only screen and (min-width: 1824px) {
+        width: 60%;
       }
 
       display: flex;
