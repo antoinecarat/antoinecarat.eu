@@ -7,7 +7,7 @@
       </div>
       <div class="navbar-menu">
         <a class="button navbar-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}" title="Home"><font-awesome-icon icon='home' /></a>
-        <a class="button navbar-menu-item" @click="$router.push('/about')" :class="{'is-active': isCurrentPath('/about')}" title="About"> <font-awesome-icon icon='shoe-prints' /></a>
+        <!-- <a class="button navbar-menu-item" @click="$router.push('/about')" :class="{'is-active': isCurrentPath('/about')}" title="About"> <font-awesome-icon icon='shoe-prints' /></a> -->
         <a class="button navbar-menu-item" @click="$router.push('/projects')" :class="{'is-active': isCurrentPath('/projects')}" title="Projects"> <font-awesome-icon icon='vial' /></a>
         <!-- <a class="button navbar-menu-item" @click="$router.push('/skills')" :class="{'is-active': isCurrentPath('/skills')}"><font-awesome-icon icon='seedling' /> Skills</a> -->
         <!-- <a class="button navbar-menu-item" @click="$router.push('/career')" :class="{'is-active': isCurrentPath('/career')}"><font-awesome-icon icon='shoe-prints' /> Career</a> -->

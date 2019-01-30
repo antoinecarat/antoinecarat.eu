@@ -4,7 +4,7 @@
       <!-- <timeline title="A journey through my life" :events=timelineEvents.events /> -->
       <h3>My life-journey</h3>
       <p>
-        I'm born on the 30th of August 1995 in Montluçon, a small French town near the my childhood village.
+        I'm born on the 30th of August 1995 in Montluçon, a small French town near my childhood village.
         <br><br>
         I studied Electronics in High School and in 2011, while working on a robot vaccum cleaner,
         I discovered and fell in love with Computer Science as I had to program a microchip.
