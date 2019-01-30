@@ -1,10 +1,10 @@
 <template>
-  <div class="content">
+  <div class="content is-stretched">
     <!-- <div class="tile">🚧 🏗️ Work  in Progress 👷‍ 🚧</div> -->
     <!-- <projects-grid title="Here's some of my most significant personnal/school projects: " :projects=projectsData.projects /> -->
-    <div class="project tile" v-for="project in projectsData.projects" :key="project.title">
+    <div class="project tile" v-for="project in projectsData.projects" :key="project.title" @click="window.open(project.links[0].link)">
       <div class="project-wip" v-show="project.wip">WIP</div>
-      <img class="project-thumbnail" :src="project.thumbnail" alt="Project's thumbnail">
+      <img class="project-thumbnail" :src="project.thumbnail || 'https://picsum.photos/g/600/390/?blur'" alt="Project's thumbnail">
       <h3 class="project-title">{{project.title}}</h3>
       <div class="project-metadatas">
         <span class="project-date">{{project.date}}</span>
@@ -22,7 +22,8 @@ import projectsData from './../data/en/projects.js'
 export default {
   data: function () {
     return {
-      projectsData
+      projectsData,
+      window
     }
   },
   // components: { 'projects-grid': ProjectsGrid }
@@ -36,6 +37,7 @@ export default {
     }
     align-items: flex-start;
     position: relative;
+    cursor: pointer;
 
     .project-wip {
       position: absolute;
