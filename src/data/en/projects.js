@@ -2,6 +2,18 @@ export default {
   projects: [
     {
       wip: true,
+      title: 'How I ended up living abroad for a while',
+      subtitle: 'An article about my expatriation in Ireland',
+      thumbnail: '../../static/abroad.jpg',
+      date: 'Jan 2019',
+      duration: '1w',
+      description:
+        'After few months of living abroad, I decided to write an article about my experience settle in abroad.',
+      tags: ['Article'],
+      links: [{ name: 'Live', link: 'https://medium.com/@antoine.carat' }]
+    },
+    {
+      wip: true,
       title: 'antoinecarat.eu',
       subtitle: 'This very website',
       thumbnail: '../../static/website.png',
@@ -21,7 +33,7 @@ export default {
     {
       title: 'prisma-multi-tenant',
       subtitle: 'Use prisma as a multi-tenant provider',
-      thumbnail: 'https://picsum.photos/g/600/390/?blur',
+      thumbnail: '../../static/pmt-tib.jpeg',
       date: 'Dec 2018',
       duration: '3w',
       description:
@@ -60,7 +72,7 @@ export default {
     {
       title: "Charlie's Quizz",
       subtitle: 'Generated from open-data questions quiz.',
-      thumbnail: 'https://picsum.photos/g/600/390/?blur',
+      thumbnail: '../../static/charlies.png',
       date: 'Nov 2016',
       duration: '2m',
       description:
@@ -77,7 +89,7 @@ export default {
     {
       title: 'ReportGenerator',
       subtitle: 'Organization meeting report generator',
-      thumbnail: 'https://picsum.photos/g/600/390/?blur',
+      thumbnail: '../../static/report.png',
       date: 'Jun 2017',
       duration: '1w',
       description:
