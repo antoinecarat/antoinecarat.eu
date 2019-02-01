@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <a class="footer-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}">Home</a>
+    <!-- <a class="footer-menu-item" @click="$router.push('/')" :class="{'is-active': isCurrentPath('/')}">Home</a> -->
     <a class="footer-menu-item" target="_blank" href="mailto:antoine.carat@protonmail.com">Email</a>
     <a class="footer-menu-item" target="_blank" href="https://www.linkedin.com/in/antoine-carat-138754135/">LinkedIn</a>
     <a class="footer-menu-item" target="_blank" href="https://github.com/antoinecarat">Github</a>

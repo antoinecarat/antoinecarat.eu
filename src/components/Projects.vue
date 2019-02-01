@@ -1,8 +1,8 @@
 <template>
-  <div class="content is-stretched">
+  <div class="content">
     <!-- <div class="tile">🚧 🏗️ Work  in Progress 👷‍ 🚧</div> -->
     <!-- <projects-grid title="Here's some of my most significant personnal/school projects: " :projects=projectsData.projects /> -->
-    <div class="project tile" v-for="project in projectsData.projects" :key="project.title" @click="window.open(project.links[0].link)">
+    <div class="project tile" v-for="project in projectsData.projects" :key="project.title">
       <div class="project-wip" v-show="project.wip">WIP</div>
       <img class="project-thumbnail" :src="project.thumbnail || 'https://picsum.photos/g/600/390/?blur'" alt="Project's thumbnail">
       <h3 class="project-title">{{project.title}}</h3>
@@ -11,12 +11,12 @@
         <span>|</span>
         <span class="project-themes">{{project.tags.join(', ')}}</span>
       </div>
+      <a target="_blank" :href="project.links[0].link">More</a>
     </div>
   </div>
 </template>
 
 <script>
-// import ProjectsGrid from './views/ProjectsGrid.vue'
 import projectsData from './../data/en/projects.js'
 
 export default {
@@ -26,7 +26,6 @@ export default {
       window
     }
   },
-  // components: { 'projects-grid': ProjectsGrid }
 }
 </script>
 

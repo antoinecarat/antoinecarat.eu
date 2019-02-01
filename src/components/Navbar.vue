@@ -115,7 +115,7 @@ export default {
           margin-top: 1rem;
         }
         
-          font-size: 1.3rem;
+        font-size: 1.3rem;
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-end;
@@ -139,6 +139,11 @@ export default {
           &.is-active {
             background: transparent;
             border-bottom: 1px solid whitesmoke;
+          }
+
+          &:hover {
+            color: darken($color: whitesmoke, $amount: 30);
+            border-color: darken($color: whitesmoke, $amount: 30);
           }
         }
       }

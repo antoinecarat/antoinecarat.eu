@@ -32,10 +32,10 @@
         which I obtain with honors and ended major in July 2018!
         <br><br>
         Following my graduation, I decided to take up a challenge and start my actual career abroad.
-        This led me to the Emerald Island, land of fairy tales, giants and leprechauns: The Ireland.
-        I'm thus living in Dublin since the 22nd of September 2018.
+        This led me to the Emerald Island, land of fairy tales, giants and leprechauns: Ireland.
+        I'm thus living in Dublin since the 22nd of September 2018, working at BrowserStack since the 5th of November of that year.
       </p>
-    </div>
+        <div class="separator" />
     </div>
   </div>
 </template>
@@ -80,7 +80,11 @@ export default {
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+
+      h3 {
+        align-self: center;
+      }
     }
 
 
