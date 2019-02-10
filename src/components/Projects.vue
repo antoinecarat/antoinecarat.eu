@@ -1,7 +1,5 @@
 <template>
   <div class="content">
-    <!-- <div class="tile">🚧 🏗️ Work  in Progress 👷‍ 🚧</div> -->
-    <!-- <projects-grid title="Here's some of my most significant personnal/school projects: " :projects=projectsData.projects /> -->
     <div class="project tile" v-for="project in projectsData.projects" :key="project.title">
       <div class="project-wip" v-show="project.wip">WIP</div>
       <img class="project-thumbnail" :src="project.thumbnail || 'https://picsum.photos/g/600/390/?blur'" alt="Project's thumbnail">
@@ -26,6 +24,16 @@ export default {
       window
     }
   },
+  mounted() {
+    for (let img of document.getElementsByTagName("img")) {
+      let src = img.src.replace("min-", "")
+      if (src !== img.src) {
+        let big_img = new Image();
+        big_img.onload = () => img.src = src
+        big_img.src = src
+      }
+    }
+  }
 }
 </script>
 
