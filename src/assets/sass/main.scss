@@ -28,8 +28,9 @@ a, a:visited {
 .content {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
+  
   &.is-stretched {
     @media only screen and (min-width: 768px) {
       align-items: stretch;

@@ -63,6 +63,7 @@ export default {
       }
 
       .image {
+        align-self: center;
         width: 125px;
         height: 125px;
         border-radius: 125px;
