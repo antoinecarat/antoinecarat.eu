@@ -2,13 +2,30 @@ export default {
   projects: [
     {
       wip: true,
+      title: 'google-docs-mustaches',
+      subtitle: 'A document interpolation library',
+      thumbnail: '../../static/gdm.png',
+      date: 'Mar 2019',
+      duration: '1m',
+      description:
+        "google-docs-mustaches is a npm library written in TypeScript that will execute requests to the Google Drive and Google Docs APIs to help you work with generic documents. The library will interpolate the placeholders in your document using the given data and export it to pdf in a drive folder. I'm gladly working on this library which a friend of mine created. The v1.0 of the project is not released yet and we still have some work to do. We also try to work as professionally as possible to be able to share this with the open-source community and invite people to contribute easily.",
+      tags: ['TypeScript', 'Google APIs'],
+      links: [
+        {
+          name: 'Sources',
+          link: 'https://github.com/Errorname/google-docs-mustaches'
+        }
+      ]
+    },
+    {
+      wip: true,
       title: 'How I ended up living abroad for a while',
       subtitle: 'An article about my expatriation in Ireland',
       thumbnail: '../../static/min-abroad.jpg',
       date: 'Jan 2019',
       duration: '1w',
       description:
-        'After few months of living abroad, I decided to write an article about my experience settle in abroad.',
+        'After few months living abroad, I decided to write an article about my experience settling in abroad.',
       tags: ['Article'],
       links: [{ name: 'Live', link: 'https://medium.com/@antoine.carat' }]
     },
