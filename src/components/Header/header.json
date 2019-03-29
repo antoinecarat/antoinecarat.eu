@@ -1,0 +1,10 @@
+{
+  "links": [
+    { "name": "Email", "link": "mailto:antoine.carat@protonmail.com" },
+    { "name": "LinkedIn", "link": "https://www.linkedin.com/in/antoine-carat-138754135/" },
+    { "name": "Twitter", "link": "https://twitter.com/a_carat" },
+    { "name": "Github", "link": "https://github.com/antoinecarat" },
+    { "name": "Medium", "link": "https://medium.com/@antoine.carat" },
+    { "name": "StackOverflow", "link": "https://stackoverflow.com/users/11192017/antoinecarat" }
+  ]
+}

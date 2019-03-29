@@ -15,13 +15,12 @@ body {
 }
 
 a, a:visited {
-  margin-top: 1rem;
-  color: black;
+  color: #008cb4;
   text-decoration: underline;
   cursor: pointer;
 
   &:hover {
-    color: $gravegray;
+    color: darken($color: #008cb4, $amount: 10);
   }
 }
 
