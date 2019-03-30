@@ -4,7 +4,7 @@
       "jobtitle": "Software Engineer",
       "company": {
         "name": "BrowserStack Ltd, Dublin",
-        "logo": "../../static/bs-logo.jpg",
+        "logo": "/static/img/bs-logo.jpg",
         "website": "https://browserstack.com",
         "description": "BrowserStack is the most reliable mobile app and browser testing platform, enaling developers to test their apps (web or mobile) over different model, different OS and different version."
       },
@@ -17,8 +17,8 @@
       "jobtitle": "Cloud&DevOps Intern",
       "company": {
         "name": "Voyages-SNCF Technologies, Nantes",
-        "logo": "../../static/oui-logo.jpg",
-        "website": "https://",
+        "logo": "/static/img/oui-logo.jpg",
+        "website": "https://ouitalk.oui.sncf/groupe",
         "description": "Voyages-SNCF Technologies — now rebranded 'E-Voyageur Technologies' — is part of the group Oui.sncf which is the first european train tickets retailer. VSCT acts as the primary provider of software and infrastructure for the group."
       },
       "startdate": "Mon Jan 18 2018 09:00:00 GMT+0000",
