@@ -20,7 +20,6 @@ export default {
   },
   mounted() {
     setTimeout( () => this.loaded = true, 500);
-    navigator.vibrate(1000);
   }
 }
 </script>
