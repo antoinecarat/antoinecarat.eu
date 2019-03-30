@@ -22,9 +22,22 @@
         "description": "Voyages-SNCF Technologies — now rebranded 'E-Voyageur Technologies' — is part of the group Oui.sncf which is the first european train tickets retailer. VSCT acts as the primary provider of software and infrastructure for the group."
       },
       "startdate": "Mon Jan 18 2018 09:00:00 GMT+0000",
-      "enddate": "Fri Jul 13 2018 09:00:00 GMT+0000",
+      "enddate": "Fri Jul 13 2018 17:00:00 GMT+0000",
       "description": "<p> - Maintenance and customer support of an internal cloud based on OpenStack allowing dev teams to deploy their projects internally using Jenkins and Docker. Development of web utility tools for the team.<br>- Development of an automate solution to test the resiliency of an application deployed on AWS involving contributions to the chaostoolkit project.<br> - Development of a full-stack web application implementing a serious game of one-vs-one chaos resolution challenge, allowing to practise on-call skills at anytime. </p>",
       "tags": ["OpenStack", "Docker", "Swarm", "Jenkins", "Go", "Openfaas", "Angular", "ChaosEngineering", "AWS", "Python", "React.js", "Node.js", "MongoDB"]
+    },
+    {
+      "jobtitle": "Cloud Intern",
+      "company": {
+        "name": "Discovery Initiative, Nantes",
+        "logo": "/static/img/discovery-logo.png",
+        "website": "http://beyondtheclouds.github.io/",
+        "description": "The Discovery initiative aims to overcome the main limitations of the traditional server-centric cloud solutions by revising the OpenStack software in order to make it inherently cooperative."
+      },
+      "startdate": "Mon Jun 19 2017 09:00:00 GMT+0000",
+      "enddate": "Fri Aug 25 2017 17:00:00 GMT+0000",
+      "description": "<p>  Improvement  of  an  internal  tool,  EnOs  (enos.readthedocs.io),  with  a profiling system. (Initiation course, 1 day per week over 4 month) <br> - Replacement of the mySQL backend of an OpenStack service (Keystone) by a distributed database (CockroachDB) in order to increase OpenStack scalability (Fog/Edge computing fashion). </p>",
+      "tags": ["OpenStack", "Cloud Computing", "Ansible", "Python", "Research"]
     }
   ]
 }
