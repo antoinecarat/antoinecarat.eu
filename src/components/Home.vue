@@ -19,15 +19,25 @@
         </div>
         <div class="school">
           <h2 class="title">School</h2>
+          <p><b>2018</b> Software Architecture MSc, Nantes. <i>1st/40</i></p>
+          <p><b>2016</b> Computer Science BSc degree, Nantes.</p>
+          <p><b>2014</b> Computer Science DUT, Nantes.</p>
         </div>
         <div class="skills">
           <h2 class="title">Skills</h2>
+          <p><b>Frontend</b> Vue.js, React.js, JS, HTML/CSS, SCSS</p>
+          <p><b>Backend</b> Node.js, Ruby, Python, Java</p>
+          <p><b>DevOps</b> Docker, Jenkins, Ansible</p>
+          <p><b>Misc</b> Haskell, Bash</p>
         </div>
-        <div class="languages">
+        <!-- <div class="languages">
           <h2 class="title">Languages</h2>
-        </div>
+          <p><b>English</b> Written and oral fluency</p>
+          <p><b>French</b> Native language</p>
+        </div> -->
         <div class="Hobies">
           <h2 class="title">Hobbies</h2>
+          In a nutshell: 🙊👨‍💻🏉🎒🌍
         </div>
       </div>
       <div class="main" slot="right">
@@ -88,6 +98,8 @@ export default {
     flex-flow: column wrap;
     justify-content: space-evenly;
     align-items: center;
+
+    margin-bottom: 1rem;
 
     .sidebar {
       padding: 1rem;

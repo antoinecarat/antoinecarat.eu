@@ -10,7 +10,7 @@
       <div class="description" slot="right">
         <h2>About the company</h2>
         <p class="companydescription">
-          {{ experience.company.description }}
+          {{ experience.company.description }} <i><a :href="experience.company.website">Learn more</a></i>
         </p>
         <h2>About my role</h2>
         <p class="roledescription">
@@ -18,22 +18,6 @@
         </p>
       </div>
     </SlidingDoors>
-    <!-- <div class="card">
-      <img class="logo" :src="experience.company.logo" alt="">
-      <h2 class="jobtitle">{{ experience.jobtitle }}</h2>
-      <h3 class="company">{{experience.company.name}}</h3>
-      <p class="dates"> {{ monthsBetween(new Date(experience.startdate), new Date(experience.enddate || Date())) }} months ( {{ new Date(experience.startdate).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) }}  - {{ experience.enddate && new Date(experience.enddate).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) || 'Now' }})</p>
-    </div> -->
-    <!-- <div class="description">
-      <h2>About the company</h2>
-      <p class="companydescription">
-        {{ experience.company.description }}
-      </p>
-      <h2>About my role</h2>
-      <p class="roledescription">
-        
-      </p>
-    </div> -->
   </div>
 </template>
 
