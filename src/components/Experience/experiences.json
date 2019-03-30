@@ -1,0 +1,30 @@
+{
+  "experiences": [
+    {
+      "jobtitle": "Software Engineer",
+      "company": {
+        "name": "BrowserStack Ltd, Dublin",
+        "logo": "../../static/bs-logo.jpg",
+        "website": "https://browserstack.com",
+        "description": "BrowserStack is the most reliable mobile app and browser testing platform, enaling developers to test their apps (web or mobile) over different model, different OS and different version."
+      },
+      "startdate": "Mon Nov 05 2018 09:00:00 GMT+0000",
+      "enddate": null,
+      "description": "Development and maintenance of a mobile-driving platform that allows users to test their applications in a cross-devices and cross-browsers fashion. This platform consists of 3000+ devices and saves companies the cost of building their own \"lab\" internally.",
+      "tags": ["Ruby", "Bash", "Mobile"]
+    },
+    {
+      "jobtitle": "Cloud&DevOps Intern",
+      "company": {
+        "name": "Voyages-SNCF Technologies, Nantes",
+        "logo": "../../static/oui-logo.jpg",
+        "website": "https://",
+        "description": "Voyages-SNCF Technologies — now rebranded 'E-Voyageur Technologies' — is part of the group Oui.sncf which is the first european train tickets retailer. VSCT acts as the primary provider of software and infrastructure for the group."
+      },
+      "startdate": "Mon Jan 18 2018 09:00:00 GMT+0000",
+      "enddate": "Fri Jul 13 2018 09:00:00 GMT+0000",
+      "description": "<p> - Maintenance and customer support of an internal cloud based on OpenStack allowing dev teams to deploy their projects internally using Jenkins and Docker. Development of web utility tools for the team.<br>- Development of an automate solution to test the resiliency of an application deployed on AWS involving contributions to the chaostoolkit project.<br> - Development of a full-stack web application implementing a serious game of one-vs-one chaos resolution challenge, allowing to practise on-call skills at anytime. </p>",
+      "tags": ["OpenStack", "Docker", "Swarm", "Jenkins", "Go", "Openfaas", "Angular", "ChaosEngineering", "AWS", "Python", "React.js", "Node.js", "MongoDB"]
+    }
+  ]
+}

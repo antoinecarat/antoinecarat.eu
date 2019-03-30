@@ -33,44 +33,18 @@
       <div class="main" :class="{'active': loaded}">
         <div class="experiences">
           <h2 class="title">Experiences</h2>
-          <div class="experience" :class="{'hovered': bouncing}">
-            <span class="learn-more">Learn more</span>
-            <p class="head">
-              <span class="jobtitle">Software Engineer</span> <span class="company">@ BrowserStack Ltd, Dublin.</span>
-            </p>
-            <p class="dates">5 months (November 2018  - Now)</p>
-            <p>Development and maintenance of a mobile-driving platform that allows users to test 
-            their applications in a cross-devices and cross-browsers fashion. 
-            This platform consists of 3000+ devices and saves companies the cost of building their own "lab" internally.</p>
-            <div class="tags">#Ruby #Bash #Mobile</div>
-          </div>
-          <div class="experience" @click="$router.push('/projects')">
-            <span class="learn-more">Learn more</span>
-            <p class="head">
-              <span class="jobtitle">Cloud&DevOps Intern</span> <span class="company">@ Voyages-SNCF.com Technologies, Nantes.</span>
-            </p>
-            <p class="dates">6 months (January - July 2018)</p>
-            <p>
-              - Maintenance and customer support of an internal cloud based on OpenStack allowing 
-              dev teams to deploy their projects internally using Jenkins and Docker. 
-              Development of web utility tools for the team.
-              <br>
-              - Development of an automate solution to test the resiliency of an application 
-              deployed on AWS involving contributions to the chaostoolkit project.
-              <br>
-              - Development of a full-stack web application implementing a serious game 
-              of one-vs-one chaos resolution challenge, allowing to practise on-call skills at anytime.
-            </p>
-            <div class="tags">#OpenStack #Docker #Swarm #Jenkins #Go #Openfaas #Angular #ChaosEngineering #AWS #Python #React.js #Node.js #MongoDB</div>
-          </div>
+          <Experience :id=id :experience=experience :class="{'hovered': bouncing && id==0}" v-for="(experience, id) in experiences" :key="experience.startdate" />
         </div>
         <div class="highlights">
           <h2 class="title">Highlights</h2>
           <p class="highlight">
-            <span class="h-title">Alice&Bob founding president</span> I fund a student oragnization and headed it during one year
+            <span class="h-title">Alice&Bob founding president</span> I founded a student organization and headed it during one year
           </p>
           <p class="highlight">
             <span class="h-title">google-docs-mustaches contributor</span> I'm investing some time working on this document interpolation library.
+          </p>
+          <p class="highlight">
+            <span class="h-title">vue-grouped-table</span> I needed this kind of table for a dashboard project and decided to make it open-source.
           </p>
           <p class="highlight">
             <span class="h-title">How I ended up living abroad for a while</span> I wrote this article to share my thoughts about leaving my country and settle in a new one.
@@ -82,12 +56,16 @@
 </template>
 
 <script>
+import Experience from './Experience/Experience.vue'
+import experiencesData from './Experience/experiences.json'
+
 export default {
+  name: 'Resume',
+  components: {
+    Experience
+  },
   data: function() {
-    return {
-      loaded: false,
-      bouncing: false
-    }
+    return { ...experiencesData, loaded: false, bouncing: false }
   },
   mounted() {
     setTimeout( () => {
@@ -103,7 +81,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
   .resume {
     width: 75%;
@@ -114,7 +91,7 @@ export default {
     flex-flow: column wrap;
     justify-content: space-evenly;
     align-items: center;
-    
+
     .content {
       margin-top: 1rem;
       width: 100%;
@@ -169,63 +146,6 @@ export default {
           font-family: 'Palatino', 'Warnock', 'Pastonchi', 'Classica', 'serif';
           margin: 0 0 1rem 0;
           font-size: 1.5rem;
-        }
-
-        .experiences {
-
-          .experience {
-            margin: 1rem 0;
-            position: relative;
-            transition: 300ms;
-            width: 100%;
-            
-            &:last-of-type {
-              margin-bottom: 2rem;
-            }
-
-            .learn-more {
-              display: none;
-              color: #008cb4;
-              position: absolute;
-              top: 0%;
-              right: 0%;
-              text-decoration: underline;
-              &:hover {
-                font-weight: 600;
-              }
-            }
-
-            &.hovered,
-            &:hover {
-              border-left: 1px solid lightgray;
-              padding-left: 1rem;
-              color: #AAAAAA;
-              cursor: pointer;
-              
-              & > .learn-more {
-                display: block;
-              }
-            }
-
-            .head {
-              margin-bottom: 0;
-
-              .jobtitle {
-                font-weight: 700;
-              }
-              .company {
-                font-style: italic;
-              }
-            }
-            .dates {
-              margin-top: 0;
-              font-style: italic;
-            }
-            .tags {
-              font-style: italic;
-
-            }
-          }
         }
 
         .highlights {
