@@ -82,7 +82,6 @@ export default {
       }
     }
     .description {
-      padding-left: 2%;
       text-align: left;
     }
   }

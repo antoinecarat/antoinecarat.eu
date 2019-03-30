@@ -49,7 +49,7 @@ export default {
 
     .right {
       width: 62%;
-      padding-left: 2%;
+      padding-left: 1rem;
       margin-top: .5rem;
       border-left: 1px solid gray;
       position: relative;
