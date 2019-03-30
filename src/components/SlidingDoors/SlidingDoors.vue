@@ -20,7 +20,7 @@ export default {
   mounted() {
     setTimeout( () => {
       this.closed = true;
-    }, 500);
+    }, 300);
   }
 }
 </script>

@@ -3,9 +3,8 @@
     <h1 class="big-title" @click="$router.push('/')">ANTOINE CARAT</h1>
     <div class="contacts">
       <span class="contact" v-for="link in links" :key="link.name">
-        <a :href="link.link">{{ link.name }}</a>
+        <a target="_blank" :href="link.link">{{ link.name }}</a>
       </span>
-      <!-- <span>Mail</span> — <span>LinkedIn</span> — <span>Github</span> — <span>Twitter</span> — <span>Medium</span> — <span>StackOverflow</span> -->
     </div>
   </div>
 </template>
