@@ -5,7 +5,14 @@
       <span class="jobtitle">{{ experience.jobtitle }}</span> <span class="company">@ {{ experience.company.name }}.</span>
     </p>
     <p class="dates"> {{ monthsBetween(new Date(experience.startdate), new Date(experience.enddate || Date())) }} months ( {{ new Date(experience.startdate).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) }}  - {{ experience.enddate && new Date(experience.enddate).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) || 'Now' }})</p>
-    <p>{{ experience.description }}</p>
+    <p v-if="experience.role.description.length == 1">
+      {{ experience.role.description[0] }}
+    </p>
+    <p v-else>
+      <ul>
+        <li v-for="item in experience.role.description" :key="item">{{ item }}</li>
+      </ul>
+    </p>
     <div class="tags"> {{experience.tags.map( e => `#${e}`).join(' ')}} </div>
   </div>
 </template>
@@ -88,6 +95,9 @@ export default {
     .dates {
       margin-top: 0;
       font-style: italic;
+    }
+    ul {
+      padding-left: 1rem;
     }
     .tags {
       font-style: italic;

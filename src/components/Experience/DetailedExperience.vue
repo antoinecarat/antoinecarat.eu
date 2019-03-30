@@ -10,11 +10,16 @@
       <div class="description" slot="right">
         <h2>About the company</h2>
         <p class="companydescription">
-          {{ experience.company.description }} <i><a :href="experience.company.website">Learn more</a></i>
+          {{ experience.company.description }} <i><a target="_blank" :href="experience.company.website">Learn more</a></i>
         </p>
         <h2>About my role</h2>
-        <p class="roledescription">
-          
+        <p v-if="experience.role.description.length == 1">
+          {{ experience.role.description[0] }}
+        </p>
+        <p v-else>
+          <ul>
+            <li v-for="item in experience.role.description" :key="item">{{ item }}</li>
+          </ul>
         </p>
       </div>
     </SlidingDoors>
