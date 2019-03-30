@@ -1,7 +1,7 @@
 <template>
   <div class="resume">
-    <div class="content">
-      <div class="sidebar" :class="{'active': loaded}">
+    <SlidingDoors>
+      <div class="sidebar" slot="left">
         <div class="aboutme">
           <h2 class="title">About me</h2>
           <p class="text">
@@ -30,7 +30,7 @@
           <h2 class="title">Hobbies</h2>
         </div>
       </div>
-      <div class="main" :class="{'active': loaded}">
+      <div class="main" slot="right">
         <div class="experiences">
           <h2 class="title">Experiences</h2>
           <Experience :id=id :experience=experience :class="{'hovered': bouncing && id==0}" v-for="(experience, id) in experiences" :key="experience.startdate" />
@@ -51,7 +51,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </SlidingDoors>
   </div>
 </template>
 
@@ -65,18 +65,15 @@ export default {
     Experience
   },
   data: function() {
-    return { ...experiencesData, loaded: false, bouncing: false }
+    return { ...experiencesData, bouncing: false }
   },
   mounted() {
-    setTimeout( () => {
-      this.loaded = true;
       //TODO: Restrict to new visitors
-      const interval = setInterval( () => this.bouncing = !this.bouncing,  500);
+      const interval = setInterval( () => this.bouncing = !this.bouncing, 500);
       setTimeout( () => {
         clearInterval(interval);
         this.bouncing = false;
       }, 3000);
-    }, 500);
   }
 }
 </script>
@@ -92,67 +89,35 @@ export default {
     justify-content: space-evenly;
     align-items: center;
 
-    .content {
-      margin-top: 1rem;
-      width: 100%;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-evenly;
-      align-items: flex-start;
+    .sidebar {
+      padding: 1rem;
+      background: #ebebeb;
+      text-align: left;
 
-      .sidebar {
-        width: 30%;
-        padding: 1%;
-        background: #ebebeb;
-        text-align: left;
-        position: relative;
-        left: -25%;
-        opacity: 0;
-        transition: 300ms;
+      .title {
+        color: #008cb4;
+        font-family: 'Palatino', 'Warnock', 'Pastonchi', 'Classica', 'serif';
+        border-bottom: 1px dotted #008cb4;
+        padding-bottom: 2%;
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+      }
+    }
 
-        &.active {
-          left: 0;
-          opacity: 100;
-        }
+    .main {
+      text-align: left;
 
-        .title {
-          color: #008cb4;
-          font-family: 'Palatino', 'Warnock', 'Pastonchi', 'Classica', 'serif';
-          border-bottom: 1px dotted #008cb4;
-          padding-bottom: 2%;
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
+      .title {
+        color: #008cb4;
+        font-family: 'Palatino', 'Warnock', 'Pastonchi', 'Classica', 'serif';
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
       }
 
-      .main {
-        padding-left: 2%;
-        margin-top: .5rem;
-        border-left: 1px solid gray;
-        text-align: left;
-        width: 62%;
-        position: relative;
-        right: -25%;
-        opacity: 0;
-        transition: 300ms;
-
-        &.active {
-          right: 0;
-          opacity: 100;
-        }
-
-        .title {
-          color: #008cb4;
-          font-family: 'Palatino', 'Warnock', 'Pastonchi', 'Classica', 'serif';
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .highlights {
-          .highlight {
-            .h-title {
-              font-weight: 700;
-            }
+      .highlights {
+        .highlight {
+          .h-title {
+            font-weight: 700;
           }
         }
       }
