@@ -1,5 +1,5 @@
 <template>
-  <section class="box">
+  <section class="content">
     <Header :loaded=this.loaded />
     <router-view></router-view>
   </section>
@@ -20,16 +20,10 @@ export default {
   },
   mounted() {
     setTimeout( () => this.loaded = true, 500);
+    navigator.vibrate(1000);
   }
 }
 </script>
 
 <style lang="scss">
-  .box {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
 </style>
