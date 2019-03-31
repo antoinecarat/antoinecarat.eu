@@ -34,8 +34,17 @@ export default {
     justify-content: space-evenly;
     align-items: flex-start;
 
+    @media only screen and (max-width: 768px) {
+      flex-flow: column wrap;
+      align-items: center;
+    }
+
     .left {
       width: 30%;
+      @media only screen and (max-width: 768px) {
+        width: 95%;
+      }
+
       position: relative;
       left: -25%;
       opacity: 0;
@@ -60,6 +69,11 @@ export default {
       &.active {
         right: 0;
         opacity: 100;
+      }
+
+      @media only screen and (max-width: 768px) {
+        width: 95%;
+        border: none;
       }
     }
   }

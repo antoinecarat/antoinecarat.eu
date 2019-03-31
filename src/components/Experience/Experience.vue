@@ -1,8 +1,7 @@
 <template>
   <div class="experience" @click="$router.push(`/experience/${id}`)">
-    <span class="learn-more">Learn more</span>
     <p class="head">
-      <span class="jobtitle">{{ experience.jobtitle }}</span> <span class="company">@ {{ experience.company.name }}.</span>
+      <span class="jobtitle">{{ experience.jobtitle }}</span> <span class="company"> @{{ experience.company.name }}.</span>
     </p>
     <p class="dates"> {{ monthsBetween(new Date(experience.startdate), new Date(experience.enddate || Date())) }} months ( {{ new Date(experience.startdate).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) }}  - {{ experience.enddate && new Date(experience.enddate).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) || 'Now' }})</p>
     <p v-if="experience.role.description.length == 1">
@@ -14,6 +13,7 @@
       </ul>
     </p>
     <div class="tags"> {{experience.tags.map( e => `#${e}`).join(' ')}} </div>
+    <p class="learn-more">Learn more</p>
   </div>
 </template>
 
@@ -59,12 +59,12 @@ export default {
     }
 
     .learn-more {
-      display: none;
+      @media only screen and (min-width: 768px) {
+        display: none;
+      }
       color: #008cb4;
-      position: absolute;
-      top: 0%;
-      right: 0%;
       text-decoration: underline;
+      &:active,
       &:hover {
         font-weight: 600;
       }
@@ -78,7 +78,12 @@ export default {
       cursor: pointer;
       
       & > .learn-more {
-        display: block;
+        @media only screen and (min-width: 768px) {
+          display: block;
+          position: absolute;
+          top: 0%;
+          right: 0%;
+        }
       }
     }
 

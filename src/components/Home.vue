@@ -79,11 +79,13 @@ export default {
   },
   mounted() {
       //TODO: Restrict to new visitors
-      const interval = setInterval( () => this.bouncing = !this.bouncing, 500);
-      setTimeout( () => {
-        clearInterval(interval);
-        this.bouncing = false;
-      }, 3000);
+      if (screen.width > 768) {
+        const interval = setInterval( () => this.bouncing = !this.bouncing, 500);
+        setTimeout( () => {
+          clearInterval(interval);
+          this.bouncing = false;
+        }, 3000);
+      }
   }
 }
 </script>
@@ -91,6 +93,9 @@ export default {
 <style lang="scss">
   .resume {
     width: 75%;
+    @media only screen and (max-width: 768px) {
+      width: 95%;
+    }
     text-align: center;
     font-family: 'Avenir Next', 'Avenir', 'Gibson', 'Montserrat', 'sans-serif';
 
