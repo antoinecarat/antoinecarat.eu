@@ -13,8 +13,8 @@ This website has been - and is still - built as a showcase of me and my skills s
 - [x] Get my own domain
 - [x] Redesign without template
 - [x] Remove Bulma framework
+- [x] Deployment pipeline
 - [ ] Interactive CV design **WIP**
-- [ ] Deployment pipeline
 - [ ] Add touch gestures (?)
 - [ ] Give components to open-source
 - [ ] Progressive Web Application
