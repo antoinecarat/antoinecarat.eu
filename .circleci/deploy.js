@@ -16,6 +16,6 @@ ftpDeploy.deploy(config, function(err) {
     console.error(err)
     process.exit(1)
   } else {
-    console.log('deployed')
+    console.log('Deployed! 🚀')
   }
 })
