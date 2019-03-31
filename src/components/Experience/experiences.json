@@ -38,8 +38,8 @@
         "website": "http://beyondtheclouds.github.io/",
         "description": "The Discovery initiative aims to overcome the main limitations of the traditional server-centric cloud solutions by revising the OpenStack software in order to make it inherently cooperative."
       },
-      "startdate": "Mon Jun 19 2017 09:00:00 GMT+0000",
-      "enddate": "Fri Aug 25 2017 17:00:00 GMT+0000",
+      "startdate": "Thu Jun 15 2017 09:00:00 GMT+0000",
+      "enddate": "Thu Aug 31 2017 17:00:00 GMT+0000",
       "role": {
         "description": ["Improvement  of  an  internal  tool,  EnOs  (enos.readthedocs.io),  with  a profiling system. (Initiation course, 1 day per week over 4 month)", "Replacement of the mySQL backend of an OpenStack service (Keystone) by a distributed database (CockroachDB) in order to increase OpenStack scalability (Fog/Edge computing fashion)."]
       },
