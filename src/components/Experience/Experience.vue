@@ -51,7 +51,7 @@ export default {
   .experience {
     margin: 1rem 0;
     position: relative;
-    transition: 300ms;
+    transition: 600ms;
     width: 100%;
 
     &:last-of-type {

@@ -1,6 +1,6 @@
 module.exports = {
-  assetsDir: 'static/img',
+  assetsDir: "static/img",
   devServer: {
     disableHostCheck: true
   }
-}
+};
