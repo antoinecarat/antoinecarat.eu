@@ -2,6 +2,7 @@
   <div class="experience-detailed">
     <SlidingDoors>
       <div class="card" slot="left">
+        <p class="back" @click="$router.push('/')">Back</p>
         <img class="logo" :src="experience.company.logo" alt="">
         <h2 class="jobtitle">{{ experience.jobtitle }}</h2>
         <h3 class="company">{{experience.company.name}}</h3>
@@ -65,6 +66,19 @@ export default {
     align-items: flex-start;
 
     .card {
+      .back {
+        text-align: left;
+        color: #008cb4;
+        cursor: pointer;
+        text-decoration: underline;
+        &:active,
+        &:hover {
+          font-weight: 600;
+        }
+        &::before {
+          content: '< '
+        }
+      }
       .logo {
         border-radius: 100rem;
         width: 30%;
