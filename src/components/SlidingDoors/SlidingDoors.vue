@@ -31,7 +31,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
 
   @media only screen and (max-width: 768px) {
     flex-flow: column wrap;

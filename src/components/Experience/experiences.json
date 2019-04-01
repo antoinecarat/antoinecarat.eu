@@ -8,11 +8,17 @@
         "name": "BrowserStack Ltd, Dublin",
         "logo": "/static/img/bs-logo.jpg",
         "website": "https://browserstack.com",
-        "description": "BrowserStack is the most reliable mobile app and browser testing platform, enaling developers to test their apps (web or mobile) over different model, different OS and different version."
+        "description": "BrowserStack is the most reliable mobile app and browser testing platform, enaling developers to test their apps (web or mobile) over different model, different OS and different version, desktop and mobile."
       },
       "role": {
-        "description": ["Development and maintenance of a mobile-driving platform that allows users to test their applications in a cross-devices and cross-browsers fashion. This platform consists of 3000+ devices and saves companies the cost of building their own \"lab\" internally."]
+        "description": ["Development and maintenance of a mobile-driving platform that allows users to test their applications in a cross-devices and cross-browsers fashion. This platform consists of 3000+ devices and saves companies the cost of building their own \"lab\" internally."],
+        "more": [
+          "The BrowserStack testing platform gives users access to thousands of real mobile devices so they can tests their applications and/or websites without paying the extra cost of the maintenance of a internal lab. These devices are part of what we called the mobile platform.",
+          "This platform is constituted of different services and components allowing to control the devices through the user's browser or with automated test scripts. As a Software Engineer, I'm in charge of multiple tasks, from the onboarding of a new device or a new OS version to the addition of an API endpoint and the development of a new feature.",
+          "Also, I've joined BrowserStack at the beginning of their transition from startup to global company so I had the chance to assist and give my opinion on each team decision that can help us scale up: centralization of the logs (EFK), Scrum methodology, Tests pipeline, Refactoring ... Very fulfilling on a professionnal level!"
+        ]
       },
+      "learnings": "",
       "tags": ["Ruby", "Bash", "Mobile"]
     },
     {
@@ -26,8 +32,21 @@
         "description": "Voyages-SNCF Technologies — now rebranded 'E-Voyageur Technologies' — is part of the group Oui.sncf which is the first european train tickets retailer. VSCT acts as the primary provider of software and infrastructure for the group."
       },
       "role": {
-        "description": ["Maintenance and customer support of an internal cloud based on OpenStack allowing dev teams to deploy their projects internally using Jenkins and Docker. Development of web utility tools for the team.", "Development of an automate solution to test the resiliency of an application deployed on AWS involving contributions to the chaostoolkit project.", "Development of a full-stack web application implementing a serious game of one-vs-one chaos resolution challenge, allowing to practise on-call skills at anytime."]
+        "description": [
+          "Maintenance and customer support of an internal cloud based on OpenStack allowing dev teams to deploy their projects internally using Jenkins and Docker. Development of web utility tools for the team.",
+          "Development of an automate solution to test the resiliency of an application deployed on AWS involving contributions to the chaostoolkit project.",
+          "Development of a full-stack web application implementing a serious game of one-vs-one chaos resolution challenge, allowing to practise on-call skills at anytime."
+        ],
+        "more": [
+          "For my end-of-studies internship, I joined VSCT to first work within the VSCloud team, which was taking care of an internal cloud platform based on OpenStack, Docker and Jenkins. The other teams of developpers were so able to deploy their application internally.",
+          "My main missions were first to maintain the platform in a working state by fixing bugs and supervise its state and secondary to help the customers when they were facing issues with their deployments. Unfortunatly, the project has been called to be replaced by an hybride cloud solution (2/3 public cloud, 1/3 on premise) and therfore I needed to move to another team for the rest of my internship.",
+          "I thus joined the team ERA, in charge of the development of the new B2B European Train selling platform, aiming to replace the legacy one, in place for ten years. The new application is deployed on AWS and was not open to customers at this time. Although they began to practise their on-call processes through Chaos Games.",
+          "These games are pretty straigh forward: an outage in created on the application/platform and the designated person has to solve it just like if he was on a real situation. The second part of my internship took then place in that context of 'Chaos Engineering'.",
+          "The main subject was to develop a solution to automate some resiliency tests. To do so, I used the amazing chaos-toolkit open-source project and contributed to its AWS plugin and managed to use it within a Jenkins pipeline.",
+          "I also developped a serious game application which was, inspired by the Chaos Games mentionned before, allows a member of the team to cause an outage and ask for its resolution to anyone in the team. This game would allow the team to practise their resolution skills at anytime and not only during Chaos Games."
+        ]
       },
+      "learnings": "",
       "tags": ["OpenStack", "Docker", "Swarm", "Jenkins", "Go", "Openfaas", "Angular", "ChaosEngineering", "AWS", "Python", "React.js", "Node.js", "MongoDB"]
     },
     {
@@ -41,8 +60,14 @@
       "startdate": "Thu Jun 15 2017 09:00:00 GMT+0000",
       "enddate": "Thu Aug 31 2017 17:00:00 GMT+0000",
       "role": {
-        "description": ["Improvement  of  an  internal  tool,  EnOs  (enos.readthedocs.io),  with  a profiling system. (Initiation course, 1 day per week over 4 month)", "Replacement of the mySQL backend of an OpenStack service (Keystone) by a distributed database (CockroachDB) in order to increase OpenStack scalability (Fog/Edge computing fashion)."]
+        "description": ["Improvement  of  an  internal  tool,  EnOs  (enos.readthedocs.io),  with  a profiling system. (Initiation course, 1 day per week over 4 month)", "Replacement of the mySQL backend of an OpenStack service (Keystone) by a distributed database (CockroachDB) in order to increase OpenStack scalability (Fog/Edge computing fashion)."],
+        "more": [
+          "I first collaborated with the Discovery initiative during a Research initiation course which took place in the first semster of my Master's. Each Tuesday during 4 months, 3 classmates and I were going to their office to work together on a project: Adding a profiling system to their in-house experimentation tool:  EnOs (enos.readthedocs.io) After researching the different profiling services that could be integrated with OpenStack, we decided to go with OSProfiler and integrate it in Rally, a performance analysis service of OpenStack.",
+          "Few months after, I decided to do a volunteer internship during the summer and I choose to go back with the Discovery initiative as I appreciated the themes and concerns they are working on. My objective was to replace the database of the identity service of OpenStack, Keystone, to make it more scalable.",
+          "The whole challenge of this internship was to pick up the architecture and the sub-services of Keystone to be able to understand how we could replace its mySQL backend by a CocroachDB one. The main issue was to add the support for the new database in each layer of the service to manage and insure the full compatibility with the existing system."
+        ]
       },
+      "learnings": "",
       "tags": ["OpenStack", "Cloud Computing", "Ansible", "Python", "Research"]
     }
   ]
