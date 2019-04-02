@@ -2,24 +2,7 @@
   <div class="resume">
     <SlidingDoors>
       <div class="sidebar" slot="left">
-        <div class="aboutme">
-          <h2 class="title">About me</h2>
-          <p class="text">
-            My journey in the Computer Science world begins in high-school where
-            I had to program the microchip of automatic vacuum cleaner and fell
-            in love with these pretty lines of code and knew that I wanted to
-            spend a lot of time with them, hence why I moved to Nantes to study
-            Computer Science for 6 years and get a Master’s degree with honours.
-            <br /><br />
-            I tend to be interested in any kind of Software job but I genuinely
-            enjoy myself working with web technologies and most specifically
-            JavaScript.
-            <br /><br />
-            No matter what I’m working on, I’m always trying to make it the
-            neatest possible. I also love functional programming, open-source or
-            TDD.
-          </p>
-        </div>
+        <AboutMe />
         <div class="school">
           <h2 class="title">School</h2>
           <p><b>2018</b> Software Architecture MSc, Nantes. <i>1st/40</i></p>
@@ -82,13 +65,15 @@
 </template>
 
 <script>
+import AboutMe from "./About/AboutMe.vue";
 import Experience from "./Experience/Experience.vue";
 import experiencesData from "./Experience/experiences.json";
 
 export default {
   name: "Resume",
   components: {
-    Experience
+    Experience,
+    AboutMe
   },
   data: function() {
     return { ...experiencesData, bouncing: false };
