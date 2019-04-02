@@ -79,12 +79,12 @@ export default {
     return { ...experiencesData, bouncing: false };
   },
   mounted() {
-    //TODO: Restrict to new visitors
-    if (screen.width > 768) {
+    if (screen.width > 768 && !localStorage['visited']) {
       const interval = setInterval(() => (this.bouncing = !this.bouncing), 500);
       setTimeout(() => {
         clearInterval(interval);
         this.bouncing = false;
+        localStorage['visited'] = 'true';
       }, 3000);
     }
   }
