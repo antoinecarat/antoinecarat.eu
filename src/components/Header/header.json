@@ -5,6 +5,7 @@
     { "name": "Twitter", "link": "https://twitter.com/a_carat" },
     { "name": "Github", "link": "https://github.com/antoinecarat" },
     { "name": "Medium", "link": "https://medium.com/@antoine.carat" },
-    { "name": "NPM", "link": "https://www.npmjs.com/~acarat" }
+    { "name": "NPM", "link": "https://www.npmjs.com/~acarat" },
+    { "name": "Resume", "link": "/static/doc/Antoine-Carat_Resume.pdf"}
   ]
 }
