@@ -1,4 +1,4 @@
-# cara-puce.github.io
+# antoinecarat.eu
 > My professional website, deployed here: https://antoinecarat.eu
 
 ## Purpose
@@ -10,10 +10,11 @@ This website has been - and is still - built as a showcase of me and my skills s
 - [x] Splitting page into Vue components
 - [x] Add vue-router and vuex
 - [x] Restarting from scratch with vue-cli
-- [x] Get my own domain name
+- [x] Get my own domain
 - [x] Redesign without template
-- [ ] Remove Bulma framework **WIP**
-- [ ] Deployment pipeline
+- [x] Remove Bulma framework
+- [x] Deployment pipeline
+- [ ] Interactive CV design **WIP**
 - [ ] Add touch gestures (?)
 - [ ] Give components to open-source
 - [ ] Progressive Web Application
