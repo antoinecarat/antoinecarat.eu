@@ -15,6 +15,9 @@ This website has been - and is still - built as a showcase of me and my skills s
 - [x] Remove Bulma framework
 - [x] Deployment pipeline
 - [ ] Interactive CV design **WIP**
-  - [ ] Redesign
+  - [x] Redesign
+  - [ ] Add details for projects
+  - [ ] Add details for skills
+  - [ ] Hobbies section
   - [ ] Allow download from sources to pdf
 - [ ] Progressive Web Application
