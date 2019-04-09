@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "highlight": true,
+      "title": "Alice&Bob founding president",
+      "description": {
+        "short": "I founded a student organization and headed it during one year"
+      }
+    },
+    {
+      "highlight": true,
+      "title": "google-docs-mustaches",
+      "description": {
+        "short": "I'm working on this document interpolation library."
+      }
+    },
+    {
+      "highlight": true,
+      "title": "vue-grouped-table",
+      "description": {
+        "short": "I needed this kind of table for a dashboard project and decided to make it open-source."
+      }
+    },
+    {
+      "highlight": true,
+      "title": "How I ended up living abroad for a while",
+      "description": {
+        "short": "I wrote this article to share my thoughts about leaving my country and settle in a new one."
+      }
+    }
+  ]
+}

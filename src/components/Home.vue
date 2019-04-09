@@ -39,25 +39,10 @@
         </div>
         <div class="highlights">
           <h2 class="title">Highlights</h2>
-          <p class="highlight">
-            <span class="h-title">Alice&Bob founding president</span> I founded
-            a student organization and headed it during one year
+          <p class="highlight" v-for="project in projects.filter( e => e.highlight )" :key="project.title">
+            <span class="h-title">{{ project.title }}</span> {{ project.description.short }}
           </p>
-          <p class="highlight">
-            <span class="h-title">google-docs-mustaches contributor</span> I'm
-            investing some time working on this document interpolation library.
-          </p>
-          <p class="highlight">
-            <span class="h-title">vue-grouped-table</span> I needed this kind of
-            table for a dashboard project and decided to make it open-source.
-          </p>
-          <p class="highlight">
-            <span class="h-title"
-              >How I ended up living abroad for a while</span
-            >
-            I wrote this article to share my thoughts about leaving my country
-            and settle in a new one.
-          </p>
+          <p>More projects</p>
         </div>
       </div>
     </SlidingDoors>
@@ -68,6 +53,7 @@
 import AboutMe from "./About/AboutMe.vue";
 import Experience from "./Experience/Experience.vue";
 import experiencesData from "./Experience/experiences.json";
+import projectsData from "./Project/projects.json";
 
 export default {
   name: "Resume",
@@ -76,7 +62,7 @@ export default {
     AboutMe
   },
   data: function() {
-    return { ...experiencesData, bouncing: false };
+    return { ...experiencesData, ...projectsData, bouncing: false };
   },
   mounted() {
     if (screen.width > 768 && !localStorage['visited']) {
