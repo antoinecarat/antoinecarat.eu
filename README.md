@@ -20,4 +20,5 @@ This website has been - and is still - built as a showcase of me and my skills s
   - [ ] Add details for skills
   - [ ] Hobbies section
   - [ ] Allow download from sources to pdf
+- [ ] Improve perfs on Lighthouse audit
 - [ ] Progressive Web Application
