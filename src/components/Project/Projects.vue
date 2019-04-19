@@ -3,23 +3,9 @@
     <p class="back" @click="$router.push('/')">Back</p>
     <SlidingDoors>
       <div class="card" slot="left">
-        <h2>Github Activity*</h2>
-        <div id="github-stats">
-          <calendar-heatmap
-            :values="githubData"
-            :max="5"
-            :end-date="new Date()"
-            :range-color="[
-              'ebedf0',
-              'dae2ef',
-              '#c0ddf9',
-              '#73b3f3',
-              '#3886e1',
-              '#17459e'
-            ]"
-          />
-          * Commits, Pull Requests, Issues and Reviews
-        </div>
+        <h2>Github Activity</h2>
+          <GithubCalendar user="antoinecarat" />
+          Commits, Pull Requests, Issues and Reviews
       </div>
       <div class="description" slot="right">
         <!-- Grid -->
@@ -50,55 +36,18 @@
 
 <script>
 import projectData from "./projects.json";
-import { CalendarHeatmap } from "vue-calendar-heatmap";
-import axios from "axios";
+import GithubCalendar from "./GithubCalendar"
 
-const GH_TOKEN = "c658c4045109ce0dc4993f273d112d4af01eb767";
+const GH_TOKEN = "0333065eac441e0db4963d40b7f6a8c500fc01f2";
 
 export default {
   components: {
-    CalendarHeatmap
+    GithubCalendar
   },
   data: function() {
     return {
-      ...projectData,
-      githubData: []
+      ...projectData
     };
-  },
-  mounted() {
-    axios
-      .post(
-        "https://api.github.com/graphql",
-        {
-          query: `{
-                  user(login: "antoinecarat") {
-                    # contributionsCollection(from:"2019-01-01T22:59:59Z") {
-                    contributionsCollection {
-                      contributionCalendar {
-                        totalContributions,
-                        weeks{
-                          contributionDays{
-                            date,
-                            contributionCount
-                          },
-                        }
-                      }
-                    }
-                  }
-                }`
-        },
-        {
-          headers: { Authorization: `Bearer ${GH_TOKEN}` }
-        }
-      )
-      .then(res => {
-        this.githubData = res.data.data.user.contributionsCollection.contributionCalendar.weeks
-          .map(e => e.contributionDays)
-          .flat()
-          .map(e => {
-            return { date: e.date, count: e.contributionCount };
-          });
-      });
   }
 };
 </script>
