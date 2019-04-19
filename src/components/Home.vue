@@ -37,12 +37,14 @@
             :key="experience.startdate"
           />
         </div>
-        <div class="highlights">
+        <div class="highlights" @click="$router.push('/projects')">
           <h2 class="title">Highlights</h2>
-          <p class="highlight" v-for="project in projects.filter( e => e.highlight )" :key="project.title">
-            <span class="h-title">{{ project.title }}</span> {{ project.description.short }}
-          </p>
-          <p>More projects</p>
+          <div class="h-list">
+            <p class="highlight" v-for="project in projects.filter( e => e.highlight )" :key="project.title">
+              <span class="h-title">{{ project.title }}</span> {{ project.description.short }}
+            </p>
+            <p class="learn-more">More projects</p>
+          </div>
         </div>
       </div>
     </SlidingDoors>
@@ -119,9 +121,40 @@ export default {
     }
 
     .highlights {
+      position: relative;
       .highlight {
         .h-title {
           font-weight: 700;
+        }
+      }
+      .learn-more {
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
+        color: #008cb4;
+        text-decoration: underline;
+        &:active,
+        &:hover {
+          font-weight: 600;
+        }
+      }
+      &.hovered,
+      &:hover {
+        .h-list {
+          transition: 600ms;
+          width: 100%;
+          border-left: 1px solid lightgray;
+          padding-left: 1rem;
+          color: #aaaaaa;
+          cursor: pointer;
+        }
+        & > .h-list .learn-more {
+          @media only screen and (min-width: 768px) {
+            display: block;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+          }
         }
       }
     }
