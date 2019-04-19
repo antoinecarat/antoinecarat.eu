@@ -1,32 +1,32 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/Home'
-import DetailedAboutMe from '@/components/About/DetailedAboutMe'
-import DetailedExperience from '@/components/Experience/DetailedExperience'
-import Projects from '@/components/Project/Projects'
-import DetailedProject from '@/components/Project/DetailedProject'
+import Vue from "vue";
+import Router from "vue-router";
+import Home from "@/components/Home";
+import DetailedAboutMe from "@/components/About/DetailedAboutMe";
+import DetailedExperience from "@/components/Experience/DetailedExperience";
+import Projects from "@/components/Project/Projects";
+import DetailedProject from "@/components/Project/DetailedProject";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   routes: [
-    { path: '/', component: Home, name: 'Home' },
-    { path: '/about', component: DetailedAboutMe, name: 'DetailedAboutMe' },
+    { path: "/", component: Home, name: "Home" },
+    { path: "/about", component: DetailedAboutMe, name: "DetailedAboutMe" },
     {
-      path: '/experience/:id',
+      path: "/experience/:id",
       component: DetailedExperience,
-      name: 'DetailedExperience'
+      name: "DetailedExperience"
     },
     {
-      path: '/projects',
+      path: "/projects",
       component: Projects,
-      name: 'Projects'
+      name: "Projects"
     },
     {
-      path: '/project/:id',
+      path: "/project/:id",
       component: DetailedProject,
-      name: 'DetailedProject'
+      name: "DetailedProject"
     }
   ]
-})
+});

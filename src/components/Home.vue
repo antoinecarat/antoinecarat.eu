@@ -40,8 +40,13 @@
         <div class="highlights" @click="$router.push('/projects')">
           <h2 class="title">Highlights</h2>
           <div class="h-list">
-            <p class="highlight" v-for="project in projects.filter( e => e.highlight )" :key="project.title">
-              <span class="h-title">{{ project.title }}</span> {{ project.description.short }}
+            <p
+              class="highlight"
+              v-for="project in projects.filter(e => e.highlight)"
+              :key="project.title"
+            >
+              <span class="h-title">{{ project.title }}</span>
+              {{ project.description.short }}
             </p>
             <p class="learn-more">More projects</p>
           </div>
@@ -67,12 +72,12 @@ export default {
     return { ...experiencesData, ...projectsData, bouncing: false };
   },
   mounted() {
-    if (screen.width > 768 && !localStorage['visited']) {
+    if (screen.width > 768 && !localStorage["visited"]) {
       const interval = setInterval(() => (this.bouncing = !this.bouncing), 500);
       setTimeout(() => {
         clearInterval(interval);
         this.bouncing = false;
-        localStorage['visited'] = 'true';
+        localStorage["visited"] = "true";
       }, 3000);
     }
   }
