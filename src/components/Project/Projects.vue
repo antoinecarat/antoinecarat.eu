@@ -4,7 +4,11 @@
     <SlidingDoors>
       <div class="card" slot="left">
         <h2>Github Activity</h2>
-        <GithubCalendar user="antoinecarat" />
+        <GithubCalendar
+          user="antoinecarat"
+          :months=6
+          :rangeColors="['#ebedf0', '#dae2ef', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e']"
+        />
         Commits, Pull Requests, Issues and Reviews
       </div>
       <div class="description" slot="right">
@@ -34,7 +38,7 @@
 
 <script>
 import projectData from "./projects.json";
-import GithubCalendar from "./GithubCalendar";
+import { GithubCalendar } from "vue-github-calendar";
 
 export default {
   components: {

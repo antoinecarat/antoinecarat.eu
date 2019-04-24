@@ -3,15 +3,14 @@
     <p class="back" @click="$router.push('/projects')">Back</p>
     <SlidingDoors>
       <div class="card" slot="left">
-        <!-- Show thumbnail + title + stats -->
         <img class="logo" :src="project.thumbnail || 'https://bulma.io/images/placeholders/480x320.png'" alt="" />
         <h2 class="p-title">{{ project.title }}</h2>
       </div>
       <div class="description" slot="right">
         <h2>Project description</h2>
         <p>{{ project.description.short }}</p>
-        <!-- <h2>How?</h2> -->
-        <!-- <p>Technical stuff</p> -->
+        <h2>How?</h2>
+        <p>Technical stuff</p>
       </div>
     </SlidingDoors>
   </div>
