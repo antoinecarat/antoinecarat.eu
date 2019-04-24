@@ -37,27 +37,19 @@
             :key="experience.startdate"
           />
         </div>
-        <div class="highlights">
+        <div class="highlights" @click="$router.push('/projects')">
           <h2 class="title">Highlights</h2>
-          <p class="highlight">
-            <span class="h-title">Alice&Bob founding president</span> I founded
-            a student organization and headed it during one year
-          </p>
-          <p class="highlight">
-            <span class="h-title">google-docs-mustaches contributor</span> I'm
-            investing some time working on this document interpolation library.
-          </p>
-          <p class="highlight">
-            <span class="h-title">vue-grouped-table</span> I needed this kind of
-            table for a dashboard project and decided to make it open-source.
-          </p>
-          <p class="highlight">
-            <span class="h-title"
-              >How I ended up living abroad for a while</span
+          <div class="h-list">
+            <p
+              class="highlight"
+              v-for="project in projects.filter(e => e.highlight)"
+              :key="project.title"
             >
-            I wrote this article to share my thoughts about leaving my country
-            and settle in a new one.
-          </p>
+              <span class="h-title">{{ project.title }}</span>
+              {{ project.description.short }}
+            </p>
+            <p class="learn-more">More projects</p>
+          </div>
         </div>
       </div>
     </SlidingDoors>
@@ -68,6 +60,7 @@
 import AboutMe from "./About/AboutMe.vue";
 import Experience from "./Experience/Experience.vue";
 import experiencesData from "./Experience/experiences.json";
+import projectsData from "./Project/projects.json";
 
 export default {
   name: "Resume",
@@ -76,15 +69,15 @@ export default {
     AboutMe
   },
   data: function() {
-    return { ...experiencesData, bouncing: false };
+    return { ...experiencesData, ...projectsData, bouncing: false };
   },
   mounted() {
-    if (screen.width > 768 && !localStorage['visited']) {
+    if (screen.width > 768 && !localStorage["visited"]) {
       const interval = setInterval(() => (this.bouncing = !this.bouncing), 500);
       setTimeout(() => {
         clearInterval(interval);
         this.bouncing = false;
-        localStorage['visited'] = 'true';
+        localStorage["visited"] = "true";
       }, 3000);
     }
   }
@@ -133,9 +126,40 @@ export default {
     }
 
     .highlights {
+      position: relative;
       .highlight {
         .h-title {
           font-weight: 700;
+        }
+      }
+      .learn-more {
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
+        color: #008cb4;
+        text-decoration: underline;
+        &:active,
+        &:hover {
+          font-weight: 600;
+        }
+      }
+      &.hovered,
+      &:hover {
+        .h-list {
+          transition: 600ms;
+          width: 100%;
+          border-left: 1px solid lightgray;
+          padding-left: 1rem;
+          color: #aaaaaa;
+          cursor: pointer;
+        }
+        & > .h-list .learn-more {
+          @media only screen and (min-width: 768px) {
+            display: block;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+          }
         }
       }
     }

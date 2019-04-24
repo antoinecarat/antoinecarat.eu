@@ -14,7 +14,11 @@ This website has been - and is still - built as a showcase of me and my skills s
 - [x] Redesign without template
 - [x] Remove Bulma framework
 - [x] Deployment pipeline
-- [ ] Interactive CV design **WIP**
-- [ ] Add touch gestures (?)
-- [ ] Give components to open-source
+- [ ] Interactive CV design :construction_worker:
+  - [x] Redesign
+  - [ ] Add details for projects :point_left:
+  - [ ] Add details for skills
+  - [ ] Hobbies section
+  - [ ] Allow download from sources to pdf
+- [ ] Improve perfs on Lighthouse audit
 - [ ] Progressive Web Application

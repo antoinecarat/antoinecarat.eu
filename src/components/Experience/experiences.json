@@ -18,7 +18,7 @@
           "Also, I've joined BrowserStack at the beginning of their transition from startup to global company so I had the chance to assist and give my opinion on each team decision that can help us scale up: centralization of the logs (EFK), Scrum methodology, Tests pipeline, Refactoring ... Very fulfilling on a professionnal level!"
         ]
       },
-      "learnings": "",
+      "learnings": [],
       "tags": ["Ruby", "Bash", "Mobile"]
     },
     {
@@ -46,7 +46,7 @@
           "I also developped a serious game application which was, inspired by the Chaos Games mentionned before, allows a member of the team to cause an outage and ask for its resolution to anyone in the team. This game would allow the team to practise their resolution skills at anytime and not only during Chaos Games."
         ]
       },
-      "learnings": "",
+      "learnings": [],
       "tags": ["OpenStack", "Docker", "Swarm", "Jenkins", "Go", "Openfaas", "Angular", "ChaosEngineering", "AWS", "Python", "React.js", "Node.js", "MongoDB"]
     },
     {
@@ -67,7 +67,7 @@
           "The whole challenge of this internship was to pick up the architecture and the sub-services of Keystone to be able to understand how we could replace its mySQL backend by a CocroachDB one. The main issue was to add the support for the new database in each layer of the service to manage and insure the full compatibility with the existing system."
         ]
       },
-      "learnings": "",
+      "learnings": [],
       "tags": ["OpenStack", "Cloud Computing", "Ansible", "Python", "Research"]
     }
   ]
