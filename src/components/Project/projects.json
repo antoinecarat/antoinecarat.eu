@@ -5,6 +5,7 @@
       "title": "Alice&Bob",
       "subtitle": "A student organization",
       "thumbnail": "/static/img/ab_logo.jpg",
+      "tags": ["Team lead", "Events", "Students life"],
       "description": {
         "short": "I founded a student organization and headed it during one year"
       }
@@ -12,8 +13,9 @@
     {
       "highlight": true,
       "title": "google-docs-mustaches",
-      "subtitle": "A document interpolation library",
+      "subtitle": "Interpolate generic documents",
       "thumbnail": "/static/img/gdm.png",
+      "tags": ["TypeScript", "Google APIs"],
       "description": {
         "short": "I'm working on this document interpolation library."
       }
@@ -23,6 +25,7 @@
       "title": "vue-grouped-table",
       "subtitle": "Group your data by multiple fields in a table",
       "thumbnail": null,
+      "tags": ["Vue.js", "Component", "UI"],
       "description": {
         "short": "I needed this kind of table for a dashboard project and decided to make it open-source."
       }
@@ -32,6 +35,7 @@
       "title": "How I ended up living abroad for a while",
       "subtitle": "A testimony on expatriation",
       "thumbnail": "/static/img/abroad.jpg",
+      "tags": ["Article"],
       "description": {
         "short": "I wrote this article to share my thoughts about leaving my country and settle in a new one."
       }

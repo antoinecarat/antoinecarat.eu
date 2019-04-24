@@ -17,8 +17,13 @@
           >
             <img class="thumbnail" :src="project.thumbnail || 'https://bulma.io/images/placeholders/480x320.png'" alt="Project's thumbnail">
             <div class="project-data">
-              <h2>{{ project.title }}</h2>
-              <h3>{{ project.subtitle }}</h3>
+              <span class="title">{{ project.title }} </span>
+              <span class="subtitle">{{ project.subtitle }}</span>
+              <div class="project-tags">
+                <span v-for="tag in project.tags" :key="tag">
+                  {{ tag }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -29,9 +34,7 @@
 
 <script>
 import projectData from "./projects.json";
-import GithubCalendar from "./GithubCalendar"
-
-const GH_TOKEN = "0333065eac441e0db4963d40b7f6a8c500fc01f2";
+import GithubCalendar from "./GithubCalendar";
 
 export default {
   components: {
@@ -103,10 +106,10 @@ export default {
         transition: 600ms;
         margin-bottom: 1rem;
         cursor: pointer;
-        z-index: -1;
+        // z-index: -1;
 
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
 
@@ -117,15 +120,6 @@ export default {
           border: 1px solid #008cb4;
         }
         
-        h2 {
-          align-self: flex-start;
-          margin: 1rem 0 0 0;
-        }
-
-        h3 {
-          align-self: flex-start;
-          margin: .5rem 0;
-        }
 
         .thumbnail {
           width: 5rem;
@@ -135,7 +129,44 @@ export default {
           object-fit: cover;
         }
 
+        .project-data {
+           display: flex;
+          flex-flow: column wrap;
+          justify-content: space-evenly;
+          align-items: flex-start;
+          .title {
+            margin: 0;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: 500;
+            // border: 1px solid black;
+          }
+          .subtitle {
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+          }
 
+          .project-tags {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: .5rem;
+            span {
+              margin: 0 .5rem;
+              font-style: italic;
+
+              &:first-child {
+                margin-left: 0;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
 
       }
     }

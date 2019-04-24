@@ -10,8 +10,8 @@
       <div class="description" slot="right">
         <h2>Project description</h2>
         <p>{{ project.description.short }}</p>
-        <h2>How?</h2>
-        <p>Technical stuff</p>
+        <!-- <h2>How?</h2> -->
+        <!-- <p>Technical stuff</p> -->
       </div>
     </SlidingDoors>
   </div>

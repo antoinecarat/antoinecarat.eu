@@ -1,6 +1,12 @@
 <template>
   <div id="github-stats">
-    <svg class="cal-wrapper" :height="10 * squareSize">
+    <svg class="cal-wrapper" :height="8 * squareSize">
+      <!-- <g class="cal-months" v-for="(month, i) in ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']" :key="month">
+        <text
+          fill="#000000"
+          :y="1.25 * squareSize"
+          :x="(i * 2 * (squareSize + 1)) + (squareSize + 1)">{{ month }}</text>
+      </g> -->
       <g class="cal-week" v-for="(week, i) in values" :key="i">
         <rect class="cal-day" v-for="(day, j) in week.contributionDays" :key="j"
           :style="{fill: rangeColors[contribCount(day.contributionCount)]}"
@@ -26,7 +32,6 @@
 import axios from "axios";
 
 const DEFAULT_RANGE_COLOR = ['#ebedf0', '#dae2ef', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e']
-const GH_TOKEN = "0333065eac441e0db4963d40b7f6a8c500fc01f2"
 
 export default {
   name: "GithubCalendar",
@@ -44,6 +49,7 @@ export default {
     return {
       values: [],
       squareSize: 0,
+      gh_token: process.env.VUE_APP_GHTOKEN
     }
   },
   methods: {
@@ -73,7 +79,7 @@ export default {
                 }`
         },
         {
-          headers: { Authorization: `Bearer ${GH_TOKEN}` }
+          headers: { Authorization: `Bearer ${this.gh_token}` }
         }
       )
       .then(res => {
@@ -88,6 +94,8 @@ export default {
 <style lang="scss">
   .cal-wrapper {
     width: 100%;
+    // border: 1px solid black;
+    
     .cal-legend {
       margin-top: 50%;
     }
