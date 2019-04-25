@@ -30,6 +30,11 @@
               "Now"
           }})
         </p>
+        <div class="tags">
+          <span v-for="tag in experience.tags" :key="tag">
+            {{ tag }}
+          </span>
+        </div>
       </div>
       <div class="description" slot="right">
         <h2>About the company</h2>

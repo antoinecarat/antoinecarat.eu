@@ -23,7 +23,7 @@
             <div class="project-data">
               <span class="title">{{ project.title }} </span>
               <span class="subtitle">{{ project.subtitle }}</span>
-              <div class="project-tags">
+              <div class="tags">
                 <span v-for="tag in project.tags" :key="tag">
                   {{ tag }}
                 </span>
@@ -75,16 +75,10 @@ export default {
   }
 
   .card {
-
-    .logo {
-      border-radius: 100rem;
-      width: 30%;
-    }
-    .stats-row {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-evenly;
-    }
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
   }
   .description {
     text-align: left;
@@ -152,15 +146,15 @@ export default {
             margin: 0;
           }
 
-          .project-tags {
+          .tags {
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
             align-items: center;
-            margin-top: .5rem;
+            margin: .5rem 0;
+
             span {
               margin: 0 .5rem;
-              font-style: italic;
 
               &:first-child {
                 margin-left: 0;

@@ -2,42 +2,45 @@
   "projects": [
     {
       "highlight": true,
-      "title": "Alice&Bob",
-      "subtitle": "A student organization",
-      "thumbnail": "/static/img/ab_logo.jpg",
-      "tags": ["Team lead", "Events", "Students life"],
+      "title": "Vue.js components creator",
+      "subtitle": "Multiple ideas into open-source components",
+      "thumbnail": "/static/img/vuelogo.png",
+      "tags": ["Vue.js", "Components", "UI", "Open Source"],
       "description": {
-        "short": "I founded a student organization and headed it during one year"
+        "short": "I'm always trying to make my frontend components the most reusable possible and give it to community if it answers a concern that can be faced by anyone else.",
+        "long": []
       }
     },
     {
       "highlight": true,
       "title": "google-docs-mustaches",
-      "subtitle": "Interpolate generic documents",
+      "subtitle": "Interpolate your generic documents",
       "thumbnail": "/static/img/gdm.png",
-      "tags": ["TypeScript", "Google APIs"],
+      "tags": ["TypeScript", "Google APIs", "Open Source"],
       "description": {
-        "short": "I'm working on this document interpolation library."
+        "short": "I joined a friend of mine on this open-source project which aims to reduce the amount of time spent on generic documents filling by interpolating data within placehoders.",
+        "long": []
       }
     },
     {
       "highlight": true,
-      "title": "vue-grouped-table",
-      "subtitle": "Group your data by multiple fields in a table",
-      "thumbnail": null,
-      "tags": ["Vue.js", "Component", "UI"],
+      "title": "Alice&Bob",
+      "subtitle": "Nantes Computer Science Student's organization",
+      "thumbnail": "/static/img/ab_logo.jpg",
+      "tags": ["Team lead", "Events", "Students life"],
       "description": {
-        "short": "I needed this kind of table for a dashboard project and decided to make it open-source."
+        "short": "I founded a student organization and headed it during one year. The main goal was to help students to succeed in their studies and to offer them some events when they can meet older/younger students.",
+        "long": []
       }
     },
     {
-      "highlight": true,
       "title": "How I ended up living abroad for a while",
       "subtitle": "A testimony on expatriation",
       "thumbnail": "/static/img/abroad.jpg",
       "tags": ["Article"],
       "description": {
-        "short": "I wrote this article to share my thoughts about leaving my country and settle in a new one."
+        "short": "I wrote this article to share my thoughts about leaving my country and settle in a new one.",
+        "long": []
       }
     }
   ]

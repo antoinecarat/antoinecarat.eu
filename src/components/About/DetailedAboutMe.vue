@@ -6,7 +6,11 @@
         <img class="myface" :src="picture" alt="" />
         <h2 class="name">Antoine Carat</h2>
         <h3 class="subtitle">{{ subtitle }}</h3>
-        <h4></h4>
+        <div class="tags">
+          <span v-for="tag in tags" :key="tag">
+            {{ tag }}
+          </span>
+        </div>
       </div>
       <div class="description" slot="right">
         <h2>Hey, what's the craic?</h2>
