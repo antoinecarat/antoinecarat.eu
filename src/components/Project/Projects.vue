@@ -4,7 +4,11 @@
     <SlidingDoors>
       <div class="card" slot="left">
         <h2>Github Activity</h2>
-        <GithubCalendar user="antoinecarat" />
+        <GithubCalendar
+          user="antoinecarat"
+          :months=6
+          :rangeColors="['#ebedf0', '#dae2ef', '#c0ddf9', '#73b3f3', '#3886e1', '#17459e']"
+        />
         Commits, Pull Requests, Issues and Reviews
       </div>
       <div class="description" slot="right">
@@ -19,7 +23,7 @@
             <div class="project-data">
               <span class="title">{{ project.title }} </span>
               <span class="subtitle">{{ project.subtitle }}</span>
-              <div class="project-tags">
+              <div class="tags">
                 <span v-for="tag in project.tags" :key="tag">
                   {{ tag }}
                 </span>
@@ -34,7 +38,7 @@
 
 <script>
 import projectData from "./projects.json";
-import GithubCalendar from "./GithubCalendar";
+import { GithubCalendar } from "vue-github-calendar";
 
 export default {
   components: {
@@ -71,16 +75,10 @@ export default {
   }
 
   .card {
-
-    .logo {
-      border-radius: 100rem;
-      width: 30%;
-    }
-    .stats-row {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-evenly;
-    }
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
   }
   .description {
     text-align: left;
@@ -148,15 +146,15 @@ export default {
             margin: 0;
           }
 
-          .project-tags {
+          .tags {
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
             align-items: center;
-            margin-top: .5rem;
+            margin: .5rem 0;
+
             span {
               margin: 0 .5rem;
-              font-style: italic;
 
               &:first-child {
                 margin-left: 0;

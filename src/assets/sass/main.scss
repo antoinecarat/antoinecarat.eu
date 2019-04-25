@@ -33,6 +33,23 @@ a, a:visited {
   width: 100%;
 }
 
+.tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
+  span {
+    color: #008cb4;
+    border: 1px dashed #008cb4;
+    font-style: italic;
+    padding: .1rem .5rem;
+    border-radius: 5rem;
+    margin-top: .5rem;
+  }
+}
+
 // .tile {
 //   background: $stonegray;
 //   border: .05rem solid $gravegray;

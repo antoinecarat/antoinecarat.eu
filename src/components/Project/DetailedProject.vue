@@ -1,17 +1,22 @@
 <template>
-  <div class="experience-detailed">
+  <div class="project-detailed">
     <p class="back" @click="$router.push('/projects')">Back</p>
     <SlidingDoors>
       <div class="card" slot="left">
-        <!-- Show thumbnail + title + stats -->
-        <img class="logo" :src="project.thumbnail || 'https://bulma.io/images/placeholders/480x320.png'" alt="" />
         <h2 class="p-title">{{ project.title }}</h2>
+        <h3 class="p-subtitle">{{ project.subtitle }}</h3>
+        <div class="tags">
+          <span v-for="tag in project.tags" :key="tag">
+            {{ tag }}
+          </span>
+        </div>
       </div>
       <div class="description" slot="right">
         <h2>Project description</h2>
+        <!-- <p v-for="item in project.description.long" :key="item">{{ item }}</p> -->
         <p>{{ project.description.short }}</p>
-        <!-- <h2>How?</h2> -->
-        <!-- <p>Technical stuff</p> -->
+        <!-- <h2>How?</h2>
+        <p v-for="item in project.description.technical" :key="item">{{ item }}</p> -->
       </div>
     </SlidingDoors>
   </div>
@@ -52,9 +57,7 @@ export default {
   }
 
   .card {
-    .logo {
-      // width: 80%;
-    }
+
   }
   .description {
     text-align: left;

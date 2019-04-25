@@ -36,7 +36,7 @@
         {{ item }}
       </li>
     </ul>
-    <div class="tags">{{ experience.tags.map(e => `#${e}`).join(" ") }}</div>
+    <div class="xp-tags">{{ experience.tags.map(e => `#${e}`).join(" ") }}</div>
     <p class="learn-more">Learn more</p>
   </div>
 </template>
@@ -129,7 +129,7 @@ export default {
   ul {
     padding-left: 1rem;
   }
-  .tags {
+  .xp-tags {
     font-style: italic;
   }
 }
