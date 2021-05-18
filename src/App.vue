@@ -2,7 +2,6 @@
   <section class="content">
     <Header :loaded="this.loaded" />
     <router-view></router-view>
-    <p class="footer">Last update on: 18/05/2021</p>
   </section>
 </template>
 

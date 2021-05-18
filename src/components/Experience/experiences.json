@@ -19,7 +19,8 @@
         ]
       },
       "learnings": [],
-      "tags": ["Ruby", "Bash", "Mobile", "Ansible", "Refactoring"]
+      "tags": ["Ruby", "Bash", "Mobile", "Team Lead", "Mentoring"],
+      "displayed": true
     },
     {
       "jobtitle": "Software Engineer",
@@ -40,7 +41,8 @@
         ]
       },
       "learnings": [],
-      "tags": ["Ruby", "Bash", "Mobile", "Ansible", "Refactoring"]
+      "tags": ["Ruby", "Bash", "Mobile", "Ansible", "Refactoring"],
+      "displayed": true
     },
     {
       "jobtitle": "Cloud&DevOps Intern",
@@ -68,7 +70,8 @@
         ]
       },
       "learnings": [],
-      "tags": ["OpenStack", "Docker", "Swarm", "Jenkins", "Go", "Openfaas", "Angular", "ChaosEngineering", "AWS", "Python", "React.js", "Node.js", "MongoDB"]
+      "tags": ["OpenStack", "Docker", "Swarm", "Jenkins", "Go", "Openfaas", "Angular", "ChaosEngineering", "AWS", "Python", "React.js", "Node.js", "MongoDB"],
+      "displayed": true
     },
     {
       "jobtitle": "Cloud Intern",
@@ -89,7 +92,8 @@
         ]
       },
       "learnings": [],
-      "tags": ["OpenStack", "Cloud Computing", "Ansible", "Python", "Research"]
+      "tags": ["OpenStack", "Cloud Computing", "Ansible", "Python", "Research"],
+      "displayed": false
     }
   ]
 }

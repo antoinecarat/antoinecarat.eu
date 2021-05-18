@@ -1,5 +1,5 @@
 <template>
-  <div class="experience" @click="$router.push(`/experience/${id}`)">
+  <div class="experience" v-if="experience.displayed" @click="$router.push(`/experience/${id}`)">
     <p class="head">
       <span class="jobtitle">{{ experience.jobtitle }}</span>
       <span class="company"> @{{ experience.company.name }}.</span>
