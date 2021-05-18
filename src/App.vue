@@ -2,7 +2,7 @@
   <section class="content">
     <Header :loaded="this.loaded" />
     <router-view></router-view>
-    <p>Last update on: 18/05/2021</p>
+    <p class="footer">Last update on: 18/05/2021</p>
   </section>
 </template>
 
@@ -25,4 +25,10 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+</style>
