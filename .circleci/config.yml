@@ -6,6 +6,7 @@ jobs:
      steps:
        - checkout
        - run: npm install
+       - run: npm install -f node-sass
        - run: npm run build
        - run: node .circleci/deploy.js
 
