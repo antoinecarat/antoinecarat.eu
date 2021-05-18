@@ -2,6 +2,17 @@
   "projects": [
     {
       "highlight": true,
+      "title": "The 7 rules of logging",
+      "subtitle": "My first article!",
+      "thumbnail": "/static/img/logs.jpg",
+      "tags": ["Article"],
+      "description": {
+        "short": "I wrote this article on how important a well designed logging framework is.",
+        "long": []
+      }
+    },
+    {
+      "highlight": true,
       "title": "Vue.js components creator",
       "subtitle": "Multiple ideas into open-source components",
       "thumbnail": "/static/img/vuelogo.png",
@@ -12,7 +23,7 @@
       }
     },
     {
-      "highlight": true,
+      "highlight": false,
       "title": "google-docs-mustaches",
       "subtitle": "Interpolate your generic documents",
       "thumbnail": "/static/img/gdm.png",
@@ -30,16 +41,6 @@
       "tags": ["Team lead", "Events", "Students life"],
       "description": {
         "short": "I founded a student organization and headed it during one year. The main goal was to help students to succeed in their studies and to offer them some events when they can meet older/younger students.",
-        "long": []
-      }
-    },
-    {
-      "title": "How I ended up living abroad for a while",
-      "subtitle": "A testimony on expatriation",
-      "thumbnail": "/static/img/abroad.jpg",
-      "tags": ["Article"],
-      "description": {
-        "short": "I wrote this article to share my thoughts about leaving my country and settle in a new one.",
         "long": []
       }
     }
