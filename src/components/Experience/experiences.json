@@ -1,8 +1,8 @@
 {
   "experiences": [
     {
-      "jobtitle": "Software Engineer",
-      "startdate": "Mon Nov 05 2018 09:00:00 GMT+0000",
+      "jobtitle": "Senior Software Engineer",
+      "startdate": "Wed Apr 01 2020 09:00:00 GMT+0000",
       "enddate": null,
       "company": {
         "name": "BrowserStack Ltd, Dublin",
@@ -11,10 +11,31 @@
         "description": "BrowserStack is the most reliable mobile app and browser testing platform, enaling developers to test their apps (web or mobile) over different model, different OS and different version, desktop and mobile."
       },
       "role": {
-        "description": ["Development and maintenance of a mobile-driving platform that allows users to test their applications in a cross-devices and cross-browsers fashion. This platform consists of 3000+ devices and saves companies the cost of building their own \"lab\" internally."],
+        "description": ["Continuity of my work as Software Engineer with more focus on architectural challenges and team management."],
         "more": [
           "The BrowserStack testing platform gives users access to thousands of real mobile devices so they can tests their applications and/or websites without paying the extra cost of the maintenance of a internal lab. These devices are part of what we called the mobile platform.",
-          "This platform is constituted of different services and components allowing to control the devices through the user's browser or with automated test scripts. As a Software Engineer, I'm in charge of multiple tasks, from the onboarding of a new device or a new OS version to the addition of an API endpoint and the development of a new feature.",
+          "This platform is constituted of different services and components allowing to control the devices through the user's browser or with automated test scripts. As a Senio Software Engineer, I'm in charge of the addition of new devices to the platform, with the architectural challenges that come with it.",
+          "I am, on top of my SSE work, taking on responsibilities of leading the team dedicated to device addition, improving our workflow (Jira, inter-team communication, ...) and onboardinng new joinees. I also took care of the re-structuration of the team's Confluence documentation space."
+        ]
+      },
+      "learnings": [],
+      "tags": ["Ruby", "Bash", "Mobile", "Ansible", "Refactoring"]
+    },
+    {
+      "jobtitle": "Software Engineer",
+      "startdate": "Mon Nov 05 2018 09:00:00 GMT+0000",
+      "enddate": "Tue Mar 31 2020 17:00:00 GMT+0000",
+      "company": {
+        "name": "BrowserStack Ltd, Dublin",
+        "logo": "/static/img/bs-logo.jpg",
+        "website": "https://browserstack.com",
+        "description": "BrowserStack is the most reliable mobile app and browser testing platform, enaling developers to test their apps (web or mobile) over different model, different OS and different version, desktop and mobile."
+      },
+      "role": {
+        "description": ["Development and maintenance of a mobile-driving platform that allows users to test their applications in a cross-devices and cross-browsers fashion. This platform consists of 7000+ devices and saves companies the cost of building their own \"lab\" internally."],
+        "more": [
+          "The BrowserStack testing platform gives users access to thousands of real mobile devices so they can tests their applications and/or websites without paying the extra cost of the maintenance of a internal lab. These devices are part of what we called the mobile platform.",
+          "This platform is constituted of different services and components allowing to control the devices through the user's browser or with automated test scripts. As a Software Engineer, I was in charge of multiple tasks, from the onboarding of a new device or a new OS version to the addition of an API endpoint and the development of a new feature.",
           "Also, I've joined BrowserStack at the beginning of their transition from startup to global company so I had the chance to assist and give my opinion on each team decision that can help us scale up: centralization of the logs (EFK), Scrum methodology, Tests pipeline, Refactoring ... Very fulfilling on a professionnal level!"
         ]
       },
